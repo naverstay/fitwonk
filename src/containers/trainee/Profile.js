@@ -37,8 +37,9 @@ export default React.createClass({
 
                 <div className="info-section">
                     <div className="info-title">
-                        <div className="sub">Вы с нами уже 17 дней</div>
-                        <div className="text-title">Личная информация</div>
+                        <div className="sub mob_hidden">Вы с нами уже 17 дней</div>
+                        <div className="sub dt_hidden">17 дней с Fitwonk</div>
+                        <div className="text-title">АККАУНТ</div>
                     </div>
                     <div className="personal-data">
                         <div className="half">
@@ -50,7 +51,7 @@ export default React.createClass({
 
                                         <div className="help-block"></div>
                                 </div>                </div>
-                            <div className="wr-input">
+                            <div className="wr-input mob_hidden">
                                 <div className="title">E-mail:</div>
                                 <div className="form-group field-user-email required">
 
@@ -59,7 +60,7 @@ export default React.createClass({
                                         <div className="help-block"></div>
                                 </div>                </div>
                         </div>
-                        <div className="half">
+                        <div className="half mob_hidden">
                             <div className="title">Фото:</div>
                             <div className="button-upload">Обзор<div className="form-group field-user-avatar_file">
 
@@ -70,7 +71,7 @@ export default React.createClass({
                             <div className="photo active">
                                 <img className="default" src="http://login.fitwonk.dev.pz.su/img/no-avatar.jpg" alt=""/>                </div>
                         </div>
-                        <div className="switch-place">
+                        <div className="switch-place mob_hidden">
                             <div className="wr-input">
                                 <div className="title">Интересы:</div>
                                 <div className="form-group field-userinfo-interests">
@@ -80,7 +81,7 @@ export default React.createClass({
                                         <div className="help-block"></div>
                                 </div>                </div>
                         </div>
-                        <div className="switch-place">
+                        <div className="switch-place mob_hidden">
                             <div className="switch ">
                                 <div></div>
                                 <span className="true" onClick="$('#user-training_status').val(1)">Тренируюсь</span>
@@ -96,13 +97,14 @@ export default React.createClass({
                 </div>
 
                 <form id="w0" className="personal-data" action="site/save-user-info" method="post" encType="multipart/form-data">
-                    <input type="hidden" name="_csrf" value="MkRmbDdpNlddJw07GicCHgcXMSdwHHgTQgA3K3UAZAZACRMCaCh6OA=="/>    <div className="info-section">
-                        <div className="info-title">
+                    <input type="hidden" name="_csrf" value="MkRmbDdpNlddJw07GicCHgcXMSdwHHgTQgA3K3UAZAZACRMCaCh6OA=="/>    
+                    <div className="info-section mob_hidden">
+                        <div className="info-title table-row-switcher">
                             <div className="sub">Последний замер 15.08.2016</div>
                             <div className="text-title">Антропометрия</div>
                         </div>
                         <div className="list-item">
-                            <div className="get-data">
+                            <div className="get-data table-row-switcher">
                                 <div className="data w75">
                                     <div className="wr">
                                         <select name="birthday_year" className="custom">

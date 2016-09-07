@@ -10,7 +10,8 @@ export default React.createClass({
                             <a href=""><img src="img/logo_fitwonk.png" title="FITWORK" alt="FITWORK"/></a>
                         </div>
                         <div className="header-title">
-                            <div>Выбор абонемента и оплата</div>
+                            <div className="mob_hidden">Выбор абонемента и оплата</div>
+                            <div className="dt_hidden">Тарифы</div>
                         </div>
                     </div>
                 </div>
@@ -47,13 +48,34 @@ export default React.createClass({
                                                                     <div className="time">1<span> мес.</span></div>
                                                                     <div className="price">1 300<span> руб.</span></div>
                                                                     <div className="t">В абонемент входят</div>
-                                                                    <ul>
+
+                                                                    <ul className="dt_hidden">
+                                                                        <li>Индивидуальную программу ежедневных
+                                                                            тренировок
+                                                                        </li>
+                                                                        <li>Персонального коучера онлайн 24/7</li>
+                                                                        <li>Индивидуальные советы по сбалансированному
+                                                                            питанию
+                                                                        </li>
+                                                                        <li>Онлайн статистику достижений в личном
+                                                                            кабинете
+                                                                        </li>
+                                                                        <li>Упражнения с подробным описанием, фото и
+                                                                            видео
+                                                                            подсказками
+                                                                        </li>
+                                                                        <li>Умный таймер тренировок с видео подсказками
+                                                                            упражнений
+                                                                        </li>
+                                                                    </ul>
+                                                                    <ul className="mob_hidden">
                                                                         <li>Квалифицированный тренер</li>
                                                                         <li>Индивидуальная программа тренировок</li>
                                                                         <li>300+ уникальных упражнений</li>
                                                                         <li>Умный помощник</li>
                                                                         <li>Online статистика ежедневных достижений</li>
-                                                                    </ul>                                    </div>
+                                                                    </ul>
+                                                                </div>
                                                             </div></li>
                                                             <li className="li-line"><div className="li-ind">
                                                                 <div className="li-block li-abonement" data-id="2" data-price="3500">
@@ -61,13 +83,33 @@ export default React.createClass({
                                                                     <div className="time">3<span> мес.</span></div>
                                                                     <div className="price">3 500<span> руб.</span></div>
                                                                     <div className="t">В абонемент входят</div>
-                                                                    <ul>
+                                                                    <ul className="dt_hidden">
+                                                                        <li>Индивидуальную программу ежедневных
+                                                                            тренировок
+                                                                        </li>
+                                                                        <li>Персонального коучера онлайн 24/7</li>
+                                                                        <li>Индивидуальные советы по сбалансированному
+                                                                            питанию
+                                                                        </li>
+                                                                        <li>Онлайн статистику достижений в личном
+                                                                            кабинете
+                                                                        </li>
+                                                                        <li>Упражнения с подробным описанием, фото и
+                                                                            видео
+                                                                            подсказками
+                                                                        </li>
+                                                                        <li>Умный таймер тренировок с видео подсказками
+                                                                            упражнений
+                                                                        </li>
+                                                                    </ul>
+                                                                    <ul className="mob_hidden">
                                                                         <li>Квалифицированный тренер</li>
                                                                         <li>Индивидуальная программа тренировок</li>
                                                                         <li>300+ уникальных упражнений</li>
                                                                         <li>Умный помощник</li>
                                                                         <li>Online статистика ежедневных достижений</li>
-                                                                    </ul>                                    </div>
+                                                                    </ul>
+                                                                </div>
                                                             </div></li>
                                                             <li className="li-line"><div className="li-ind">
                                                                 <div className="li-block li-abonement" data-id="3" data-price="6600">
@@ -75,13 +117,33 @@ export default React.createClass({
                                                                     <div className="time">6<span> мес.</span></div>
                                                                     <div className="price">6 600<span> руб.</span></div>
                                                                     <div className="t">В абонемент входят</div>
-                                                                    <ul>
+                                                                    <ul className="dt_hidden">
+                                                                        <li>Индивидуальную программу ежедневных
+                                                                            тренировок
+                                                                        </li>
+                                                                        <li>Персонального коучера онлайн 24/7</li>
+                                                                        <li>Индивидуальные советы по сбалансированному
+                                                                            питанию
+                                                                        </li>
+                                                                        <li>Онлайн статистику достижений в личном
+                                                                            кабинете
+                                                                        </li>
+                                                                        <li>Упражнения с подробным описанием, фото и
+                                                                            видео
+                                                                            подсказками
+                                                                        </li>
+                                                                        <li>Умный таймер тренировок с видео подсказками
+                                                                            упражнений
+                                                                        </li>
+                                                                    </ul>
+                                                                    <ul className="mob_hidden">
                                                                         <li>Квалифицированный тренер</li>
                                                                         <li>Индивидуальная программа тренировок</li>
                                                                         <li>300+ уникальных упражнений</li>
                                                                         <li>Умный помощник</li>
                                                                         <li>Online статистика ежедневных достижений</li>
-                                                                    </ul>                                    </div>
+                                                                    </ul>
+                                                                </div>
                                                             </div></li>
                                                             <li className="li-line"><div className="li-ind">
                                                                 <div className="li-block li-abonement" data-id="4" data-price="12500">
@@ -89,13 +151,33 @@ export default React.createClass({
                                                                     <div className="time">12<span> мес.</span></div>
                                                                     <div className="price">12 500<span> руб.</span></div>
                                                                     <div className="t">В абонемент входят</div>
-                                                                    <ul>
+                                                                    <ul className="dt_hidden">
+                                                                        <li>Индивидуальную программу ежедневных
+                                                                            тренировок
+                                                                        </li>
+                                                                        <li>Персонального коучера онлайн 24/7</li>
+                                                                        <li>Индивидуальные советы по сбалансированному
+                                                                            питанию
+                                                                        </li>
+                                                                        <li>Онлайн статистику достижений в личном
+                                                                            кабинете
+                                                                        </li>
+                                                                        <li>Упражнения с подробным описанием, фото и
+                                                                            видео
+                                                                            подсказками
+                                                                        </li>
+                                                                        <li>Умный таймер тренировок с видео подсказками
+                                                                            упражнений
+                                                                        </li>
+                                                                    </ul>
+                                                                    <ul className="mob_hidden">
                                                                         <li>Квалифицированный тренер</li>
                                                                         <li>Индивидуальная программа тренировок</li>
                                                                         <li>300+ уникальных упражнений</li>
                                                                         <li>Умный помощник</li>
                                                                         <li>Online статистика ежедневных достижений</li>
-                                                                    </ul>                                    </div>
+                                                                    </ul>
+                                                                </div>
                                                             </div></li>
                                                         </ul>
                                                     </div>

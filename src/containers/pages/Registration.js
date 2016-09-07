@@ -10,7 +10,7 @@ export default React.createClass({
                             <a href=""><img src="img/logo_fitwonk.png" title="FITWORK" alt="FITWORK"/></a>
                         </div>
                         <div className="header-title">
-                            <div>Регистрация нового пользователя</div>
+                            <div>Регистрация нового пользователя</div> 
                         </div>
                     </div>
                 </div>
@@ -422,13 +422,36 @@ export default React.createClass({
                                         </div>
                                         <div className="data-block double">
                                             <div className="data-ind get-data">
-                                                <div className="title" style={{"float": "left"}}>Медицинские противопоказания:</div>
-                                                <div className="help" style={{"float": "left", "margin": "0 0 0 12px"}}>
-                                                    <div className="label">?</div>
-                                                    <div className="info" style={{"width": "300px"}}>
-                                                        <div className="wr-text">Если у Вас есть противопоказания для занятия спортом, Вам необходимо проконсультироваться с лечащим врачом. Копию письменного разрешения Вы можете направить по адресу <a href="mailto:register@fitwonk.ru">register@fitwonk.ru</a></div>
+                                                <div className="title info-golder" style={{"float": "left"}}>
+                                                    <span>Медицинские противопоказания:</span>
+                                                    <div className="help"
+                                                         style={{"float": "left", "margin": "0 0 0 12px"}}>
+                                                        <div className="label">?</div>
+                                                        <div className="info" style={{"width": "300px"}}>
+                                                            <div className="wr-text mob_hidden">Если у Вас есть
+                                                                противопоказания
+                                                                для занятия
+                                                                спортом,
+                                                                Вам
+                                                                необходимо проконсультироваться с лечащим врачом. Копию
+                                                                письменного
+                                                                разрешения Вы
+                                                                можете направить по адресу <a
+                                                                    href="mailto:register@fitwonk.ru">register@fitwonk.ru</a>
+                                                            </div>
+                                                            <div className="wr-text dt_hidden">
+                                                                Если у тебя есть противопоказания для занятий спортом,
+                                                                то
+                                                                необходимо
+                                                                проконсультироваться с лечащим врачом. Копию письменного
+                                                                разрешения от
+                                                                врача направь, пожалуйста, по адресу <a
+                                                                href="mailto:register@fitwonk.ru">register@fitwonk.ru</a>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                               
                                                 <div className="label-bloks" style={{"clear": "both"}}>
                                                     <label>
                                                         <div className="wr-radio"><input type="radio" name="ProfileForm[note]" className="custom" value="Да, есть противопоказания"/></div>Да, есть противопоказания
