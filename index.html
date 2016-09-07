@@ -1,0 +1,223 @@
+
+
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+	<!-- Для мобил -->
+    <!-- <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=2.0, user-scalable=1"> -->
+    <meta name="viewport" , content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">              <!-- сглаживание шрифтов в window mobile -->
+    <meta name="format-detection" content="telephone=yes">  <!-- распознование телефонов мобильником для набора по клику -->
+    <meta name="format-detection" content="address=no">     <!-- распознование адресов мобильником для поиска по клику -->
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token" content="Nko1a0p1QVJZKV48Zzt1GwMZYiANAA8WRg5kLAgcEwNEB0AFFTQNPQ==">
+    <title>Мои цели</title>
+	<link rel="icon" href="favicon.png" type="image/png">
+    <link href="css/c3.min.css" rel="stylesheet">
+<link href="css/style.css?10" rel="stylesheet">
+<link href="css/additional.css" rel="stylesheet">
+
+<script src="assets/5b928dd8/jquery.js"></script>
+<script src="assets/e704461e/yii.js"></script>
+<script src="js/script.js"></script>
+<script src="js/autosize.min.js"></script>
+</head>
+<body>
+<style type="text/css">
+    .info-section .list-item .item-title small {
+        font-size: 12px;
+        text-transform: none;
+        color: #808080;
+    }
+</style>
+<div id="application" class="page-bg"></div>
+<div class="hide-page-layer"></div>
+
+<div class="loader hide">
+	<img src="img/loader.gif">
+</div>
+
+<script type="text/javascript">
+
+    function drawChart(label, data, target, column_name) {
+        var min = 999999, max = -1, x = ['x'], data1 = ['data1'], data2 = ['data2'];
+        if (target > 0) {
+            if (target < min) {
+                min = target;
+            }
+            if (target > max) {
+                max = target;
+            }
+        }
+        for (var el in data) {
+            var v = data[el][1];
+            if (v < min) {
+                min = v;
+            }
+            if (v > max) {
+                max = v;
+            }
+            x.push(data[el][0]);
+            data1.push(data[el][1]);
+            if (target > 0) {
+                data2.push(target);
+            }
+        }
+        if (min < 999999) {
+            min = min - 3;
+            if (min < 0) {
+                min = 0;
+            }
+        }
+
+        if (!column_name) {
+            column_name = 'Значение';
+        }
+
+        $("#chart_" + label).parent().find(".in-item-body").removeClass('hide');
+        $("#chart_" + label).parent().find(".measure").addClass('hide');
+        $("#chart_" + label).parent().find(".target").addClass('hide');
+
+        var columns = [], names = [];
+        if (data2.length > 1) {
+            columns = [
+                x,
+                data1,
+                data2
+            ];
+            names = {
+                data1: column_name,
+                data2: 'Цель'
+            };
+        } else {
+            columns = [
+                x,
+                data1
+            ];
+            names = {
+                data1: column_name
+            };
+        }
+        var chart = c3.generate({
+            bindto: '#chart_' + label,
+            data: {
+                x: 'x',
+                //labels: true,
+                xFormat: '%Y-%m-%d',
+                type: 'bar',
+                columns: columns,
+                names: names
+            },
+            axis: {
+                x: {
+                    type: 'timeseries',
+                    tick: {
+                        format: '%d.%m'
+                    }
+                },
+                y: {
+                    min: min
+                }
+            },
+            size: {
+                width: 545
+            },
+            bar: {
+                width: 10
+            }
+        });
+
+    }
+
+    jQuery(document).ready(function () {
+        $('.target-save').click(function(e){
+            var i = $(this).parents('.get-data').find('input');
+            var data = {
+                action: $(this).data('action'),
+                type: i.data('type'),
+                alias: i.data('alias'),
+                value: i.val()
+            };
+            $('#chart_' + i.data('alias')).html($('div.loader.hide').clone().removeClass('hide'));
+
+            $.post('/trainee/update-target', data)
+                    .done(function(data) {
+                        if (data.error != "") {
+                            eval('data.logs = _' + data.alias);
+                            eval('data.target = __' + data.alias);
+                            drawChart(data.alias, data.logs, data.target, data.name);
+                            alert(data.error);
+                        }
+                        else {
+                            for (var i=0; i<data.logs.length; i++) {
+                                for (var j=1; j<data.logs[i].length; j++) {
+                                    data.logs[i][j] = parseFloat(data.logs[i][j]);
+                                }
+                            }
+                            drawChart(data.alias, data.logs, data.target, data.name);
+                        }
+                    })
+                    .fail(function(error) {
+                        eval('data.logs = _' + data.alias);
+                        eval('data.target = __' + data.alias);
+                        drawChart(data.alias, data.logs, data.target, data.name);
+                        alert("Ошибка сохранения");
+                    });
+        });
+        $('.measure-toggle').click(function() {
+            var o = $(this).parent().parent();
+            o.parent().find('.measure').removeClass('hide');
+            o.addClass('hide');
+        });
+        $('.target-toggle').click(function() {
+            var o = $(this).parent().parent();
+            o.parent().find('.target').removeClass('hide');
+            o.addClass('hide');
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    var _weight = [];
+    //_weight.push(['08.08', 96.0, 93.0]);
+    //_weight.push(['08.08', 96.0]);
+    _weight.push(['2016-08-08', 96.0]);
+    //_weight.push(['15.08', 98.0, 93.0]);
+    //_weight.push(['15.08', 98.0]);
+    _weight.push(['2016-08-15', 98.0]);
+    var __weight = 93;
+
+
+    jQuery(document).ready(function () {
+        drawChart('weight', _weight, 93, 'Вес');
+    });
+</script>
+
+<script type="text/javascript">
+    var _chest = [];
+    //_chest.push(['11.08', 110.0, 110.0]);
+    //_chest.push(['11.08', 110.0]);
+    _chest.push(['2016-08-11', 110.0]);
+    var __chest = 0;
+
+
+    jQuery(document).ready(function () {
+        drawChart('chest', _chest, 0, 'Грудь');
+    });
+</script>
+
+<script src="js/d3.min.js"></script>
+<script src="js/c3.min.js"></script>
+<script src="js/anthropometry-graph-trainee.js"></script>
+<script src="assets/e704461e/yii.validation.js"></script>
+<script src="assets/e704461e/yii.activeForm.js"></script>
+<script type="text/javascript">jQuery(document).ready(function () {
+jQuery('#w0').yiiActiveForm([{"id":"contactform-name","name":"name","container":".field-contactform-name","input":"#contactform-name","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Name»."});}},{"id":"contactform-email","name":"email","container":".field-contactform-email","input":"#contactform-email","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Email»."});yii.validation.email(value, messages, {"pattern":/^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,"fullPattern":/^[^@]*<[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/,"allowName":false,"message":"Значение «Email» не является правильным email адресом.","enableIDN":false,"skipOnEmpty":1});}},{"id":"contactform-subject","name":"subject","container":".field-contactform-subject","input":"#contactform-subject","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Subject»."});}},{"id":"contactform-body","name":"body","container":".field-contactform-body","input":"#contactform-body","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Body»."});}}], []);
+});</script>
+
+<script src="assets/js/bundle.js"></script>
+
+</body>
+</html>
+

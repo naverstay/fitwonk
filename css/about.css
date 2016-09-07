@@ -1,0 +1,193 @@
+.version.about /* version checker */
+{
+	color: #000001;
+	background-color: #752373;
+}
+
+.html
+{
+	background-color: #FFFFFF;
+}
+
+#page
+{
+	z-index: 1;
+	width: 832px;
+	min-height: 643.5566464716152px;
+	background-image: none;
+	border-style: none;
+	border-color: #000000;
+	background-color: transparent;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 12px 20px 144.44335352838482px 48px;
+}
+
+#pu609
+{
+	width: 0.01px;
+}
+
+#u609
+{
+	z-index: 38;
+	width: 217px;
+	background-color: transparent;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u444-20
+{
+	z-index: 8;
+	display: block;
+	vertical-align: top;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 8px;
+	left: 264px;
+}
+
+#pu531
+{
+	width: 0.01px;
+	margin-left: 14px;
+	margin-top: 39px;
+}
+
+#u531
+{
+	z-index: 34;
+	width: 113px;
+	background-color: transparent;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u389
+{
+	z-index: 2;
+	width: 92px;
+	background-color: transparent;
+	position: relative;
+	margin-right: -10000px;
+	left: 158px;
+}
+
+#u394
+{
+	z-index: 4;
+	width: 92px;
+	background-color: transparent;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 2px;
+	left: 294px;
+}
+
+#u587
+{
+	z-index: 36;
+	width: 90px;
+	background-color: transparent;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 4px;
+	left: 431px;
+}
+
+#u437
+{
+	z-index: 6;
+	width: 92px;
+	background-color: transparent;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 3px;
+	left: 567px;
+}
+
+#u449
+{
+	z-index: 32;
+	width: 99px;
+	background-color: transparent;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 2px;
+	left: 706px;
+}
+
+#buttonu447
+{
+	z-index: 28;
+	width: 231px;
+	border-color: #787878;
+	background-color: #1D76BB;
+	border-radius: 10px;
+	padding-bottom: 13px;
+	margin-left: 602px;
+	margin-top: 43px;
+	position: relative;
+}
+
+#buttonu447:hover
+{
+	background-color: #545454;
+	width: 231px;
+	min-height: 0px;
+	margin: 43px 0px 0px 602px;
+}
+
+#buttonu447.ButtonSelected
+{
+	background-color: #1D76BB;
+	width: 231px;
+	min-height: 0px;
+	margin: 43px 0px 0px 602px;
+}
+
+#u448
+{
+	z-index: 30;
+	height: 22px;
+	width: 182px;
+	vertical-align: top;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 13px;
+	left: 24px;
+	background: url("../images/u448.png") no-repeat 0px 0px;
+}
+
+#buttonu447:hover #u448
+{
+	background: url("../images/u448-r.png") no-repeat 0px 0px;
+}
+
+#u696-4
+{
+	z-index: 40;
+	width: 363px;
+	background-color: transparent;
+	line-height: 11px;
+	text-align: right;
+	font-size: 9px;
+	margin-left: 469px;
+	margin-top: 27px;
+	position: relative;
+}
+
+body
+{
+	position: relative;
+	min-width: 900px;
+	padding-top: 36px;
+	padding-bottom: 36px;
+}
+
+#page .verticalspacer
+{
+	clear: both;
+}
+
