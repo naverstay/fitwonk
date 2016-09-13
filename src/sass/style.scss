@@ -6068,6 +6068,36 @@ video {
 
 .edit_v1 {
   padding-left: 5px;
+
+  .edit_form {
+    display: inline-block;
+
+    input {
+      border: 1px solid #bebebe;
+      background: #f6f6f7;
+      padding: 0 2px;
+      height: 20px;
+      font-size: 14px;
+      line-height: 1.5;
+      outline: none;
+    }
+
+    button {
+      display: inline-block;
+      text-transform: uppercase;
+      color: #fff;
+      outline: none;
+      border: 0;
+      cursor: pointer;
+      background: #2a75b9;
+      height: 22px;
+      padding: 0 3px;
+      font-size: 14px;
+      border-radius: 3px;
+      line-height: inherit;
+      margin-left: 5px;
+    }
+  }
 }
 
 .mob_hidden {
