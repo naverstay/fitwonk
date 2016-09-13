@@ -910,7 +910,7 @@ video {
         padding-bottom: 50px;
         text-align: center;
       }
-      
+
       @include respond-to-min($resp_step_2) {
         height: 250px;
         width: 402px;
@@ -1362,11 +1362,11 @@ video {
         //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
         border-radius: 45px;
       }
-      
+
       @include respond-to-max($resp_step_2) {
         width: 30px;
         height: 30px;
-        
+
         span {
           width: 28px;
           height: 25px;
@@ -1544,6 +1544,9 @@ video {
 
     .open_menu & {
       @include transform_rotate(90);
+      position: fixed;
+      top: 50px;
+      right: 10px;
     }
 
     @include respond-to-min($resp_step_2) {
@@ -2681,7 +2684,7 @@ video {
   &.table-row-switcher {
     @include transition_all(transform .3s);
     @include transform_translate(100%, 0);
-    
+
     &:before {
       @include transition_all(transform .3s);
       @include transform_translate(100%, 0);
@@ -2702,7 +2705,7 @@ video {
         @include transform_translate(0, 0);
       }
     }
-    
+
     .user-block {
       text-align: center;
       z-index: 1;
@@ -2718,28 +2721,39 @@ video {
       }
     }
 
-    @include respond-to-max($resp_step_1) { 
+    @include respond-to-max($resp_step_1) {
       z-index: 2;
       position: fixed;
       top: 0;
       right: 0;
       bottom: 0;
-      overflow-y: auto;
-      padding: 6em 0 .67em 0;
+      padding: 410px 0 .67em 0;
       width: 320px;
       background: #ccc;
       max-width: 100%;
+
+      .user-block {
+        position: absolute;
+        top: 100px;
+        right: 0;
+        left: 0;
+      }
+
+      .main-menu {
+        overflow-y: auto;
+        max-height: 100%;
+      }
     }
   }
-  
-  @include respond-to-min($resp_step_2) {
+
+  @include respond-to-min($resp_step_1) {
     &.table-row-switcher {
       @include transform_translate(0, 0);
 
       &:before {
         display: none;
       }
-      
+
       .user-block {
         &.user-block-info {
           width: 270px;
@@ -2759,7 +2773,7 @@ video {
     }
 
     &.table-row-switcher {
- 
+
       .main-menu {
         @include transform_translate(0, 0);
         position: relative;
@@ -6050,6 +6064,10 @@ video {
 
 .item-body .wr-graph {
   margin: 10px 0 9px;
+}
+
+.edit_v1 {
+  padding-left: 5px;
 }
 
 .mob_hidden {

@@ -451,7 +451,6 @@ export default React.createClass({
                                                         </div>
                                                     </div>
                                                 </div>
-                                               
                                                 <div className="label-bloks" style={{"clear": "both"}}>
                                                     <label>
                                                         <div className="wr-radio"><input type="radio" name="ProfileForm[note]" className="custom" value="Да, есть противопоказания"/></div>Да, есть противопоказания

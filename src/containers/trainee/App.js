@@ -13,7 +13,7 @@ export default React.createClass({
             </div>
             <div className="header">
                 <div className="page-width">
-                    <div className="mob_menu mobMenu"></div>
+                    <div className="mob_menu mobMenu "></div>
                     <div className="logo">
                         <a href="trainee"><img src="http://login.fitwonk.dev.pz.su/img/logo_fitwonk.png" alt=""/></a>
                     </div>
@@ -29,7 +29,6 @@ export default React.createClass({
                     </ul>
                 </div>
             </div>
-
             <div className="page-width">
                 <div className="left-column table-row-switcher">
                     <div className="user-block">

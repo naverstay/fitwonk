@@ -501,6 +501,28 @@ $(function(){
     $("input.custom").isbEasySwitches({
         htmlCheckbox: '<img class="isb-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTkwNTNCMjk3NEU1MTFFNUI4REFFMjk0OUI3OTVCNjYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTkwNTNCMkE3NEU1MTFFNUI4REFFMjk0OUI3OTVCNjYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBOTA1M0IyNzc0RTUxMUU1QjhEQUUyOTQ5Qjc5NUI2NiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBOTA1M0IyODc0RTUxMUU1QjhEQUUyOTQ5Qjc5NUI2NiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Po+SiIgAAAQXSURBVHja7JtLSBVhFMfn3kuFBtdFr4W2iAwiskVFQUToTbRCe6BGYI+V0WNRLSKj1mVtghYZUYQuxMAWqaVYVEIkRUVhLYwkCF1Utkihhz1u/5PnxjTMnTszZ+bOjM6Bw3ed+33fnN898z3Omc9IMplUppJElSkmIXAIHAKH4gspKMjPhd6G1hrVi00S2OkorkPLoZXxePzF6OjYwKR8pBm2DbqJL02jv3F9s179SMBh6Qm9Bq3S+foHdMPQ0PDdSeFhhm1OA5vydCfqJQLvYUCQ3U3QXSaqf4WWwtMPA+lhhr1gEpYkB9qFdqsD52EV7D4bzUehiaB5+LRNWJI49HI0QN5tQHFM0MUwtCYaENiTQtgRXqLeRAIAW8+PsgQ2Adh+309agD2M4pygC5qoSgD7zPfrMGD384wsgS0D7CPfbzwAW4fikqAL2mysB2yf74MHDu8uCmEr9GB952GGbRY4Yhy6URswmPYwDCiA7swSLIVzVwWwFB3VGMEaJgBgwBwU96B7EVC/Q0D93GXYNo5w7MJWA7Y9U8WYASz9Ukv4EmURBgHd7wIshW/tAtjf0D2AbTNTOaZjQB57tkgz1rcCegDQrxyG7YTOEMDuBmyL2QYxHdge6PI0E9wWo3yRRdg1KLo5fLMrdYBtstIgqjJgJsOuMqhvmC+yAEuxaZcQ9gBgr1htFGUDclF0ZIBVQ7dqUycWYFfwDxsXwB4CbKOdhlGGpXFUYqFdjl6+yARsET/GEtjjgD1vtzF5uNUirBq6I5U6MQlLM/9sAewJwDZIhlOUx5JdoaejJxM0vi/k+0hgzwD2lHSyjGHGfYKZd0yZyNrbEVpStqOPLvT1Pg3sfWi+ELbeiaXw77IEQ/tg8Hd8LBVAV6OPbvT1Qb01Zdj5AhsbAXvEqbX/3zoMQx/A4KTN8Zx6vGvQRyf6GlHBLhDYR1HTQfSnOA7M0L0wmCajtQJo2pFRaHYDWiiwrZk3Fo4eQomkmWTOojjqYaTYwlvGX053rBs8wEN3UMyDrvQAloKAWjdg0wLTmAH0LQ+gabe3A7A/3bpB2nhYBb1IEzm5JTehVYAdd/MmhicAGDo1+bgJTeHoNsB+c/tXzXjkAdBJhl4GXewSLCXdvmRjzJhO4qmOFlQ6eP/HysS727FsTRKWspYM3S7YhmphKVH+OZtLgOU0rc1wUisvaXOTbdj/Mh5mhcdaBbRXAJvwAtaWh1WezjOREtLKa/bsR6+2cLZftbCHyngsmpFBZeJ9j2ewIg+rPD2Lo6KlBtXeQtcBdkjxWMQv0wDxicYkj009GebZ2HNYRzys8vRcFHQWaqEGtpiOGig+EcdelwKKMh3FPFZJ6KhBuZ9gXRF+4/iUs5S+k0j4Xy0hcAgcAofAPpY/AgwA/dJjEgZvZkAAAAAASUVORK5CYII="/>'
     });
+    // edit init
+
+    console.log($('.editMe'));
+    
+    //$('.editMe').editable(function (value, settings) {
+    //    return value;
+    //}, {
+    //    indicator: 'Saving...',
+    //    select: true,
+    //    width: '100px',
+    //    height: '22px',
+    //    onblur: 'ignore',
+    //    event: "dblclick",
+    //    placeholder: '',
+    //    cssclass: 'edit_v1',
+    //    callback: function (value, settings) {
+    //
+    //    },
+    //    onreset: function (settings, el) {
+    //
+    //    }
+    //});
     // trainer collapse
     $('.trainerBlock').click(function () {
         $(this).closest('.trainer-section').find('.trainer-info').slideToggle();

@@ -21,14 +21,36 @@ export default React.createClass({
                         <div className="info-table">
                             <table>
                                 <tr><td>
-                                    <div className="info"><span className="title">Возраст:</span> 46 лет</div>
-                                    <div className="info"><span className="title">Город:</span> </div>
-                                    <div className="info"><span className="title">День рождения:</span> 01.01.1970</div>
-                                    <div className="info"><span className="title">Рост:</span> 175 см
-                                        <span style={{"marginLeft": "12px"}}><span className="title">Вес:</span> 98 кг</span>
+                                    <div className="info">
+                                        <span className="title">Возраст:</span>
+                                        <span className="editMe edit_v1">
+                                        46 лет 
+                                        </span>
                                     </div>
-                                    <div className="info"><span className="title">Интересы:</span> </div>
-                                    <div className="info"><span className="title">Программа:</span> Набор силы</div>
+                                    <div className="info">
+                                        <span className="title">Город:</span>
+                                        <span className="editMe edit_v1"></span>
+                                    </div>
+                                    <div className="info">
+                                        <span className="title">День рождения:</span> 
+                                        <span className="editMe edit_v1">01.01.1970</span>
+                                    </div>
+                                    <div className="info">
+                                        <span className="title">Рост:</span>
+                                        <span className="editMe edit_v1">175 см</span>
+                                        <span style={{"marginLeft": "12px"}}>
+                                            <span className="title">Вес:</span> 
+                                            <span className="editMe edit_v1">98 кг</span>
+                                        </span>
+                                    </div>
+                                    <div className="info">
+                                        <span className="title">Интересы:</span>
+                                        <span className="editMe edit_v1"></span>
+                                    </div>
+                                    <div className="info">
+                                        <span className="title">Программа:</span>
+                                        <span className="editMe edit_v1">Набор силы</span>
+                                    </div>
                                 </td></tr>
                             </table>
                         </div>
@@ -46,9 +68,7 @@ export default React.createClass({
                             <div className="wr-input">
                                 <div className="title">Имя:</div>
                                 <div className="form-group field-user-name">
-
                                     <input type="text" id="user-name" className="form-control" name="User[name]" value="aovechkin"/>
-
                                         <div className="help-block"></div>
                                 </div>                </div>
                             <div className="wr-input mob_hidden">
