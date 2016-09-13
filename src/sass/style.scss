@@ -787,7 +787,7 @@ video {
   }
   .header-title {
     float: left;
-    padding-top: 15px;
+    padding-top: 16px;
     font-size: 15px;
     text-transform: uppercase;
     div {
@@ -1515,8 +1515,8 @@ video {
     float: right;
     width: 30px;
     height: 30px;
-    margin-left: -10px;
     margin-top: 8px;
+    margin-left: 5px;
     cursor: pointer;
 
     &:after,
@@ -1549,6 +1549,10 @@ video {
       right: 10px;
     }
 
+    @include respond-to-max($resp_step_0) {
+      margin-left: -10px;
+    }
+    
     @include respond-to-min($resp_step_2) {
       display: none;
     }
@@ -1557,8 +1561,12 @@ video {
   .logo {
     width: 250px;
 
-    @include respond-to-min($resp_step_2) {
+    @include respond-to-min($resp_step_0) {
       float: left;
+      margin-right: 10px;
+    }
+
+    @include respond-to-min($resp_step_2) {
       margin-right: 25px;
     }
 
@@ -1573,7 +1581,7 @@ video {
   }
   .header-title {
     float: left;
-    padding-top: 15px;
+    padding-top: 16px;
     font-size: 15px;
     text-transform: uppercase;
     div {
@@ -6097,6 +6105,12 @@ video {
       line-height: inherit;
       margin-left: 5px;
     }
+  }
+}
+
+.xs_hidden {
+  @include respond-to-max($resp_step_1) {
+    display: none !important;
   }
 }
 
