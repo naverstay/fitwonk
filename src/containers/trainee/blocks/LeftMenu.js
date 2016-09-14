@@ -20,6 +20,9 @@ export default React.createClass({
                 <li>
                     <NavLink to="/profile" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/img/icon_settings.png" alt="" /></span>Настройки</NavLink>
                 </li>
+                <li>
+                    <NavLink to="site/logout" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/img/icon_exit.png" alt="" /></span>Выход</NavLink>
+                </li>
             </ul>
         )
     }

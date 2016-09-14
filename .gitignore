@@ -4,6 +4,9 @@
 # IntelliJ project files
 .idea
 *.iml
+npm-debug.log
+src/.sass-cache/
+src/node_modules/
 /node_modules/
 out
 gen

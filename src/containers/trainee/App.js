@@ -24,8 +24,8 @@ export default React.createClass({
                     </div>
                     <ul className="header-menu">
                         <li><a id="writeToUs">Написать нам</a></li>
-                        <li className="sep">|</li>
-                        <li><a href="site/logout" data-method="post">Выход</a></li>
+                        <li className="sep xs_hidden">|</li>
+                        <li className="xs_hidden" ><a href="site/logout" data-method="post">Выход</a></li>
                     </ul>
                 </div>
             </div>
