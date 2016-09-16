@@ -427,7 +427,7 @@ export default React.createClass({
                     </div>
                     <div className="description-right">
                         <p>Продолжительность 18 минут</p>
-                        <div style={{"textAlign": "left", "marginTop": "16px"}}>
+                        <div className="start_btn_holder">
                             <a href="trainee/training" className="button">Начать тренировку</a>
                             <a href="trainee/training?go=c3ded33617a1ffd51532f5d6f7a6c36d"
                                className="button widget-pulse disabled pull-right" style={{"float": "right"}}>Внести

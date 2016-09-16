@@ -525,8 +525,11 @@ $(function(){
     $('.mobMenu').click(function () {
         $('body').toggleClass('open_menu');
     });
+    $('.main-menu').on ('click', function () {
+        $('body').removeClass('open_menu');
+    });
     // drop list
-    $('.drop-button').click(function(){
+    $('body').delegate('.drop-button', 'click', function () {
         $(this).parents('.drop-block:first').toggleClass('closed');
     });
     // filter food search

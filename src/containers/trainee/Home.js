@@ -26,8 +26,8 @@ export default React.createClass({
 
                 <div className="info-section">
                     <div className="info-title">
+                        <div className="text-title pull-left">Тренировка</div>
                         <a href="trainee/training" className="button small pull-right" style={{"padding": "5px 25px 0 !important"}}>Начать тренировку</a>
-                        <div className="text-title">Тренировка</div>
                     </div>
                     <div className="day-training">
                         <ul className="training-list">

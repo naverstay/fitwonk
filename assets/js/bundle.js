@@ -122,7 +122,7 @@
 	// Pages
 
 
-		// Trainee application
+	// Trainee application
 
 /***/ },
 /* 1 */
@@ -24382,7 +24382,7 @@
 	          if (error) {
 	            listener(error);
 	          } else if (redirectLocation) {
-	            history.transitionTo(redirectLocation);
+	            history.replace(redirectLocation);
 	          } else if (nextState) {
 	            listener(null, nextState);
 	          } else {
@@ -25550,7 +25550,7 @@
 	  },
 
 	  propTypes: {
-	    to: oneOfType([string, object]).isRequired,
+	    to: oneOfType([string, object]),
 	    query: object,
 	    hash: string,
 	    state: object,
@@ -25611,6 +25611,11 @@
 
 
 	    if (router) {
+	      // If user does not specify a `to` prop, return an empty anchor tag.
+	      if (to == null) {
+	        return _react2.default.createElement('a', props);
+	      }
+
 	      var location = createLocationDescriptor(to, { query: query, hash: hash, state: state });
 	      props.href = router.createHref(location);
 
@@ -27191,7 +27196,7 @@
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'page-width' },
-	                    _react2.default.createElement('div', { className: 'mob_menu mobMenu' }),
+	                    _react2.default.createElement('div', { className: 'mob_menu mobMenu ' }),
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: 'logo' },
@@ -27238,12 +27243,12 @@
 	                        ),
 	                        _react2.default.createElement(
 	                            'li',
-	                            { className: 'sep' },
+	                            { className: 'sep xs_hidden' },
 	                            '|'
 	                        ),
 	                        _react2.default.createElement(
 	                            'li',
-	                            null,
+	                            { className: 'xs_hidden' },
 	                            _react2.default.createElement(
 	                                'a',
 	                                { href: 'site/logout', 'data-method': 'post' },
@@ -27472,7 +27477,7 @@
 	            )
 	        );
 	    }
-		});
+	});
 
 /***/ },
 /* 236 */
@@ -27520,7 +27525,7 @@
 	            )
 	        );
 	    }
-		});
+	});
 
 /***/ },
 /* 237 */
@@ -27617,10 +27622,24 @@
 	                    ),
 	                    'Настройки'
 	                )
+	            ),
+	            _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                    _NavLink2.default,
+	                    { to: 'site/logout', className: 'item' },
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'icon' },
+	                        _react2.default.createElement('img', { src: 'http://login.fitwonk.dev.pz.su/img/icon_exit.png', alt: '' })
+	                    ),
+	                    'Выход'
+	                )
 	            )
 	        );
 	    }
-		});
+	});
 
 /***/ },
 /* 238 */
@@ -27647,7 +27666,7 @@
 	    render: function render() {
 	        return _react2.default.createElement(_reactRouter.Link, _extends({}, this.props, { activeClassName: 'active' }));
 	    }
-		});
+	});
 
 /***/ },
 /* 239 */
@@ -28554,7 +28573,7 @@
 	            )
 	        );
 	    }
-		});
+	});
 
 /***/ },
 /* 240 */
@@ -29712,7 +29731,7 @@
 	                    ),
 	                    _react2.default.createElement(
 	                        'div',
-	                        { style: { "textAlign": "left", "marginTop": "16px" } },
+	                        { className: 'start_btn_holder' },
 	                        _react2.default.createElement(
 	                            'a',
 	                            { href: 'trainee/training', className: 'button' },
@@ -29757,7 +29776,7 @@
 	            )
 	        );
 	    }
-		});
+	});
 
 /***/ },
 /* 241 */
@@ -29988,7 +30007,7 @@
 	            )
 	        );
 	    }
-		});
+	});
 
 /***/ },
 /* 242 */
@@ -30085,14 +30104,14 @@
 	                    "div",
 	                    { className: "info-title" },
 	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "text-title pull-left" },
+	                        "Тренировка"
+	                    ),
+	                    _react2.default.createElement(
 	                        "a",
 	                        { href: "trainee/training", className: "button small pull-right", style: { "padding": "5px 25px 0 !important" } },
 	                        "Начать тренировку"
-	                    ),
-	                    _react2.default.createElement(
-	                        "div",
-	                        { className: "text-title" },
-	                        "Тренировка"
 	                    )
 	                ),
 	                _react2.default.createElement(
@@ -30245,7 +30264,7 @@
 	            )
 	        );
 	    }
-		});
+	});
 
 /***/ },
 /* 243 */
@@ -30325,7 +30344,11 @@
 	                                            { className: "title" },
 	                                            "Возраст:"
 	                                        ),
-	                                        " 46 лет"
+	                                        _react2.default.createElement(
+	                                            "span",
+	                                            { className: "editMe edit_v1" },
+	                                            "46 лет"
+	                                        )
 	                                    ),
 	                                    _react2.default.createElement(
 	                                        "div",
@@ -30335,7 +30358,7 @@
 	                                            { className: "title" },
 	                                            "Город:"
 	                                        ),
-	                                        " "
+	                                        _react2.default.createElement("span", { className: "editMe edit_v1" })
 	                                    ),
 	                                    _react2.default.createElement(
 	                                        "div",
@@ -30345,7 +30368,11 @@
 	                                            { className: "title" },
 	                                            "День рождения:"
 	                                        ),
-	                                        " 01.01.1970"
+	                                        _react2.default.createElement(
+	                                            "span",
+	                                            { className: "editMe edit_v1" },
+	                                            "01.01.1970"
+	                                        )
 	                                    ),
 	                                    _react2.default.createElement(
 	                                        "div",
@@ -30355,7 +30382,11 @@
 	                                            { className: "title" },
 	                                            "Рост:"
 	                                        ),
-	                                        " 175 см",
+	                                        _react2.default.createElement(
+	                                            "span",
+	                                            { className: "editMe edit_v1" },
+	                                            "175 см"
+	                                        ),
 	                                        _react2.default.createElement(
 	                                            "span",
 	                                            { style: { "marginLeft": "12px" } },
@@ -30364,7 +30395,11 @@
 	                                                { className: "title" },
 	                                                "Вес:"
 	                                            ),
-	                                            " 98 кг"
+	                                            _react2.default.createElement(
+	                                                "span",
+	                                                { className: "editMe edit_v1" },
+	                                                "98 кг"
+	                                            )
 	                                        )
 	                                    ),
 	                                    _react2.default.createElement(
@@ -30375,7 +30410,7 @@
 	                                            { className: "title" },
 	                                            "Интересы:"
 	                                        ),
-	                                        " "
+	                                        _react2.default.createElement("span", { className: "editMe edit_v1" })
 	                                    ),
 	                                    _react2.default.createElement(
 	                                        "div",
@@ -30385,7 +30420,11 @@
 	                                            { className: "title" },
 	                                            "Программа:"
 	                                        ),
-	                                        " Набор силы"
+	                                        _react2.default.createElement(
+	                                            "span",
+	                                            { className: "editMe edit_v1" },
+	                                            "Набор силы"
+	                                        )
 	                                    )
 	                                )
 	                            )
@@ -31225,7 +31264,7 @@
 	            )
 	        );
 	    }
-		});
+	});
 
 /***/ },
 /* 244 */
@@ -31367,7 +31406,7 @@
 	            )
 	        );
 	    }
-		});
+	});
 
 /***/ },
 /* 245 */
@@ -31693,7 +31732,7 @@
 	            _react2.default.createElement("div", { className: "hide-page-layer" })
 	        );
 	    }
-		});
+	});
 
 /***/ },
 /* 246 */
@@ -32397,7 +32436,7 @@
 	            _react2.default.createElement("div", { className: "hide-page-layer" })
 	        );
 	    }
-		});
+	});
 
 /***/ },
 /* 247 */
@@ -34104,7 +34143,7 @@
 	            _react2.default.createElement("div", { className: "hide-page-layer" })
 	        );
 	    }
-		});
+	});
 
 /***/ },
 /* 248 */
@@ -34592,8 +34631,7 @@
 	            )
 	        );
 	    }
-		});
+	});
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=bundle.js.map
