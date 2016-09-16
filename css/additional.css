@@ -28,7 +28,7 @@ input[type=text] {
 }
 
 .pull-left {
-    float: right;
+    float: left;
 }
 
 .pull-right {
