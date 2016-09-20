@@ -332,8 +332,30 @@ form.personal-data {
 }
 
 .block.alert.warning {
-    background-image: url("../img/alert_warning.png");
+    position: relative;
     color: #968d21;
+}
+
+.block.alert.warning:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 52px;
+    z-index: 1;
+    background: url("../img/alert_warning.png") 100% 50% no-repeat;
+}
+
+.block.alert.warning:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 44px;
+    border-right: 1px solid #c27f1f;
+    background: #e49623;
 }
 
 .block.alert .close {
