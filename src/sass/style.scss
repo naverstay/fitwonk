@@ -3103,6 +3103,15 @@ video {
     &:hover {
       background: $color_monza_approx;
     }
+
+    @include respond-to-max($resp_step_2) {
+      display: block;
+      float: none;
+      clear: both;
+      margin-top: 26px;
+      max-width: 170px;
+      text-align: center;
+    }
   }
 }
 
@@ -4710,9 +4719,9 @@ video {
   .video-js {
     position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .video-practice {
