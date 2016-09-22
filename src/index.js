@@ -12,10 +12,14 @@ import Profile from './containers/trainee/Profile'
 
 // Pages
 import PageLogin from './containers/pages/Login'
-import PageProgram from './containers/pages/Program'
-import PageSignin from './containers/pages/Signin'
 import PageRegistration from './containers/pages/Registration'
+import PagePasswordReset from './containers/pages/PasswordReset'
+import PageProgram from './containers/pages/Program'
+import PageTariff from './containers/pages/Tariff'
+import PageRegistrationForm from './containers/pages/RegistrationForm'
 import PageTraining from './containers/pages/Training'
+
+import PageTestPage from './containers/pages/TestPage'
 
 render((
     <Router history={hashHistory}>
@@ -30,9 +34,15 @@ render((
 
         {/* Different pages */}
         <Route path="/login" component={PageLogin}/>
-        <Route path="/program" component={PageProgram}/>
-        <Route path="/signin" component={PageSignin}/>
         <Route path="/registration" component={PageRegistration}/>
+        <Route path="/password-reset" component={PagePasswordReset}/>
+        <Route path="/program" component={PageProgram}/>
+        <Route path="/tariff" component={PageTariff}/>
+        <Route path="/payment" component={PageTariff}/>
+        <Route path="/registration-form" component={PageRegistrationForm}/>
         <Route path="/training" component={PageTraining}/>
+
+        {/* Test page */}
+        <Route path="/test_page" component={PageTestPage}/>
     </Router>
 ), document.getElementById('application'))

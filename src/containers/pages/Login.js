@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 export default React.createClass({
     render() {
@@ -36,7 +37,7 @@ export default React.createClass({
                                         <p className="help-block help-block-error"></p>
                                 </div></div>
                                 <div className="login-menu">
-                                    <a href="site/signup">Регистрация</a>            <a href="site/request-password-reset">Забыли пароль?</a>        </div>
+                                    <Link to="/registration">Регистрация</Link>            <Link to="password-reset">Забыли пароль?</Link>        </div>
                                 <input type="submit" value="Войти в личный кабинет" />
 
                                 <div className="login-soc">

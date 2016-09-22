@@ -1,6 +1,7 @@
 import React from 'react'
 import Alert from '../common/Alert'
 import LeftMenu from './blocks/LeftMenu'
+import { Link } from 'react-router'
 
 export default React.createClass({
   render() {
@@ -20,7 +21,7 @@ export default React.createClass({
                     <div className="header-title">
                         <div className="date">26.08.2016</div>
                         <div className="sep">|</div>
-                        <div className="day"><a href="trainee/calendar">1 день</a></div>
+                        <div className="day"><Link to="/calendar">1 день</Link></div>
                     </div>
                     <ul className="header-menu">
                         <li><a id="writeToUs">Написать нам</a></li>

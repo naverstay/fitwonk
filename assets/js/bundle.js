@@ -82,24 +82,40 @@
 
 	var _Login2 = _interopRequireDefault(_Login);
 
-	var _Program = __webpack_require__(245);
-
-	var _Program2 = _interopRequireDefault(_Program);
-
-	var _Signin = __webpack_require__(246);
-
-	var _Signin2 = _interopRequireDefault(_Signin);
-
-	var _Registration = __webpack_require__(247);
+	var _Registration = __webpack_require__(245);
 
 	var _Registration2 = _interopRequireDefault(_Registration);
 
-	var _Training = __webpack_require__(248);
+	var _PasswordReset = __webpack_require__(246);
+
+	var _PasswordReset2 = _interopRequireDefault(_PasswordReset);
+
+	var _Program = __webpack_require__(247);
+
+	var _Program2 = _interopRequireDefault(_Program);
+
+	var _Tariff = __webpack_require__(248);
+
+	var _Tariff2 = _interopRequireDefault(_Tariff);
+
+	var _RegistrationForm = __webpack_require__(249);
+
+	var _RegistrationForm2 = _interopRequireDefault(_RegistrationForm);
+
+	var _Training = __webpack_require__(250);
 
 	var _Training2 = _interopRequireDefault(_Training);
 
+	var _TestPage = __webpack_require__(251);
+
+	var _TestPage2 = _interopRequireDefault(_TestPage);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	// Pages
+
+
+	// Trainee application
 	(0, _reactDom.render)(_react2.default.createElement(
 	    _reactRouter.Router,
 	    { history: _reactRouter.hashHistory },
@@ -113,16 +129,15 @@
 	        _react2.default.createElement(_reactRouter.Route, { path: '/profile', component: _Profile2.default })
 	    ),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/login', component: _Login2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: '/program', component: _Program2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: '/signin', component: _Signin2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/registration', component: _Registration2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: '/training', component: _Training2.default })
+	    _react2.default.createElement(_reactRouter.Route, { path: '/password-reset', component: _PasswordReset2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/program', component: _Program2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/tariff', component: _Tariff2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/payment', component: _Tariff2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/registration-form', component: _RegistrationForm2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/training', component: _Training2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/test_page', component: _TestPage2.default })
 	), document.getElementById('application'));
-
-	// Pages
-
-
-	// Trainee application
 
 /***/ },
 /* 1 */
@@ -24108,8 +24123,6 @@
 
 	var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
-	var _Actions = __webpack_require__(184);
-
 	var _computeChangedRoutes2 = __webpack_require__(202);
 
 	var _computeChangedRoutes3 = _interopRequireDefault(_computeChangedRoutes2);
@@ -24156,10 +24169,6 @@
 	    }
 
 	    return (0, _isActive3.default)(location, indexOnly, state.location, state.routes, state.params);
-	  }
-
-	  function createLocationFromRedirectInfo(location) {
-	    return history.createLocation(location, _Actions.REPLACE);
 	  }
 
 	  var partialNextState = void 0;
@@ -24219,7 +24228,7 @@
 	    }
 
 	    function handleErrorOrRedirect(error, redirectInfo) {
-	      if (error) callback(error);else callback(null, createLocationFromRedirectInfo(redirectInfo));
+	      if (error) callback(error);else callback(null, redirectInfo);
 	    }
 	  }
 
@@ -26370,6 +26379,8 @@
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+	var _Actions = __webpack_require__(184);
+
 	var _invariant = __webpack_require__(180);
 
 	var _invariant2 = _interopRequireDefault(_invariant);
@@ -26428,7 +26439,7 @@
 	  history = (0, _RouterUtils.createRoutingHistory)(history, transitionManager);
 
 	  transitionManager.match(location, function (error, redirectLocation, nextState) {
-	    callback(error, redirectLocation, nextState && _extends({}, nextState, {
+	    callback(error, redirectLocation && router.createLocation(redirectLocation, _Actions.REPLACE), nextState && _extends({}, nextState, {
 	      history: history,
 	      router: router,
 	      matchContext: { history: history, transitionManager: transitionManager, router: router }
@@ -27173,6 +27184,8 @@
 
 	var _LeftMenu2 = _interopRequireDefault(_LeftMenu);
 
+	var _reactRouter = __webpack_require__(172);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
@@ -27223,8 +27236,8 @@
 	                            'div',
 	                            { className: 'day' },
 	                            _react2.default.createElement(
-	                                'a',
-	                                { href: 'trainee/calendar' },
+	                                _reactRouter.Link,
+	                                { to: '/calendar' },
 	                                '1 день'
 	                            )
 	                        )
@@ -27483,7 +27496,7 @@
 /* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -27493,34 +27506,36 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(172);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-	    displayName: "Alert",
+	    displayName: 'Alert',
 	    render: function render() {
 	        return _react2.default.createElement(
-	            "div",
-	            { className: "block alert warning" },
+	            'div',
+	            { className: 'block alert warning' },
 	            _react2.default.createElement(
-	                "div",
+	                'div',
 	                { style: { "display": "table-cell", "verticalAlign": "middle", "padding": "3px 0 3px 0" } },
-	                "Ваша подписка закончилась 21.08.2016.",
-	                _react2.default.createElement("br", null),
-	                "Для активации всех функций необходимо оформить ",
+	                'Ваша подписка закончилась 21.08.2016.',
+	                _react2.default.createElement('br', null),
+	                'Для активации всех функций необходимо оформить ',
 	                _react2.default.createElement(
-	                    "a",
-	                    { href: "payment" },
-	                    "новую подписку"
+	                    _reactRouter.Link,
+	                    { to: '/signin' },
+	                    'новую подписку'
 	                ),
-	                "."
+	                '.'
 	            ),
 	            _react2.default.createElement(
-	                "div",
+	                'div',
 	                { style: { "display": "table-cell", "verticalAlign": "middle", "textAlign": "center", "width": "40px" } },
 	                _react2.default.createElement(
-	                    "button",
-	                    { type: "button", className: "close" },
-	                    "×"
+	                    'button',
+	                    { type: 'button', className: 'close' },
+	                    '×'
 	                )
 	            )
 	        );
@@ -27544,6 +27559,8 @@
 	var _NavLink = __webpack_require__(238);
 
 	var _NavLink2 = _interopRequireDefault(_NavLink);
+
+	var _reactRouter = __webpack_require__(172);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27635,6 +27652,20 @@
 	                        _react2.default.createElement('img', { src: 'http://login.fitwonk.dev.pz.su/img/icon_exit.png', alt: '' })
 	                    ),
 	                    'Выход'
+	                )
+	            ),
+	            _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/test_page', className: 'item' },
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'icon' },
+	                        _react2.default.createElement('img', { src: 'http://login.fitwonk.dev.pz.su/img/icon_exit.png', alt: '' })
+	                    ),
+	                    'Разводящая страница'
 	                )
 	            )
 	        );
@@ -29733,8 +29764,8 @@
 	                        'div',
 	                        { className: 'start_btn_holder' },
 	                        _react2.default.createElement(
-	                            'a',
-	                            { href: 'trainee/training', className: 'button' },
+	                            _reactRouter.Link,
+	                            { to: '/training', className: 'button' },
 	                            'Начать тренировку'
 	                        ),
 	                        _react2.default.createElement(
@@ -30013,7 +30044,7 @@
 /* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -30023,74 +30054,76 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(172);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-	    displayName: "Home",
+	    displayName: 'Home',
 	    render: function render() {
 	        return _react2.default.createElement(
-	            "div",
+	            'div',
 	            null,
 	            _react2.default.createElement(
-	                "div",
-	                { className: "info-section" },
+	                'div',
+	                { className: 'info-section' },
 	                _react2.default.createElement(
-	                    "div",
-	                    { className: "info-title" },
-	                    _react2.default.createElement("div", { className: "sub" }),
+	                    'div',
+	                    { className: 'info-title' },
+	                    _react2.default.createElement('div', { className: 'sub' }),
 	                    _react2.default.createElement(
-	                        "div",
-	                        { className: "text-title" },
-	                        "Рекомендации"
+	                        'div',
+	                        { className: 'text-title' },
+	                        'Рекомендации'
 	                    )
 	                ),
 	                _react2.default.createElement(
-	                    "div",
-	                    { className: "counter-calories" },
+	                    'div',
+	                    { className: 'counter-calories' },
 	                    _react2.default.createElement(
-	                        "table",
+	                        'table',
 	                        null,
 	                        _react2.default.createElement(
-	                            "tr",
+	                            'tr',
 	                            null,
-	                            _react2.default.createElement("td", { className: "ind bg-blue" }),
+	                            _react2.default.createElement('td', { className: 'ind bg-blue' }),
 	                            _react2.default.createElement(
-	                                "td",
-	                                { className: "bg-blue fs60 mw140" },
-	                                "2722",
+	                                'td',
+	                                { className: 'bg-blue fs60 mw140' },
+	                                '2722',
 	                                _react2.default.createElement(
-	                                    "div",
-	                                    { className: "abs-text" },
-	                                    "Ккал"
+	                                    'div',
+	                                    { className: 'abs-text' },
+	                                    'Ккал'
 	                                )
 	                            ),
 	                            _react2.default.createElement(
-	                                "td",
-	                                { className: "bg-blue fs60 mw140" },
-	                                "2",
+	                                'td',
+	                                { className: 'bg-blue fs60 mw140' },
+	                                '2',
 	                                _react2.default.createElement(
-	                                    "div",
-	                                    { className: "abs-text" },
-	                                    "кг/мес"
+	                                    'div',
+	                                    { className: 'abs-text' },
+	                                    'кг/мес'
 	                                )
 	                            ),
-	                            _react2.default.createElement("td", { className: "ind bg-blue" }),
+	                            _react2.default.createElement('td', { className: 'ind bg-blue' }),
 	                            _react2.default.createElement(
-	                                "td",
-	                                { className: "water" },
-	                                _react2.default.createElement("img", { src: "img/icons/water.png", alt: "" }),
-	                                "                "
+	                                'td',
+	                                { className: 'water' },
+	                                _react2.default.createElement('img', { src: 'img/icons/water.png', alt: '' }),
+	                                '                '
 	                            ),
 	                            _react2.default.createElement(
-	                                "td",
-	                                { className: "day" },
-	                                "3.9",
+	                                'td',
+	                                { className: 'day' },
+	                                '3.9',
 	                                _react2.default.createElement(
-	                                    "div",
-	                                    { className: "abs-text" },
-	                                    "литра воды",
-	                                    _react2.default.createElement("br", null),
-	                                    "в день"
+	                                    'div',
+	                                    { className: 'abs-text' },
+	                                    'литра воды',
+	                                    _react2.default.createElement('br', null),
+	                                    'в день'
 	                                )
 	                            )
 	                        )
@@ -30098,117 +30131,117 @@
 	                )
 	            ),
 	            _react2.default.createElement(
-	                "div",
-	                { className: "info-section" },
+	                'div',
+	                { className: 'info-section' },
 	                _react2.default.createElement(
-	                    "div",
-	                    { className: "info-title" },
+	                    'div',
+	                    { className: 'info-title' },
 	                    _react2.default.createElement(
-	                        "div",
-	                        { className: "text-title pull-left" },
-	                        "Тренировка"
+	                        'div',
+	                        { className: 'text-title pull-left mob_hidden' },
+	                        'Тренировка'
 	                    ),
 	                    _react2.default.createElement(
-	                        "a",
-	                        { href: "trainee/training", className: "button small pull-right", style: { "padding": "5px 25px 0 !important" } },
-	                        "Начать тренировку"
+	                        _reactRouter.Link,
+	                        { to: '/training', className: 'button small pull-right', style: { "padding": "5px 25px 0 !important" } },
+	                        'Начать тренировку'
 	                    )
 	                ),
 	                _react2.default.createElement(
-	                    "div",
-	                    { className: "day-training" },
+	                    'div',
+	                    { className: 'day-training' },
 	                    _react2.default.createElement(
-	                        "ul",
-	                        { className: "training-list" },
+	                        'ul',
+	                        { className: 'training-list' },
 	                        _react2.default.createElement(
-	                            "li",
+	                            'li',
 	                            null,
 	                            _react2.default.createElement(
-	                                "a",
-	                                { href: "trainee/calendar#training", className: "item" },
+	                                'a',
+	                                { href: 'trainee/calendar#training', className: 'item' },
 	                                _react2.default.createElement(
-	                                    "span",
-	                                    { className: "icon" },
-	                                    _react2.default.createElement("img", { src: "http://login.fitwonk.dev.pz.su/uploads/exercise/icon/46.png", alt: "" })
+	                                    'span',
+	                                    { className: 'icon' },
+	                                    _react2.default.createElement('img', { src: 'http://login.fitwonk.dev.pz.su/uploads/exercise/icon/46.png', alt: '' })
 	                                ),
-	                                "Приседания"
+	                                'Приседания'
 	                            )
 	                        ),
 	                        _react2.default.createElement(
-	                            "li",
+	                            'li',
 	                            null,
 	                            _react2.default.createElement(
-	                                "a",
-	                                { href: "trainee/calendar#training", className: "item" },
+	                                'a',
+	                                { href: 'trainee/calendar#training', className: 'item' },
 	                                _react2.default.createElement(
-	                                    "span",
-	                                    { className: "icon" },
-	                                    _react2.default.createElement("img", { src: "http://login.fitwonk.dev.pz.su/uploads/exercise/icon/93.png", alt: "" })
+	                                    'span',
+	                                    { className: 'icon' },
+	                                    _react2.default.createElement('img', { src: 'http://login.fitwonk.dev.pz.su/uploads/exercise/icon/93.png', alt: '' })
 	                                ),
-	                                "Лодочка с прямыми руками вперед"
+	                                'Лодочка с прямыми руками вперед'
 	                            )
 	                        ),
 	                        _react2.default.createElement(
-	                            "li",
+	                            'li',
 	                            null,
 	                            _react2.default.createElement(
-	                                "a",
-	                                { href: "trainee/calendar#training", className: "item" },
+	                                'a',
+	                                { href: 'trainee/calendar#training', className: 'item' },
 	                                _react2.default.createElement(
-	                                    "span",
-	                                    { className: "icon" },
-	                                    _react2.default.createElement("img", { src: "http://login.fitwonk.dev.pz.su/uploads/exercise/icon/97.png", alt: "" })
+	                                    'span',
+	                                    { className: 'icon' },
+	                                    _react2.default.createElement('img', { src: 'http://login.fitwonk.dev.pz.su/uploads/exercise/icon/97.png', alt: '' })
 	                                ),
-	                                "Отжимания широким хватом с колен"
+	                                'Отжимания широким хватом с колен'
 	                            )
 	                        ),
 	                        _react2.default.createElement(
-	                            "li",
+	                            'li',
 	                            null,
 	                            _react2.default.createElement(
-	                                "a",
-	                                { href: "trainee/calendar#training", className: "item" },
+	                                'a',
+	                                { href: 'trainee/calendar#training', className: 'item' },
 	                                _react2.default.createElement(
-	                                    "span",
-	                                    { className: "icon" },
-	                                    _react2.default.createElement("img", { src: "http://login.fitwonk.dev.pz.su/uploads/exercise/icon/108.png", alt: "" })
+	                                    'span',
+	                                    { className: 'icon' },
+	                                    _react2.default.createElement('img', { src: 'http://login.fitwonk.dev.pz.su/uploads/exercise/icon/108.png', alt: '' })
 	                                ),
-	                                "Обратные отжимания от стула, колени согнуты"
+	                                'Обратные отжимания от стула, колени согнуты'
 	                            )
 	                        ),
 	                        _react2.default.createElement(
-	                            "li",
+	                            'li',
 	                            null,
 	                            _react2.default.createElement(
-	                                "a",
-	                                { href: "trainee/calendar#training", className: "item" },
+	                                'a',
+	                                { href: 'trainee/calendar#training', className: 'item' },
 	                                _react2.default.createElement(
-	                                    "span",
-	                                    { className: "icon" },
-	                                    _react2.default.createElement("img", { src: "http://login.fitwonk.dev.pz.su/uploads/exercise/icon/61.png", alt: "" })
+	                                    'span',
+	                                    { className: 'icon' },
+	                                    _react2.default.createElement('img', { src: 'http://login.fitwonk.dev.pz.su/uploads/exercise/icon/61.png', alt: '' })
 	                                ),
-	                                "Пресс"
+	                                'Пресс'
 	                            )
 	                        )
 	                    ),
 	                    _react2.default.createElement(
-	                        "div",
-	                        { className: "day" },
+	                        'div',
+	                        { className: 'day' },
 	                        _react2.default.createElement(
-	                            "table",
+	                            'table',
 	                            null,
 	                            _react2.default.createElement(
-	                                "tr",
+	                                'tr',
 	                                null,
 	                                _react2.default.createElement(
-	                                    "td",
+	                                    'td',
 	                                    null,
 	                                    _react2.default.createElement(
-	                                        "div",
-	                                        { className: "number" },
-	                                        "1                        "
+	                                        'div',
+	                                        { className: 'number' },
+	                                        '1                        '
 	                                    ),
-	                                    "день"
+	                                    'день'
 	                                )
 	                            )
 	                        )
@@ -30216,48 +30249,48 @@
 	                )
 	            ),
 	            _react2.default.createElement(
-	                "div",
-	                { className: "info-section" },
+	                'div',
+	                { className: 'info-section' },
 	                _react2.default.createElement(
-	                    "div",
-	                    { className: "info-title" },
+	                    'div',
+	                    { className: 'info-title' },
 	                    _react2.default.createElement(
-	                        "div",
-	                        { className: "text-title" },
-	                        "Достижения"
+	                        'div',
+	                        { className: 'text-title' },
+	                        'Достижения'
 	                    )
 	                ),
 	                _react2.default.createElement(
-	                    "div",
-	                    { className: "notice" },
-	                    _react2.default.createElement("img", { className: "bg-image", src: "img/bg_image_1.png" }),
+	                    'div',
+	                    { className: 'notice' },
+	                    _react2.default.createElement('img', { className: 'bg-image', src: 'img/bg_image_1.png' }),
 	                    _react2.default.createElement(
-	                        "table",
-	                        { className: "table" },
+	                        'table',
+	                        { className: 'table' },
 	                        _react2.default.createElement(
-	                            "tr",
+	                            'tr',
 	                            null,
 	                            _react2.default.createElement(
-	                                "td",
-	                                { className: "w150 pl20 tu" },
+	                                'td',
+	                                { className: 'w150 pl20 tu' },
 	                                _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fs20" },
-	                                    "Поздравляем!"
+	                                    'div',
+	                                    { className: 'fs20' },
+	                                    'Поздравляем!'
 	                                ),
 	                                _react2.default.createElement(
-	                                    "div",
-	                                    { className: "fflc" },
-	                                    "У вас новый уровень."
+	                                    'div',
+	                                    { className: 'fflc' },
+	                                    'У вас новый уровень.'
 	                                )
 	                            ),
 	                            _react2.default.createElement(
-	                                "td",
+	                                'td',
 	                                null,
-	                                _react2.default.createElement("img", { src: "http://login.fitwonk.dev.pz.su/uploads/bages/1.png" }),
-	                                " "
+	                                _react2.default.createElement('img', { src: 'http://login.fitwonk.dev.pz.su/uploads/bages/1.png' }),
+	                                ' '
 	                            ),
-	                            _react2.default.createElement("td", { className: "w150 pr20 tu fflc" })
+	                            _react2.default.createElement('td', { className: 'w150 pr20 tu fflc' })
 	                        )
 	                    )
 	                )
@@ -31270,6 +31303,267 @@
 /* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(172);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createClass({
+	    displayName: 'Login',
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'page-width' },
+	                _react2.default.createElement('div', { className: 'page-bg' })
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'header' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'page-width' },
+	                    _react2.default.createElement('ul', { className: 'header-menu' })
+	                )
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'page-width' },
+	                _react2.default.createElement(
+	                    'form',
+	                    { id: 'login-form', action: 'site/login', method: 'post', role: 'form' },
+	                    _react2.default.createElement('input', { type: 'hidden', name: '_csrf', value: 'Q0Z3TXVZNTEsJRwaWBcBeHYVIAYyLHt1MwImCjcwZ2AxCwIjKhh5Xg==' }),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'login-page' },
+	                        _react2.default.createElement('div', { className: 'logo' }),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'login', id: 'loginForm' },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'title' },
+	                                'E-mail:'
+	                            ),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'wr-input' },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'form-group field-loginform-email required' },
+	                                    _react2.default.createElement('label', { className: 'control-label', htmlFor: 'loginform-email' }),
+	                                    _react2.default.createElement('input', { type: 'text', id: 'loginform-email', className: 'form-control', name: 'LoginForm[email]' }),
+	                                    _react2.default.createElement('p', { className: 'help-block help-block-error' })
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'title' },
+	                                'Пароль:'
+	                            ),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'wr-input' },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'form-group field-loginform-password required' },
+	                                    _react2.default.createElement('label', { className: 'control-label', htmlFor: 'loginform-password' }),
+	                                    _react2.default.createElement('input', { type: 'password', id: 'loginform-password', className: 'form-control', name: 'LoginForm[password]' }),
+	                                    _react2.default.createElement('p', { className: 'help-block help-block-error' })
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'login-menu' },
+	                                _react2.default.createElement(
+	                                    _reactRouter.Link,
+	                                    { to: '/registration' },
+	                                    'Регистрация'
+	                                ),
+	                                '            ',
+	                                _react2.default.createElement(
+	                                    _reactRouter.Link,
+	                                    { to: 'password-reset' },
+	                                    'Забыли пароль?'
+	                                ),
+	                                '        '
+	                            ),
+	                            _react2.default.createElement('input', { type: 'submit', value: 'Войти в личный кабинет' }),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'login-soc' },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { id: 'w0', className: 'auth-clients' },
+	                                    '            ',
+	                                    _react2.default.createElement(
+	                                        'a',
+	                                        { className: 'vkontakte auth-link', href: 'site/auth?authclient=vkontakte', 'data-popup-width': '650', 'data-popup-height': '350' },
+	                                        _react2.default.createElement('span', { className: 'auth-icon vkontakte' }),
+	                                        _react2.default.createElement(
+	                                            'span',
+	                                            { className: 'auth-title' },
+	                                            'Войти через',
+	                                            _react2.default.createElement('br', null),
+	                                            'vkontakte'
+	                                        )
+	                                    ),
+	                                    '            ',
+	                                    _react2.default.createElement(
+	                                        'a',
+	                                        { className: 'facebook auth-link', href: 'site/auth?authclient=facebook', 'data-popup-width': '860', 'data-popup-height': '480' },
+	                                        _react2.default.createElement('span', { className: 'auth-icon facebook' }),
+	                                        _react2.default.createElement(
+	                                            'span',
+	                                            { className: 'auth-title' },
+	                                            'Войти через',
+	                                            _react2.default.createElement('br', null),
+	                                            'facebook'
+	                                        )
+	                                    )
+	                                ),
+	                                '        '
+	                            )
+	                        )
+	                    )
+	                )
+	            )
+	        );
+	    }
+	});
+
+/***/ },
+/* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(172);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createClass({
+	    displayName: 'Registration',
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'page-width' },
+	                _react2.default.createElement('div', { className: 'page-bg' })
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'header' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'page-width' },
+	                    _react2.default.createElement('ul', { className: 'header-menu' })
+	                )
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'page-width' },
+	                _react2.default.createElement(
+	                    'form',
+	                    { id: 'form-signup', action: '/site/signup', method: 'post', role: 'form' },
+	                    _react2.default.createElement('input', { type: 'hidden', name: '_csrf', value: 'dG5MVXdsLnMFFyExFF5rBA1bC2dOAnoiFloDNDYBfxEjHDYYGi52Fw==' }),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'login-page' },
+	                        _react2.default.createElement('div', { className: 'logo' }),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'registry', id: 'registryForm' },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'title' },
+	                                'Ваш e-mail:'
+	                            ),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'wr-input' },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'form-group field-signupform-email required' },
+	                                    _react2.default.createElement('label', { className: 'control-label', 'for': 'signupform-email' }),
+	                                    _react2.default.createElement('input', { type: 'text', id: 'signupform-email', className: 'form-control', name: 'SignupForm[email]' }),
+	                                    _react2.default.createElement('p', { className: 'help-block help-block-error' })
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'text hide' },
+	                                'На Ваш e-mail адрес будет отправлено письмо со ссылкой на анкету'
+	                            ),
+	                            _react2.default.createElement('input', { type: 'submit', value: 'Зарегистрироваться' }),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'login-soc' },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { id: 'w0', className: 'auth-clients' },
+	                                    '            ',
+	                                    _react2.default.createElement(
+	                                        'a',
+	                                        { className: 'vkontakte auth-link', href: 'site/auth?authclient=vkontakte', 'data-popup-width': '650', 'data-popup-height': '350' },
+	                                        _react2.default.createElement('span', { className: 'auth-icon vkontakte' }),
+	                                        _react2.default.createElement(
+	                                            'span',
+	                                            { className: 'auth-title' },
+	                                            'Войти через',
+	                                            _react2.default.createElement('br', null),
+	                                            'vkontakte'
+	                                        )
+	                                    ),
+	                                    '            ',
+	                                    _react2.default.createElement(
+	                                        'a',
+	                                        { className: 'facebook auth-link', href: 'site/auth?authclient=facebook', 'data-popup-width': '860', 'data-popup-height': '480' },
+	                                        _react2.default.createElement('span', { className: 'auth-icon facebook' }),
+	                                        _react2.default.createElement(
+	                                            'span',
+	                                            { className: 'auth-title' },
+	                                            'Войти через',
+	                                            _react2.default.createElement('br', null),
+	                                            'facebook'
+	                                        )
+	                                    )
+	                                ),
+	                                '        '
+	                            )
+	                        )
+	                    )
+	                )
+	            )
+	        );
+	    }
+	});
+
+/***/ },
+/* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
@@ -31283,7 +31577,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-	    displayName: "Login",
+	    displayName: "PasswordReset",
 	    render: function render() {
 	        return _react2.default.createElement(
 	            "div",
@@ -31307,99 +31601,37 @@
 	                { className: "page-width" },
 	                _react2.default.createElement(
 	                    "form",
-	                    { id: "login-form", action: "site/login", method: "post", role: "form" },
-	                    _react2.default.createElement("input", { type: "hidden", name: "_csrf", value: "Q0Z3TXVZNTEsJRwaWBcBeHYVIAYyLHt1MwImCjcwZ2AxCwIjKhh5Xg==" }),
+	                    { id: "request-password-reset-form", action: "/site/request-password-reset", method: "post", role: "form" },
+	                    _react2.default.createElement("input", { type: "hidden", name: "_csrf", value: "MVFKUEpJSVlAKCc0KXsMLkhkDWJzJx0IU2UFMQskGDtmIzAdJwsRPQ==" }),
 	                    _react2.default.createElement(
 	                        "div",
 	                        { className: "login-page" },
 	                        _react2.default.createElement("div", { className: "logo" }),
 	                        _react2.default.createElement(
 	                            "div",
-	                            { className: "login", id: "loginForm" },
+	                            { className: "forgot", id: "forgotForm" },
 	                            _react2.default.createElement(
 	                                "div",
 	                                { className: "title" },
-	                                "E-mail:"
+	                                "Ваш e-mail:"
 	                            ),
 	                            _react2.default.createElement(
 	                                "div",
 	                                { className: "wr-input" },
 	                                _react2.default.createElement(
 	                                    "div",
-	                                    { className: "form-group field-loginform-email required" },
-	                                    _react2.default.createElement("label", { className: "control-label", htmlFor: "loginform-email" }),
-	                                    _react2.default.createElement("input", { type: "text", id: "loginform-email", className: "form-control", name: "LoginForm[email]" }),
+	                                    { className: "form-group field-passwordresetrequestform-email required" },
+	                                    _react2.default.createElement("label", { className: "control-label", "for": "passwordresetrequestform-email" }),
+	                                    _react2.default.createElement("input", { type: "text", id: "passwordresetrequestform-email", className: "form-control", name: "PasswordResetRequestForm[email]" }),
 	                                    _react2.default.createElement("p", { className: "help-block help-block-error" })
 	                                )
 	                            ),
 	                            _react2.default.createElement(
 	                                "div",
-	                                { className: "title" },
-	                                "Пароль:"
+	                                { className: "text" },
+	                                "На ваш e-mail адрес будут высланы инструкции для восстановления пароля"
 	                            ),
-	                            _react2.default.createElement(
-	                                "div",
-	                                { className: "wr-input" },
-	                                _react2.default.createElement(
-	                                    "div",
-	                                    { className: "form-group field-loginform-password required" },
-	                                    _react2.default.createElement("label", { className: "control-label", htmlFor: "loginform-password" }),
-	                                    _react2.default.createElement("input", { type: "password", id: "loginform-password", className: "form-control", name: "LoginForm[password]" }),
-	                                    _react2.default.createElement("p", { className: "help-block help-block-error" })
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                "div",
-	                                { className: "login-menu" },
-	                                _react2.default.createElement(
-	                                    "a",
-	                                    { href: "site/signup" },
-	                                    "Регистрация"
-	                                ),
-	                                "            ",
-	                                _react2.default.createElement(
-	                                    "a",
-	                                    { href: "site/request-password-reset" },
-	                                    "Забыли пароль?"
-	                                ),
-	                                "        "
-	                            ),
-	                            _react2.default.createElement("input", { type: "submit", value: "Войти в личный кабинет" }),
-	                            _react2.default.createElement(
-	                                "div",
-	                                { className: "login-soc" },
-	                                _react2.default.createElement(
-	                                    "div",
-	                                    { id: "w0", className: "auth-clients" },
-	                                    "            ",
-	                                    _react2.default.createElement(
-	                                        "a",
-	                                        { className: "vkontakte auth-link", href: "site/auth?authclient=vkontakte", "data-popup-width": "650", "data-popup-height": "350" },
-	                                        _react2.default.createElement("span", { className: "auth-icon vkontakte" }),
-	                                        _react2.default.createElement(
-	                                            "span",
-	                                            { className: "auth-title" },
-	                                            "Войти через",
-	                                            _react2.default.createElement("br", null),
-	                                            "vkontakte"
-	                                        )
-	                                    ),
-	                                    "            ",
-	                                    _react2.default.createElement(
-	                                        "a",
-	                                        { className: "facebook auth-link", href: "site/auth?authclient=facebook", "data-popup-width": "860", "data-popup-height": "480" },
-	                                        _react2.default.createElement("span", { className: "auth-icon facebook" }),
-	                                        _react2.default.createElement(
-	                                            "span",
-	                                            { className: "auth-title" },
-	                                            "Войти через",
-	                                            _react2.default.createElement("br", null),
-	                                            "facebook"
-	                                        )
-	                                    )
-	                                ),
-	                                "        "
-	                            )
+	                            _react2.default.createElement("input", { type: "submit", value: "Напомнить" })
 	                        )
 	                    )
 	                )
@@ -31409,7 +31641,7 @@
 	});
 
 /***/ },
-/* 245 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -31735,10 +31967,10 @@
 	});
 
 /***/ },
-/* 246 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -31748,528 +31980,530 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(172);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-	    displayName: "Signin",
+	    displayName: 'Tariff',
 	    render: function render() {
 	        return _react2.default.createElement(
-	            "div",
+	            'div',
 	            null,
 	            _react2.default.createElement(
-	                "div",
-	                { className: "header" },
+	                'div',
+	                { className: 'header' },
 	                _react2.default.createElement(
-	                    "div",
-	                    { className: "page-width" },
+	                    'div',
+	                    { className: 'page-width' },
 	                    _react2.default.createElement(
-	                        "div",
-	                        { className: "logo" },
+	                        'div',
+	                        { className: 'logo' },
 	                        _react2.default.createElement(
-	                            "a",
-	                            { href: "" },
-	                            _react2.default.createElement("img", { src: "img/logo_fitwonk.png", title: "FITWORK", alt: "FITWORK" })
+	                            'a',
+	                            { href: '' },
+	                            _react2.default.createElement('img', { src: 'img/logo_fitwonk.png', title: 'FITWORK', alt: 'FITWORK' })
 	                        )
 	                    ),
 	                    _react2.default.createElement(
-	                        "div",
-	                        { className: "header-title" },
+	                        'div',
+	                        { className: 'header-title' },
 	                        _react2.default.createElement(
-	                            "div",
-	                            { className: "mob_hidden" },
-	                            "Выбор абонемента и оплата"
+	                            'div',
+	                            { className: 'mob_hidden' },
+	                            'Выбор абонемента и оплата'
 	                        ),
 	                        _react2.default.createElement(
-	                            "div",
-	                            { className: "dt_hidden" },
-	                            "Тарифы"
+	                            'div',
+	                            { className: 'dt_hidden' },
+	                            'Тарифы'
 	                        )
 	                    )
 	                )
 	            ),
 	            _react2.default.createElement(
-	                "div",
-	                { className: "page-width" },
+	                'div',
+	                { className: 'page-width' },
 	                _react2.default.createElement(
-	                    "form",
-	                    { id: "form-signup", action: "site/signin", method: "post", role: "form" },
-	                    _react2.default.createElement("input", { type: "hidden", name: "_csrf", value: "N1lIMURvN0JYOiNmaSEDCwIKH3oDGnkGRx0ZdgYGZRNFFD1fGy57LQ==" }),
+	                    'form',
+	                    { id: 'form-signup', action: 'site/signin', method: 'post', role: 'form' },
+	                    _react2.default.createElement('input', { type: 'hidden', name: '_csrf', value: 'N1lIMURvN0JYOiNmaSEDCwIKH3oDGnkGRx0ZdgYGZRNFFD1fGy57LQ==' }),
 	                    _react2.default.createElement(
-	                        "div",
-	                        { className: "registry-column" },
+	                        'div',
+	                        { className: 'registry-column' },
 	                        _react2.default.createElement(
-	                            "div",
-	                            { className: "info-section no-b-indent" },
+	                            'div',
+	                            { className: 'info-section no-b-indent' },
 	                            _react2.default.createElement(
-	                                "div",
-	                                { className: "info-title" },
+	                                'div',
+	                                { className: 'info-title' },
 	                                _react2.default.createElement(
-	                                    "div",
-	                                    { className: "sub" },
+	                                    'div',
+	                                    { className: 'sub' },
 	                                    _react2.default.createElement(
-	                                        "a",
-	                                        { href: "site/program" },
-	                                        "Изменить"
+	                                        _reactRouter.Link,
+	                                        { to: '/program' },
+	                                        'Изменить'
 	                                    )
 	                                ),
 	                                _react2.default.createElement(
-	                                    "div",
-	                                    { className: "text-title" },
-	                                    "Индивидуальная программа"
+	                                    'div',
+	                                    { className: 'text-title' },
+	                                    'Индивидуальная программа'
 	                                )
 	                            )
 	                        ),
 	                        _react2.default.createElement(
-	                            "div",
-	                            { className: "info-section" },
+	                            'div',
+	                            { className: 'info-section' },
 	                            _react2.default.createElement(
-	                                "div",
-	                                { className: "info-title" },
+	                                'div',
+	                                { className: 'info-title' },
 	                                _react2.default.createElement(
-	                                    "div",
-	                                    { className: "text-title" },
-	                                    "Выбор абонемента и оплата"
+	                                    'div',
+	                                    { className: 'text-title' },
+	                                    'Выбор абонемента и оплата'
 	                                )
 	                            ),
 	                            _react2.default.createElement(
-	                                "div",
-	                                { className: "select-programm" },
+	                                'div',
+	                                { className: 'select-programm' },
 	                                _react2.default.createElement(
-	                                    "div",
-	                                    { className: "abonement-title" },
-	                                    "Выбор абонемента:"
+	                                    'div',
+	                                    { className: 'abonement-title' },
+	                                    'Выбор абонемента:'
 	                                ),
-	                                _react2.default.createElement("input", { type: "hidden", name: "plan_id", id: "li-trainer-id", value: "skip" }),
+	                                _react2.default.createElement('input', { type: 'hidden', name: 'plan_id', id: 'li-trainer-id', value: 'skip' }),
 	                                _react2.default.createElement(
-	                                    "div",
-	                                    { className: "select-trainer" },
+	                                    'div',
+	                                    { className: 'select-trainer' },
 	                                    _react2.default.createElement(
-	                                        "div",
-	                                        { className: "slider" },
+	                                        'div',
+	                                        { className: 'slider' },
 	                                        _react2.default.createElement(
-	                                            "div",
-	                                            { className: "over-line" },
+	                                            'div',
+	                                            { className: 'over-line' },
 	                                            _react2.default.createElement(
-	                                                "div",
-	                                                { className: "line" },
+	                                                'div',
+	                                                { className: 'line' },
 	                                                _react2.default.createElement(
-	                                                    "ul",
-	                                                    { className: "ul-line" },
+	                                                    'ul',
+	                                                    { className: 'ul-line' },
 	                                                    _react2.default.createElement(
-	                                                        "li",
-	                                                        { className: "li-line" },
+	                                                        'li',
+	                                                        { className: 'li-line' },
 	                                                        _react2.default.createElement(
-	                                                            "div",
-	                                                            { className: "li-ind" },
+	                                                            'div',
+	                                                            { className: 'li-ind' },
 	                                                            _react2.default.createElement(
-	                                                                "div",
-	                                                                { className: "li-block li-abonement", "data-id": "1", "data-price": "1300" },
+	                                                                'div',
+	                                                                { className: 'li-block li-abonement', 'data-id': '1', 'data-price': '1300' },
 	                                                                _react2.default.createElement(
-	                                                                    "div",
-	                                                                    { className: "checked" },
-	                                                                    _react2.default.createElement("img", { src: "img/icon_sprite_img.png" })
+	                                                                    'div',
+	                                                                    { className: 'checked' },
+	                                                                    _react2.default.createElement('img', { src: 'img/icon_sprite_img.png' })
 	                                                                ),
 	                                                                _react2.default.createElement(
-	                                                                    "div",
-	                                                                    { className: "time" },
-	                                                                    "1",
+	                                                                    'div',
+	                                                                    { className: 'time' },
+	                                                                    '1',
 	                                                                    _react2.default.createElement(
-	                                                                        "span",
+	                                                                        'span',
 	                                                                        null,
-	                                                                        " мес."
+	                                                                        ' мес.'
 	                                                                    )
 	                                                                ),
 	                                                                _react2.default.createElement(
-	                                                                    "div",
-	                                                                    { className: "price" },
-	                                                                    "1 300",
+	                                                                    'div',
+	                                                                    { className: 'price' },
+	                                                                    '1 300',
 	                                                                    _react2.default.createElement(
-	                                                                        "span",
+	                                                                        'span',
 	                                                                        null,
-	                                                                        " руб."
+	                                                                        ' руб.'
 	                                                                    )
 	                                                                ),
 	                                                                _react2.default.createElement(
-	                                                                    "div",
-	                                                                    { className: "t" },
-	                                                                    "В абонемент входят"
+	                                                                    'div',
+	                                                                    { className: 't' },
+	                                                                    'В абонемент входят'
 	                                                                ),
 	                                                                _react2.default.createElement(
-	                                                                    "ul",
-	                                                                    { className: "dt_hidden" },
+	                                                                    'ul',
+	                                                                    { className: 'dt_hidden' },
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Индивидуальную программу ежедневных тренировок"
+	                                                                        'Индивидуальную программу ежедневных тренировок'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Персонального коучера онлайн 24/7"
+	                                                                        'Персонального коучера онлайн 24/7'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Индивидуальные советы по сбалансированному питанию"
+	                                                                        'Индивидуальные советы по сбалансированному питанию'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Онлайн статистику достижений в личном кабинете"
+	                                                                        'Онлайн статистику достижений в личном кабинете'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Упражнения с подробным описанием, фото и видео подсказками"
+	                                                                        'Упражнения с подробным описанием, фото и видео подсказками'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Умный таймер тренировок с видео подсказками упражнений"
+	                                                                        'Умный таймер тренировок с видео подсказками упражнений'
 	                                                                    )
 	                                                                ),
 	                                                                _react2.default.createElement(
-	                                                                    "ul",
-	                                                                    { className: "mob_hidden" },
+	                                                                    'ul',
+	                                                                    { className: 'mob_hidden' },
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Квалифицированный тренер"
+	                                                                        'Квалифицированный тренер'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Индивидуальная программа тренировок"
+	                                                                        'Индивидуальная программа тренировок'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "300+ уникальных упражнений"
+	                                                                        '300+ уникальных упражнений'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Умный помощник"
+	                                                                        'Умный помощник'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Online статистика ежедневных достижений"
+	                                                                        'Online статистика ежедневных достижений'
 	                                                                    )
 	                                                                )
 	                                                            )
 	                                                        )
 	                                                    ),
 	                                                    _react2.default.createElement(
-	                                                        "li",
-	                                                        { className: "li-line" },
+	                                                        'li',
+	                                                        { className: 'li-line' },
 	                                                        _react2.default.createElement(
-	                                                            "div",
-	                                                            { className: "li-ind" },
+	                                                            'div',
+	                                                            { className: 'li-ind' },
 	                                                            _react2.default.createElement(
-	                                                                "div",
-	                                                                { className: "li-block li-abonement", "data-id": "2", "data-price": "3500" },
+	                                                                'div',
+	                                                                { className: 'li-block li-abonement', 'data-id': '2', 'data-price': '3500' },
 	                                                                _react2.default.createElement(
-	                                                                    "div",
-	                                                                    { className: "checked" },
-	                                                                    _react2.default.createElement("img", { src: "img/icon_sprite_img.png" })
+	                                                                    'div',
+	                                                                    { className: 'checked' },
+	                                                                    _react2.default.createElement('img', { src: 'img/icon_sprite_img.png' })
 	                                                                ),
 	                                                                _react2.default.createElement(
-	                                                                    "div",
-	                                                                    { className: "time" },
-	                                                                    "3",
+	                                                                    'div',
+	                                                                    { className: 'time' },
+	                                                                    '3',
 	                                                                    _react2.default.createElement(
-	                                                                        "span",
+	                                                                        'span',
 	                                                                        null,
-	                                                                        " мес."
+	                                                                        ' мес.'
 	                                                                    )
 	                                                                ),
 	                                                                _react2.default.createElement(
-	                                                                    "div",
-	                                                                    { className: "price" },
-	                                                                    "3 500",
+	                                                                    'div',
+	                                                                    { className: 'price' },
+	                                                                    '3 500',
 	                                                                    _react2.default.createElement(
-	                                                                        "span",
+	                                                                        'span',
 	                                                                        null,
-	                                                                        " руб."
+	                                                                        ' руб.'
 	                                                                    )
 	                                                                ),
 	                                                                _react2.default.createElement(
-	                                                                    "div",
-	                                                                    { className: "t" },
-	                                                                    "В абонемент входят"
+	                                                                    'div',
+	                                                                    { className: 't' },
+	                                                                    'В абонемент входят'
 	                                                                ),
 	                                                                _react2.default.createElement(
-	                                                                    "ul",
-	                                                                    { className: "dt_hidden" },
+	                                                                    'ul',
+	                                                                    { className: 'dt_hidden' },
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Индивидуальную программу ежедневных тренировок"
+	                                                                        'Индивидуальную программу ежедневных тренировок'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Персонального коучера онлайн 24/7"
+	                                                                        'Персонального коучера онлайн 24/7'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Индивидуальные советы по сбалансированному питанию"
+	                                                                        'Индивидуальные советы по сбалансированному питанию'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Онлайн статистику достижений в личном кабинете"
+	                                                                        'Онлайн статистику достижений в личном кабинете'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Упражнения с подробным описанием, фото и видео подсказками"
+	                                                                        'Упражнения с подробным описанием, фото и видео подсказками'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Умный таймер тренировок с видео подсказками упражнений"
+	                                                                        'Умный таймер тренировок с видео подсказками упражнений'
 	                                                                    )
 	                                                                ),
 	                                                                _react2.default.createElement(
-	                                                                    "ul",
-	                                                                    { className: "mob_hidden" },
+	                                                                    'ul',
+	                                                                    { className: 'mob_hidden' },
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Квалифицированный тренер"
+	                                                                        'Квалифицированный тренер'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Индивидуальная программа тренировок"
+	                                                                        'Индивидуальная программа тренировок'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "300+ уникальных упражнений"
+	                                                                        '300+ уникальных упражнений'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Умный помощник"
+	                                                                        'Умный помощник'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Online статистика ежедневных достижений"
+	                                                                        'Online статистика ежедневных достижений'
 	                                                                    )
 	                                                                )
 	                                                            )
 	                                                        )
 	                                                    ),
 	                                                    _react2.default.createElement(
-	                                                        "li",
-	                                                        { className: "li-line" },
+	                                                        'li',
+	                                                        { className: 'li-line' },
 	                                                        _react2.default.createElement(
-	                                                            "div",
-	                                                            { className: "li-ind" },
+	                                                            'div',
+	                                                            { className: 'li-ind' },
 	                                                            _react2.default.createElement(
-	                                                                "div",
-	                                                                { className: "li-block li-abonement", "data-id": "3", "data-price": "6600" },
+	                                                                'div',
+	                                                                { className: 'li-block li-abonement', 'data-id': '3', 'data-price': '6600' },
 	                                                                _react2.default.createElement(
-	                                                                    "div",
-	                                                                    { className: "checked" },
-	                                                                    _react2.default.createElement("img", { src: "img/icon_sprite_img.png" })
+	                                                                    'div',
+	                                                                    { className: 'checked' },
+	                                                                    _react2.default.createElement('img', { src: 'img/icon_sprite_img.png' })
 	                                                                ),
 	                                                                _react2.default.createElement(
-	                                                                    "div",
-	                                                                    { className: "time" },
-	                                                                    "6",
+	                                                                    'div',
+	                                                                    { className: 'time' },
+	                                                                    '6',
 	                                                                    _react2.default.createElement(
-	                                                                        "span",
+	                                                                        'span',
 	                                                                        null,
-	                                                                        " мес."
+	                                                                        ' мес.'
 	                                                                    )
 	                                                                ),
 	                                                                _react2.default.createElement(
-	                                                                    "div",
-	                                                                    { className: "price" },
-	                                                                    "6 600",
+	                                                                    'div',
+	                                                                    { className: 'price' },
+	                                                                    '6 600',
 	                                                                    _react2.default.createElement(
-	                                                                        "span",
+	                                                                        'span',
 	                                                                        null,
-	                                                                        " руб."
+	                                                                        ' руб.'
 	                                                                    )
 	                                                                ),
 	                                                                _react2.default.createElement(
-	                                                                    "div",
-	                                                                    { className: "t" },
-	                                                                    "В абонемент входят"
+	                                                                    'div',
+	                                                                    { className: 't' },
+	                                                                    'В абонемент входят'
 	                                                                ),
 	                                                                _react2.default.createElement(
-	                                                                    "ul",
-	                                                                    { className: "dt_hidden" },
+	                                                                    'ul',
+	                                                                    { className: 'dt_hidden' },
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Индивидуальную программу ежедневных тренировок"
+	                                                                        'Индивидуальную программу ежедневных тренировок'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Персонального коучера онлайн 24/7"
+	                                                                        'Персонального коучера онлайн 24/7'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Индивидуальные советы по сбалансированному питанию"
+	                                                                        'Индивидуальные советы по сбалансированному питанию'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Онлайн статистику достижений в личном кабинете"
+	                                                                        'Онлайн статистику достижений в личном кабинете'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Упражнения с подробным описанием, фото и видео подсказками"
+	                                                                        'Упражнения с подробным описанием, фото и видео подсказками'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Умный таймер тренировок с видео подсказками упражнений"
+	                                                                        'Умный таймер тренировок с видео подсказками упражнений'
 	                                                                    )
 	                                                                ),
 	                                                                _react2.default.createElement(
-	                                                                    "ul",
-	                                                                    { className: "mob_hidden" },
+	                                                                    'ul',
+	                                                                    { className: 'mob_hidden' },
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Квалифицированный тренер"
+	                                                                        'Квалифицированный тренер'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Индивидуальная программа тренировок"
+	                                                                        'Индивидуальная программа тренировок'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "300+ уникальных упражнений"
+	                                                                        '300+ уникальных упражнений'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Умный помощник"
+	                                                                        'Умный помощник'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Online статистика ежедневных достижений"
+	                                                                        'Online статистика ежедневных достижений'
 	                                                                    )
 	                                                                )
 	                                                            )
 	                                                        )
 	                                                    ),
 	                                                    _react2.default.createElement(
-	                                                        "li",
-	                                                        { className: "li-line" },
+	                                                        'li',
+	                                                        { className: 'li-line' },
 	                                                        _react2.default.createElement(
-	                                                            "div",
-	                                                            { className: "li-ind" },
+	                                                            'div',
+	                                                            { className: 'li-ind' },
 	                                                            _react2.default.createElement(
-	                                                                "div",
-	                                                                { className: "li-block li-abonement", "data-id": "4", "data-price": "12500" },
+	                                                                'div',
+	                                                                { className: 'li-block li-abonement', 'data-id': '4', 'data-price': '12500' },
 	                                                                _react2.default.createElement(
-	                                                                    "div",
-	                                                                    { className: "checked" },
-	                                                                    _react2.default.createElement("img", { src: "img/icon_sprite_img.png" })
+	                                                                    'div',
+	                                                                    { className: 'checked' },
+	                                                                    _react2.default.createElement('img', { src: 'img/icon_sprite_img.png' })
 	                                                                ),
 	                                                                _react2.default.createElement(
-	                                                                    "div",
-	                                                                    { className: "time" },
-	                                                                    "12",
+	                                                                    'div',
+	                                                                    { className: 'time' },
+	                                                                    '12',
 	                                                                    _react2.default.createElement(
-	                                                                        "span",
+	                                                                        'span',
 	                                                                        null,
-	                                                                        " мес."
+	                                                                        ' мес.'
 	                                                                    )
 	                                                                ),
 	                                                                _react2.default.createElement(
-	                                                                    "div",
-	                                                                    { className: "price" },
-	                                                                    "12 500",
+	                                                                    'div',
+	                                                                    { className: 'price' },
+	                                                                    '12 500',
 	                                                                    _react2.default.createElement(
-	                                                                        "span",
+	                                                                        'span',
 	                                                                        null,
-	                                                                        " руб."
+	                                                                        ' руб.'
 	                                                                    )
 	                                                                ),
 	                                                                _react2.default.createElement(
-	                                                                    "div",
-	                                                                    { className: "t" },
-	                                                                    "В абонемент входят"
+	                                                                    'div',
+	                                                                    { className: 't' },
+	                                                                    'В абонемент входят'
 	                                                                ),
 	                                                                _react2.default.createElement(
-	                                                                    "ul",
-	                                                                    { className: "dt_hidden" },
+	                                                                    'ul',
+	                                                                    { className: 'dt_hidden' },
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Индивидуальную программу ежедневных тренировок"
+	                                                                        'Индивидуальную программу ежедневных тренировок'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Персонального коучера онлайн 24/7"
+	                                                                        'Персонального коучера онлайн 24/7'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Индивидуальные советы по сбалансированному питанию"
+	                                                                        'Индивидуальные советы по сбалансированному питанию'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Онлайн статистику достижений в личном кабинете"
+	                                                                        'Онлайн статистику достижений в личном кабинете'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Упражнения с подробным описанием, фото и видео подсказками"
+	                                                                        'Упражнения с подробным описанием, фото и видео подсказками'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Умный таймер тренировок с видео подсказками упражнений"
+	                                                                        'Умный таймер тренировок с видео подсказками упражнений'
 	                                                                    )
 	                                                                ),
 	                                                                _react2.default.createElement(
-	                                                                    "ul",
-	                                                                    { className: "mob_hidden" },
+	                                                                    'ul',
+	                                                                    { className: 'mob_hidden' },
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Квалифицированный тренер"
+	                                                                        'Квалифицированный тренер'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Индивидуальная программа тренировок"
+	                                                                        'Индивидуальная программа тренировок'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "300+ уникальных упражнений"
+	                                                                        '300+ уникальных упражнений'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Умный помощник"
+	                                                                        'Умный помощник'
 	                                                                    ),
 	                                                                    _react2.default.createElement(
-	                                                                        "li",
+	                                                                        'li',
 	                                                                        null,
-	                                                                        "Online статистика ежедневных достижений"
+	                                                                        'Online статистика ежедневных достижений'
 	                                                                    )
 	                                                                )
 	                                                            )
@@ -32279,31 +32513,31 @@
 	                                            )
 	                                        ),
 	                                        _react2.default.createElement(
-	                                            "div",
-	                                            { className: "navigate" },
+	                                            'div',
+	                                            { className: 'navigate' },
 	                                            _react2.default.createElement(
-	                                                "a",
-	                                                { className: "nav-butt prev" },
+	                                                'a',
+	                                                { className: 'nav-butt prev' },
 	                                                _react2.default.createElement(
-	                                                    "span",
-	                                                    { className: "d-butt" },
+	                                                    'span',
+	                                                    { className: 'd-butt' },
 	                                                    _react2.default.createElement(
-	                                                        "span",
-	                                                        { className: "icon" },
-	                                                        _react2.default.createElement("img", { src: "img/icon_sprite_img.png" })
+	                                                        'span',
+	                                                        { className: 'icon' },
+	                                                        _react2.default.createElement('img', { src: 'img/icon_sprite_img.png' })
 	                                                    )
 	                                                )
 	                                            ),
 	                                            _react2.default.createElement(
-	                                                "a",
-	                                                { className: "nav-butt next" },
+	                                                'a',
+	                                                { className: 'nav-butt next' },
 	                                                _react2.default.createElement(
-	                                                    "span",
-	                                                    { className: "d-butt" },
+	                                                    'span',
+	                                                    { className: 'd-butt' },
 	                                                    _react2.default.createElement(
-	                                                        "span",
-	                                                        { className: "icon" },
-	                                                        _react2.default.createElement("img", { src: "img/icon_sprite_img.png" })
+	                                                        'span',
+	                                                        { className: 'icon' },
+	                                                        _react2.default.createElement('img', { src: 'img/icon_sprite_img.png' })
 	                                                    )
 	                                                )
 	                                            )
@@ -32311,110 +32545,110 @@
 	                                    )
 	                                ),
 	                                _react2.default.createElement(
-	                                    "div",
-	                                    { id: "payment-panel", style: { "display": "none" } },
+	                                    'div',
+	                                    { id: 'payment-panel', style: { "display": "none" } },
 	                                    _react2.default.createElement(
-	                                        "div",
-	                                        { className: "payment-title" },
-	                                        "Способ оплаты"
+	                                        'div',
+	                                        { className: 'payment-title' },
+	                                        'Способ оплаты'
 	                                    ),
 	                                    _react2.default.createElement(
-	                                        "div",
-	                                        { className: "thee-column" },
+	                                        'div',
+	                                        { className: 'thee-column' },
 	                                        _react2.default.createElement(
-	                                            "div",
-	                                            { className: "zdc7" },
+	                                            'div',
+	                                            { className: 'zdc7' },
 	                                            _react2.default.createElement(
-	                                                "label",
+	                                                'label',
 	                                                null,
-	                                                _react2.default.createElement("i", { className: "i1" }),
+	                                                _react2.default.createElement('i', { className: 'i1' }),
 	                                                _react2.default.createElement(
-	                                                    "div",
-	                                                    { className: "wr-radio" },
-	                                                    _react2.default.createElement("input", { className: "custom", type: "radio", name: "method", value: "card" })
+	                                                    'div',
+	                                                    { className: 'wr-radio' },
+	                                                    _react2.default.createElement('input', { className: 'custom', type: 'radio', name: 'method', value: 'card' })
 	                                                ),
-	                                                "Банковская карта"
+	                                                'Банковская карта'
 	                                            ),
 	                                            _react2.default.createElement(
-	                                                "label",
+	                                                'label',
 	                                                null,
-	                                                _react2.default.createElement("i", { className: "i4" }),
+	                                                _react2.default.createElement('i', { className: 'i4' }),
 	                                                _react2.default.createElement(
-	                                                    "div",
-	                                                    { className: "wr-radio" },
-	                                                    _react2.default.createElement("input", { className: "custom", type: "radio", name: "method", value: "qiwi" })
+	                                                    'div',
+	                                                    { className: 'wr-radio' },
+	                                                    _react2.default.createElement('input', { className: 'custom', type: 'radio', name: 'method', value: 'qiwi' })
 	                                                ),
-	                                                "Qiwi Wallet"
+	                                                'Qiwi Wallet'
 	                                            )
 	                                        ),
 	                                        _react2.default.createElement(
-	                                            "div",
-	                                            { className: "zdc8" },
+	                                            'div',
+	                                            { className: 'zdc8' },
 	                                            _react2.default.createElement(
-	                                                "label",
+	                                                'label',
 	                                                null,
-	                                                _react2.default.createElement("i", { className: "i6" }),
+	                                                _react2.default.createElement('i', { className: 'i6' }),
 	                                                _react2.default.createElement(
-	                                                    "div",
-	                                                    { className: "wr-radio" },
-	                                                    _react2.default.createElement("input", { className: "custom", type: "radio", name: "method", value: "sbrf" })
+	                                                    'div',
+	                                                    { className: 'wr-radio' },
+	                                                    _react2.default.createElement('input', { className: 'custom', type: 'radio', name: 'method', value: 'sbrf' })
 	                                                ),
-	                                                "Сбербанк Онлайн"
+	                                                'Сбербанк Онлайн'
 	                                            ),
 	                                            _react2.default.createElement(
-	                                                "label",
+	                                                'label',
 	                                                null,
-	                                                _react2.default.createElement("i", { className: "i2" }),
+	                                                _react2.default.createElement('i', { className: 'i2' }),
 	                                                _react2.default.createElement(
-	                                                    "div",
-	                                                    { className: "wr-radio" },
-	                                                    _react2.default.createElement("input", { className: "custom", type: "radio", name: "method", value: "phone", disabled: "disabled" })
+	                                                    'div',
+	                                                    { className: 'wr-radio' },
+	                                                    _react2.default.createElement('input', { className: 'custom', type: 'radio', name: 'method', value: 'phone', disabled: 'disabled' })
 	                                                ),
-	                                                "Баланс телефона"
+	                                                'Баланс телефона'
 	                                            )
 	                                        ),
 	                                        _react2.default.createElement(
-	                                            "div",
-	                                            { className: "zdc9 data-block" },
+	                                            'div',
+	                                            { className: 'zdc9 data-block' },
 	                                            _react2.default.createElement(
-	                                                "label",
+	                                                'label',
 	                                                null,
-	                                                _react2.default.createElement("i", { className: "i5" }),
+	                                                _react2.default.createElement('i', { className: 'i5' }),
 	                                                _react2.default.createElement(
-	                                                    "div",
-	                                                    { className: "wr-radio" },
-	                                                    _react2.default.createElement("input", { className: "custom", type: "radio", name: "method", value: "yandex" })
+	                                                    'div',
+	                                                    { className: 'wr-radio' },
+	                                                    _react2.default.createElement('input', { className: 'custom', type: 'radio', name: 'method', value: 'yandex' })
 	                                                ),
-	                                                "Яндекс.Деньги"
+	                                                'Яндекс.Деньги'
 	                                            ),
 	                                            _react2.default.createElement(
-	                                                "label",
+	                                                'label',
 	                                                null,
-	                                                _react2.default.createElement("i", { className: "i4" }),
+	                                                _react2.default.createElement('i', { className: 'i4' }),
 	                                                _react2.default.createElement(
-	                                                    "div",
-	                                                    { className: "wr-radio" },
-	                                                    _react2.default.createElement("input", { className: "custom", type: "radio", name: "method", value: "promocode" })
+	                                                    'div',
+	                                                    { className: 'wr-radio' },
+	                                                    _react2.default.createElement('input', { className: 'custom', type: 'radio', name: 'method', value: 'promocode' })
 	                                                ),
-	                                                "Промокод",
+	                                                'Промокод',
 	                                                _react2.default.createElement(
-	                                                    "div",
-	                                                    { className: "registry-data hide", style: { "float": "left" } },
+	                                                    'div',
+	                                                    { className: 'registry-data hide', style: { "float": "left" } },
 	                                                    _react2.default.createElement(
-	                                                        "div",
-	                                                        { className: "data-block" },
+	                                                        'div',
+	                                                        { className: 'data-block' },
 	                                                        _react2.default.createElement(
-	                                                            "div",
-	                                                            { className: "data-ind" },
+	                                                            'div',
+	                                                            { className: 'data-ind' },
 	                                                            _react2.default.createElement(
-	                                                                "div",
-	                                                                { className: "title" },
-	                                                                "Код:"
+	                                                                'div',
+	                                                                { className: 'title' },
+	                                                                'Код:'
 	                                                            ),
 	                                                            _react2.default.createElement(
-	                                                                "div",
-	                                                                { className: "wr-input", style: { "width": "235px" } },
-	                                                                _react2.default.createElement("input", { type: "text", name: "promocode" })
+	                                                                'div',
+	                                                                { className: 'wr-input', style: { "width": "235px" } },
+	                                                                _react2.default.createElement('input', { type: 'text', name: 'promocode' })
 	                                                            )
 	                                                        )
 	                                                    )
@@ -32424,22 +32658,22 @@
 	                                    )
 	                                ),
 	                                _react2.default.createElement(
-	                                    "div",
-	                                    { className: "butt-submit" },
-	                                    _react2.default.createElement("input", { type: "submit", value: "Пропустить" })
+	                                    'div',
+	                                    { className: 'butt-submit' },
+	                                    _react2.default.createElement('input', { type: 'submit', value: 'Пропустить' })
 	                                )
 	                            )
 	                        )
 	                    )
 	                )
 	            ),
-	            _react2.default.createElement("div", { className: "hide-page-layer" })
+	            _react2.default.createElement('div', { className: 'hide-page-layer' })
 	        );
 	    }
 	});
 
 /***/ },
-/* 247 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -32455,7 +32689,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-	    displayName: "Registration",
+	    displayName: "RegistrationForm",
 	    render: function render() {
 	        return _react2.default.createElement(
 	            "div",
@@ -34146,7 +34380,7 @@
 	});
 
 /***/ },
-/* 248 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34628,6 +34862,101 @@
 	                    )
 	                ),
 	                _react2.default.createElement("div", { className: "hide-page-layer" })
+	            )
+	        );
+	    }
+	});
+
+/***/ },
+/* 251 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(172);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createClass({
+	    displayName: 'TestPage',
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	                'ul',
+	                { className: 'main-menu' },
+	                _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                        _reactRouter.Link,
+	                        { to: '/login', className: 'item' },
+	                        'Login'
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                        _reactRouter.Link,
+	                        { to: '/password-reset', className: 'item' },
+	                        'Password reset'
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                        _reactRouter.Link,
+	                        { to: '/registration', className: 'item' },
+	                        'Registration'
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                        _reactRouter.Link,
+	                        { to: '/registration-form', className: 'item' },
+	                        'Registration form'
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                        _reactRouter.Link,
+	                        { to: '/program', className: 'item' },
+	                        'Program'
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                        _reactRouter.Link,
+	                        { to: '/tariff', className: 'item' },
+	                        'Tariff'
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                        _reactRouter.Link,
+	                        { to: '/training', className: 'item' },
+	                        'Training'
+	                    )
+	                )
 	            )
 	        );
 	    }

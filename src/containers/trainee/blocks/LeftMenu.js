@@ -1,5 +1,6 @@
 import React from 'react'
 import NavLink from '../../common/NavLink'
+import { Link } from 'react-router'
 
 export default React.createClass({
     render() {
@@ -22,6 +23,9 @@ export default React.createClass({
                 </li>
                 <li>
                     <NavLink to="site/logout" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/img/icon_exit.png" alt="" /></span>Выход</NavLink>
+                </li>
+                <li>
+                    <Link to="/test_page" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/img/icon_exit.png" alt="" /></span>Разводящая страница</Link>
                 </li>
             </ul>
         )

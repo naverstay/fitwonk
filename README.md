@@ -24,7 +24,7 @@ http://localhost:8080/#/profile
 http://localhost:8080/#/login
 http://localhost:8080/#/program
 http://localhost:8080/#/signin
-http://localhost:8080/#/registration
+http://localhost:8080/#/registration-form
 http://localhost:8080/#/training
 
 Также при скомпилированном бандле приложение можно открывать без веб-сервера, т.е. просто открыв в браузере локальный файл index.html (через # к нему можно подставлять все урлы недоступные через меню)
@@ -44,8 +44,8 @@ http://localhost:8080/#/training
         /pages			-- отдельные страницы
             Login.js		-- страница логина
             Program.js		-- страница выбора тренера
-            Registration.js	-- страница профиля при регистрации
-            Signin.js		-- страница выбора тарифа
+            RegistrationForm.js	-- страница профиля при регистрации
+            Tariff.js		-- страница выбора тарифа
             Training.js		-- страница/виджет тренировки
         /trainee		-- личный кабинет
             /blocks		-- папочка под отдельные визуальные блоки
