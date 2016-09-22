@@ -30200,7 +30200,7 @@
 	                            null,
 	                            _react2.default.createElement(
 	                                _reactRouter.Link,
-	                                { to: 'trainee/calendar#training', className: 'item' },
+	                                { to: '/calendar#training', className: 'item' },
 	                                _react2.default.createElement(
 	                                    'span',
 	                                    { className: 'icon' },
@@ -30214,7 +30214,7 @@
 	                            null,
 	                            _react2.default.createElement(
 	                                _reactRouter.Link,
-	                                { to: 'trainee/calendar#training', className: 'item' },
+	                                { to: '/calendar#training', className: 'item' },
 	                                _react2.default.createElement(
 	                                    'span',
 	                                    { className: 'icon' },
