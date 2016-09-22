@@ -26,21 +26,21 @@ export default React.createClass({
                     <ul className="header-menu">
                         <li><a id="writeToUs">Написать нам</a></li>
                         <li className="sep xs_hidden">|</li>
-                        <li className="xs_hidden" ><a href="site/logout" data-method="post">Выход</a></li>
+                        <li className="xs_hidden" ><Link to="/logout" data-method="post">Выход</Link></li>
                     </ul>
                 </div>
             </div>
             <div className="page-width">
                 <div className="left-column table-row-switcher">
                     <div className="user-block">
-                        <a href="trainee/profile" className="border-avatar">
+                        <Link to="/profile" className="border-avatar">
                         <span className="wr-img">
                             <img src="img/no-avatar.jpg" alt="" />                        </span>
                             <span className="user-label">
                             <img src="http://login.fitwonk.dev.pz.su/uploads/bages/1.png" alt="" />                        </span>
-                        </a>
-                        <div className="user-account-type"><span className="label">Тариф: </span><span className="value"><a href="payment/">Базовый</a></span></div>
-                        <div className="user-name"><a href="trainee/profile">aovechkin</a></div>
+                        </Link>
+                        <div className="user-account-type"><span className="label">Тариф: </span><span className="value"><Link to="/tariff">Базовый</Link></span></div>
+                        <div className="user-name"><Link to="/profile">aovechkin</Link></div>
                     </div>
 
                     <LeftMenu />
@@ -50,11 +50,11 @@ export default React.createClass({
                     <div className="info-place">
                         <div className="trainer-section">
                             <div className="user-block">
-                                <a className="border-avatar" href="trainee/dialog">
+                                <Link className="border-avatar" to="/dialog">
                         <span className="wr-img">
                             <img src="http://login.fitwonk.dev.pz.su/uploads/avatar/61.jpg?1454997322" alt="" />                        </span>
-                                </a>
-                                <div className="user-name"><a href="trainee/dialog">Михаил</a></div>                        </div>
+                                </Link>
+                                <div className="user-name"><Link to="/dialog">Михаил</Link></div>                        </div>
                             <div className="chain">
                                 <img src="img/chain.png" alt="" />                        </div>
                             <div className="trainer-info">

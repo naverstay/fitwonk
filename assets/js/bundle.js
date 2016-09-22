@@ -129,11 +129,11 @@
 	        _react2.default.createElement(_reactRouter.Route, { path: '/profile', component: _Profile2.default })
 	    ),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/login', component: _Login2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/logout', component: _Login2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/registration', component: _Registration2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/password-reset', component: _PasswordReset2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/program', component: _Program2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/tariff', component: _Tariff2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: '/payment', component: _Tariff2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/registration-form', component: _RegistrationForm2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/training', component: _Training2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/test_page', component: _TestPage2.default })
@@ -27263,8 +27263,8 @@
 	                            'li',
 	                            { className: 'xs_hidden' },
 	                            _react2.default.createElement(
-	                                'a',
-	                                { href: 'site/logout', 'data-method': 'post' },
+	                                _reactRouter.Link,
+	                                { to: '/logout', 'data-method': 'post' },
 	                                'Выход'
 	                            )
 	                        )
@@ -27281,8 +27281,8 @@
 	                        'div',
 	                        { className: 'user-block' },
 	                        _react2.default.createElement(
-	                            'a',
-	                            { href: 'trainee/profile', className: 'border-avatar' },
+	                            _reactRouter.Link,
+	                            { to: '/profile', className: 'border-avatar' },
 	                            _react2.default.createElement(
 	                                'span',
 	                                { className: 'wr-img' },
@@ -27308,8 +27308,8 @@
 	                                'span',
 	                                { className: 'value' },
 	                                _react2.default.createElement(
-	                                    'a',
-	                                    { href: 'payment/' },
+	                                    _reactRouter.Link,
+	                                    { to: '/tariff' },
 	                                    'Базовый'
 	                                )
 	                            )
@@ -27318,8 +27318,8 @@
 	                            'div',
 	                            { className: 'user-name' },
 	                            _react2.default.createElement(
-	                                'a',
-	                                { href: 'trainee/profile' },
+	                                _reactRouter.Link,
+	                                { to: '/profile' },
 	                                'aovechkin'
 	                            )
 	                        )
@@ -27339,8 +27339,8 @@
 	                                'div',
 	                                { className: 'user-block' },
 	                                _react2.default.createElement(
-	                                    'a',
-	                                    { className: 'border-avatar', href: 'trainee/dialog' },
+	                                    _reactRouter.Link,
+	                                    { className: 'border-avatar', to: '/dialog' },
 	                                    _react2.default.createElement(
 	                                        'span',
 	                                        { className: 'wr-img' },
@@ -27352,8 +27352,8 @@
 	                                    'div',
 	                                    { className: 'user-name' },
 	                                    _react2.default.createElement(
-	                                        'a',
-	                                        { href: 'trainee/dialog' },
+	                                        _reactRouter.Link,
+	                                        { to: '/dialog' },
 	                                        'Михаил'
 	                                    )
 	                                ),
@@ -27524,7 +27524,7 @@
 	                'Для активации всех функций необходимо оформить ',
 	                _react2.default.createElement(
 	                    _reactRouter.Link,
-	                    { to: '/signin' },
+	                    { to: '/tariff' },
 	                    'новую подписку'
 	                ),
 	                '.'
@@ -27644,8 +27644,8 @@
 	                'li',
 	                null,
 	                _react2.default.createElement(
-	                    _NavLink2.default,
-	                    { to: 'site/logout', className: 'item' },
+	                    _reactRouter.Link,
+	                    { to: '/logout', className: 'item' },
 	                    _react2.default.createElement(
 	                        'span',
 	                        { className: 'icon' },
@@ -30157,8 +30157,8 @@
 	                            'li',
 	                            null,
 	                            _react2.default.createElement(
-	                                'a',
-	                                { href: 'trainee/calendar#training', className: 'item' },
+	                                _reactRouter.Link,
+	                                { to: '/calendar#training', className: 'item' },
 	                                _react2.default.createElement(
 	                                    'span',
 	                                    { className: 'icon' },
@@ -30171,8 +30171,8 @@
 	                            'li',
 	                            null,
 	                            _react2.default.createElement(
-	                                'a',
-	                                { href: 'trainee/calendar#training', className: 'item' },
+	                                _reactRouter.Link,
+	                                { to: '/calendar#training', className: 'item' },
 	                                _react2.default.createElement(
 	                                    'span',
 	                                    { className: 'icon' },
@@ -30185,8 +30185,8 @@
 	                            'li',
 	                            null,
 	                            _react2.default.createElement(
-	                                'a',
-	                                { href: 'trainee/calendar#training', className: 'item' },
+	                                _reactRouter.Link,
+	                                { to: '/calendar#training', className: 'item' },
 	                                _react2.default.createElement(
 	                                    'span',
 	                                    { className: 'icon' },
@@ -30199,8 +30199,8 @@
 	                            'li',
 	                            null,
 	                            _react2.default.createElement(
-	                                'a',
-	                                { href: 'trainee/calendar#training', className: 'item' },
+	                                _reactRouter.Link,
+	                                { to: 'trainee/calendar#training', className: 'item' },
 	                                _react2.default.createElement(
 	                                    'span',
 	                                    { className: 'icon' },
@@ -30213,8 +30213,8 @@
 	                            'li',
 	                            null,
 	                            _react2.default.createElement(
-	                                'a',
-	                                { href: 'trainee/calendar#training', className: 'item' },
+	                                _reactRouter.Link,
+	                                { to: 'trainee/calendar#training', className: 'item' },
 	                                _react2.default.createElement(
 	                                    'span',
 	                                    { className: 'icon' },

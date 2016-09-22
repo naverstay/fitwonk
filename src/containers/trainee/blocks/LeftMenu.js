@@ -22,7 +22,7 @@ export default React.createClass({
                     <NavLink to="/profile" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/img/icon_settings.png" alt="" /></span>Настройки</NavLink>
                 </li>
                 <li>
-                    <NavLink to="site/logout" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/img/icon_exit.png" alt="" /></span>Выход</NavLink>
+                    <Link to="/logout" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/img/icon_exit.png" alt="" /></span>Выход</Link>
                 </li>
                 <li>
                     <Link to="/test_page" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/img/icon_exit.png" alt="" /></span>Разводящая страница</Link>

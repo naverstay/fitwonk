@@ -34,11 +34,11 @@ render((
 
         {/* Different pages */}
         <Route path="/login" component={PageLogin}/>
+        <Route path="/logout" component={PageLogin}/>
         <Route path="/registration" component={PageRegistration}/>
         <Route path="/password-reset" component={PagePasswordReset}/>
         <Route path="/program" component={PageProgram}/>
         <Route path="/tariff" component={PageTariff}/>
-        <Route path="/payment" component={PageTariff}/>
         <Route path="/registration-form" component={PageRegistrationForm}/>
         <Route path="/training" component={PageTraining}/>
 

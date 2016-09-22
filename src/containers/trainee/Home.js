@@ -32,11 +32,11 @@ export default React.createClass({
                     </div>
                     <div className="day-training">
                         <ul className="training-list">
-                            <li><a href="trainee/calendar#training" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/uploads/exercise/icon/46.png" alt=""/></span>Приседания</a></li>
-                            <li><a href="trainee/calendar#training" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/uploads/exercise/icon/93.png" alt=""/></span>Лодочка с прямыми руками вперед</a></li>
-                            <li><a href="trainee/calendar#training" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/uploads/exercise/icon/97.png" alt=""/></span>Отжимания широким хватом с колен</a></li>
-                            <li><a href="trainee/calendar#training" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/uploads/exercise/icon/108.png" alt=""/></span>Обратные отжимания от стула, колени согнуты</a></li>
-                            <li><a href="trainee/calendar#training" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/uploads/exercise/icon/61.png" alt=""/></span>Пресс</a></li>
+                            <li><Link to="/calendar#training" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/uploads/exercise/icon/46.png" alt=""/></span>Приседания</Link></li>
+                            <li><Link to="/calendar#training" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/uploads/exercise/icon/93.png" alt=""/></span>Лодочка с прямыми руками вперед</Link></li>
+                            <li><Link to="/calendar#training" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/uploads/exercise/icon/97.png" alt=""/></span>Отжимания широким хватом с колен</Link></li>
+                            <li><Link to="trainee/calendar#training" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/uploads/exercise/icon/108.png" alt=""/></span>Обратные отжимания от стула, колени согнуты</Link></li>
+                            <li><Link to="trainee/calendar#training" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/uploads/exercise/icon/61.png" alt=""/></span>Пресс</Link></li>
                         </ul>
                         <div className="day">
                             <table>
