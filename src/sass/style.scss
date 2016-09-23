@@ -3065,7 +3065,6 @@ video {
         padding-right: 0 !important;
       }
     }
-
   }
 
   .description-right {
@@ -3105,12 +3104,15 @@ video {
     }
 
     @include respond-to-max($resp_step_2) {
+      clear: both;
       display: block;
       float: none;
-      clear: both;
-      margin-top: 26px;
-      max-width: 170px;
       text-align: center;
+
+      &.start-training-btn {
+        margin-top: 26px;
+        max-width: 170px;
+      }
     }
   }
 }
@@ -4742,6 +4744,7 @@ video {
 
         @include respond-to-max($resp_step_2) {
           margin: 0 auto;
+          max-width: none !important;
         }
       }
       .img-label {
@@ -5781,9 +5784,9 @@ video {
     .w150 {
       width: 150px;
 
-      @include respond-to-max($resp_step_2) {
-        width: auto;
-      }
+      //@include respond-to-max($resp_step_2) {
+      //  width: auto;
+      //}
     }
     .w220 {
       width: 220px;
@@ -5794,7 +5797,7 @@ video {
       width: 100%;
 
       @include respond-to-max($resp_step_2) {
-        margin-top: 50px;
+        //margin-top: 50px;
       }
     }
     .fdc {
@@ -5807,6 +5810,33 @@ video {
       font-weight: normal;
       font-style: normal;
     }
+
+    @include respond-to-max($resp_step_2) {
+      display: block;
+      height: auto;
+      
+      tr {
+        display: block;
+      }
+      
+      td {
+        display: block;
+        width: auto !important;
+        text-align: center;
+      }
+
+      .congratulation_text {
+        margin-top: 20px;
+        font-size: 40px;
+      }
+      
+      .user_level {
+        img {
+          max-width: 240px;
+        }
+      }
+    }
+        
   }
   .trainer {
     display: block;

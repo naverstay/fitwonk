@@ -28,7 +28,7 @@ export default React.createClass({
                 <div className="info-section">
                     <div className="info-title">
                         <div className="text-title pull-left mob_hidden">Тренировка</div>
-                        <Link to="/training" className="button small pull-right" style={{"padding": "5px 25px 0 !important"}}>Начать тренировку</Link>
+                        <Link to="/training" className="button small pull-right start-training-btn" style={{"padding": "5px 25px 0 !important"}}>Начать тренировку</Link>
                     </div>
                     <div className="day-training">
                         <ul className="training-list">
@@ -59,10 +59,10 @@ export default React.createClass({
                             <table className="table">
                                 <tr>
                                     <td className="w150 pl20 tu">
-                                        <div className="fs20">Поздравляем!</div>
-                                        <div className="fflc">У вас новый уровень.</div>
+                                        <div className="fs20 congratulation_text">Поздравляем!</div>
+                                        <div className="fflc mob_hidden">У вас новый уровень.</div>
                                     </td>
-                                    <td><img src="http://login.fitwonk.dev.pz.su/uploads/bages/1.png"/> </td>
+                                    <td className="user_level"><img src="http://login.fitwonk.dev.pz.su/uploads/bages/1.png"/> </td>
                                     <td className="w150 pr20 tu fflc"></td>
                                 </tr>
                             </table>

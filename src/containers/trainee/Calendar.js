@@ -192,6 +192,7 @@ export default React.createClass({
                                             </p>
                                         </video>
                                     </div>
+                                    
                                     <div className="foto-practice">
                                         <div className="wr-img">
                                             <img
