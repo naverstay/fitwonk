@@ -27193,7 +27193,7 @@
 	    render: function render() {
 	        return _react2.default.createElement(
 	            'div',
-	            null,
+	            { className: this.props.location.pathname == '/dialog' ? 'trainer_view' : '' },
 	            _react2.default.createElement(
 	                'div',
 	                { id: 'alertMessage', className: 'alert-message' },
@@ -30143,7 +30143,7 @@
 	                    ),
 	                    _react2.default.createElement(
 	                        _reactRouter.Link,
-	                        { to: '/training', className: 'button small pull-right', style: { "padding": "5px 25px 0 !important" } },
+	                        { to: '/training', className: 'button small pull-right start-training-btn', style: { "padding": "5px 25px 0 !important" } },
 	                        'Начать тренировку'
 	                    )
 	                ),
@@ -30275,18 +30275,18 @@
 	                                { className: 'w150 pl20 tu' },
 	                                _react2.default.createElement(
 	                                    'div',
-	                                    { className: 'fs20' },
+	                                    { className: 'fs20 congratulation_text' },
 	                                    'Поздравляем!'
 	                                ),
 	                                _react2.default.createElement(
 	                                    'div',
-	                                    { className: 'fflc' },
+	                                    { className: 'fflc mob_hidden' },
 	                                    'У вас новый уровень.'
 	                                )
 	                            ),
 	                            _react2.default.createElement(
 	                                'td',
-	                                null,
+	                                { className: 'user_level' },
 	                                _react2.default.createElement('img', { src: 'http://login.fitwonk.dev.pz.su/uploads/bages/1.png' }),
 	                                ' '
 	                            ),

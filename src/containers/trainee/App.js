@@ -6,7 +6,7 @@ import { Link } from 'react-router'
 export default React.createClass({
   render() {
     return (
-        <div>
+        <div className={this.props.location.pathname == '/dialog' ? 'trainer_view' : ''}>
             <div id="alertMessage" className="alert-message">
                 <div className="page-width">
                     Старая версия IE
