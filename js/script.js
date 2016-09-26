@@ -474,9 +474,72 @@
 })( jQuery, window, document );
 
 $(window).load(function(){
-    $('.slider').isbEasySlideB({
-        blocks: 3
+    //$('.slider').isbEasySlideB({
+    //    blocks: 3
+    //});
+    //
+    //return;
+
+    $('body').delegate('.li-block', 'click', function () {
+        var _this = $(this);
+
+        if (!_this.hasClass('active')) {
+            _this.closest('.ul-line').find('.li-block').removeClass('active');
+            _this.addClass('active');
+            $("#li-trainer-id").val(_this.data('id'));
+        }
     });
+
+    $('.slider').each(function (ind) {
+        var sld = $(this), maxH = 0;
+
+        sld.find('.li-line').each(function (ind) {
+            maxH = Math.max(maxH, $(this).height());
+        });
+        
+        sld.find('.li-line .li-block').css('height', maxH);
+
+        sld.find('.ul-line').slick({
+            dots: false,
+            mobileFirst: true,
+            centerMode: false,
+            infinite: false,
+            arrows: true,
+            //variableWidth: true,
+            speed: 600,
+            zIndex: 1,
+            initialSlide: 0,
+            nextArrow: sld.find('.navigate .next'),
+            prevArrow: sld.find('.navigate .prev'),
+            //centerPadding: '0',
+            slide: '.li-line',
+            //appendDots: sld.parent().find('.slider_dots'),
+            slidesToShow: 1,
+            touchThreshold: 10,
+            //asNavFor: sld.prevAll('.popupObjectSlider').first(),
+            responsive: [
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                }
+            ]
+        });
+    });
+
 });
 
 // ----- DOM READY -----
@@ -504,8 +567,6 @@ $(function(){
     // edit slider on trainings
     
     $('.foto-practice').each(function (ind) {
-
-        console.log($(this));
         
         $(this).slick({
             dots: true,
