@@ -2865,9 +2865,11 @@ video {
 
 .info-place {
   margin: 0 0 25px;
+  display: none;
 
-  //float: right;
-  //overflow: hidden;
+  .trainer_view & {
+    display: block;
+  }
 
   &.banner {
     overflow: hidden;
@@ -2880,10 +2882,23 @@ video {
   }
 
   @include respond-to-min($resp_step_2) {
+    display: block;
     float: none;
     width: auto;
     min-height: 285px;
   }
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+.slick-track {
+  @extend %clearfix;
+}
+
+.slick-slide {
+  float: left;
 }
 
 .info-section {
@@ -4605,8 +4620,14 @@ video {
 
       @include respond-to-max($resp_step_2) {
         font-size: 0;
-        width: 40px;
-        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABgElEQVQ4jdWSMYviUBhF57fbCGJh6x8QFEHUJjZ2JkYSUyhoVOIjisYQEx9JJJEXzhTT7TrMbrOwtz+Hy/2+j4//LkopoijCdV10XeevIdM0mc1mmKaJ67rfC36FbNtGCMHxeMT3fQzDIEkSfoTO5zNVVSGlZLPZcD6fSdMU0zR5C1mWhe/7lGXJ6/WiLEuEEDiOQxAEKKUwTRMhxJdA13UMw0AIQZ7nSCl5PB5IKbnf79i2zXK5JAgCiqJAKcVkMqEoii9BWZb4vs9iscCyLOI4JkkSDocD0+kUx3E4nU5IKcnznO12y3w+/308pRSXywXDMOj1emiaxmq1wvM8wjAkjmPSNGU8HnO9Xr9fv6oq2u02uq4zGo2Yz+ckScLtdiMMQ7rd7s+3bzQadDod2u02/X6fZrOJYRgMh0Ns235f//l8EkURl8uFWq1Gq9Viv98TxzFCCAaDAfV6nSzL3guiKGK322FZFpqmMZvNWK/XeJ5HEARkWYZS6s9e95/mE2A5yO7SnzbUAAAAAElFTkSuQmCC) no-repeat 50%;
+        width: 41px;
+        background: url(../img/right_arrow.png) no-repeat 50%;
+        -webkit-background-size: cover;
+           -moz-background-size: cover;
+             -o-background-size: cover;
+                background-size: cover;
+                
+        //background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABgElEQVQ4jdWSMYviUBhF57fbCGJh6x8QFEHUJjZ2JkYSUyhoVOIjisYQEx9JJJEXzhTT7TrMbrOwtz+Hy/2+j4//LkopoijCdV10XeevIdM0mc1mmKaJ67rfC36FbNtGCMHxeMT3fQzDIEkSfoTO5zNVVSGlZLPZcD6fSdMU0zR5C1mWhe/7lGXJ6/WiLEuEEDiOQxAEKKUwTRMhxJdA13UMw0AIQZ7nSCl5PB5IKbnf79i2zXK5JAgCiqJAKcVkMqEoii9BWZb4vs9iscCyLOI4JkkSDocD0+kUx3E4nU5IKcnznO12y3w+/308pRSXywXDMOj1emiaxmq1wvM8wjAkjmPSNGU8HnO9Xr9fv6oq2u02uq4zGo2Yz+ckScLtdiMMQ7rd7s+3bzQadDod2u02/X6fZrOJYRgMh0Ns235f//l8EkURl8uFWq1Gq9Viv98TxzFCCAaDAfV6nSzL3guiKGK322FZFpqmMZvNWK/XeJ5HEARkWYZS6s9e95/mE2A5yO7SnzbUAAAAAElFTkSuQmCC) no-repeat 50%;
       }
 
     }
@@ -4755,6 +4776,86 @@ video {
         font-size: 30px;
       }
     }
+
+    &.slick-slider {
+      position: relative;
+
+      .slick-arrow {
+        position: absolute;
+        top: 50%;
+        font-size: 0;
+        width: 30px;
+        height: 30px;
+        margin-top: -15px;
+        z-index: 3;
+        outline: 0;
+
+        &.slick-prev {
+          left: 10px;
+          background: url(../img/left_arrow.png) no-repeat 0 0;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
+
+        &.slick-next {
+          right: 10px;
+          background: url(../img/right_arrow.png) no-repeat 0 0;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
+      }
+
+      .slick-dots {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 20px;
+        text-align: center;
+
+        > li {
+          display: inline-block;
+          vertical-align: top;
+          border-radius: 100%;
+          width: 12px;
+          height: 12px;
+          background: #fff;
+          position: relative;
+          margin: 0 4px;
+
+          button {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            font-size: 0;
+            outline: 0;
+          }
+
+          &.slick-active {
+            &:before {
+              content: '';
+              position: absolute;
+              top: 2px;
+              left: 2px;
+              width: 6px;
+              height: 6px;
+              border-radius: 100%;
+              background: #4c75b0;
+            }
+          }
+
+        }
+
+      }
+
+    }
+    
+    
   }
   .desc-practice {
     padding-top: 15px;
