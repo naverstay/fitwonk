@@ -28,7 +28,10 @@ export default React.createClass({
                                 <div className="info-section no-b-indent">
                                     <div className="info-title">
                                         <div className="sub"><Link to="/program">Изменить</Link></div>
-                                        <div className="text-title">Индивидуальная программа</div>
+                                        <div className="text-title">
+                                            <span className="mob_hidden">Индивидуальная</span>
+                                            <span>программа</span>
+                                             </div>
                                     </div>
                                 </div>
                                 <div className="info-section">
@@ -36,7 +39,7 @@ export default React.createClass({
                                         <div className="text-title">Выбор абонемента и оплата</div>
                                     </div>
                                     <div className="select-programm">
-                                        <div className="abonement-title">Выбор абонемента:</div>
+                                        <div className="abonement-title mob_hidden">Выбор абонемента:</div>
                                         <input type="hidden" name="plan_id" id="li-trainer-id" value="skip" />
                                         <div className="select-trainer">
                                             <div className="slider">

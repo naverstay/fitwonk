@@ -11,7 +11,7 @@ export default React.createClass({
                         </div>
                         <div className="header-title">
                             <div className="mob_hidden">Ваш персональный коучер</div>
-                            <div className="dt_hidden">Твой персональный коучер</div>
+                            <div className="dt_hidden mob_hidden">Твой персональный коучер</div>
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@ export default React.createClass({
                                     <div className="select-programm">
 
 
-                                        <div className="trainer-title">Выбор коучера:</div>
+                                        <div className="trainer-title mob_hidden">Выбор коучера:</div>
                                         <div className="select-trainer">
                                             <div className="slider">
                                                 <div className="over-line">

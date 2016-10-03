@@ -187,7 +187,7 @@ export default React.createClass({
                                                     <div className="day">
                                                         <div className="wr-select">
                                                             <select name="birthday_date" className="custom">
-                                                                <option value="01" selected="selected">01</option>
+                                                                <option value="01" selected="defaultValue">01</option>
                                                                 <option value="02">02</option>
                                                                 <option value="03">03</option>
                                                                 <option value="04">04</option>
@@ -224,7 +224,7 @@ export default React.createClass({
                                                     <div className="month">
                                                         <div className="wr-select">
                                                             <select name="birthday_month" className="custom">
-                                                                <option value="01" selected="selected">Январь</option>
+                                                                <option value="01" selected="defaultValue">Январь</option>
                                                                 <option value="02">Февраль</option>
                                                                 <option value="03">Март</option>
                                                                 <option value="04">Апрель</option>
@@ -266,7 +266,7 @@ export default React.createClass({
                                                                 <option value="1967">1967</option>
                                                                 <option value="1968">1968</option>
                                                                 <option value="1969">1969</option>
-                                                                <option value="1970" selected="selected">1970</option>
+                                                                <option value="1970" selected="defaultValue">1970</option>
                                                                 <option value="1971">1971</option>
                                                                 <option value="1972">1972</option>
                                                                 <option value="1973">1973</option>
@@ -351,7 +351,7 @@ export default React.createClass({
                                                     <div className="form-group field-profileform-activity">
                                                         <label className="control-label" htmlFor="profileform-activity"></label>
                                                         <select id="profileform-activity" className="custom" name="ProfileForm[activity]">
-                                                            <option value="34" selected>Минимальная (никаких физических нагрузок)</option>
+                                                            <option value="34" selected="defaultValue">Минимальная (никаких физических нагрузок)</option>
                                                             <option value="35">Низкая (физические нагрузки 1-3 раза в неделю)</option>
                                                             <option value="36">Средняя (3-5 раз в неделю)</option>
                                                             <option value="37">Высокая (6-7 раз в неделю)</option>
@@ -369,7 +369,7 @@ export default React.createClass({
                                                     <div className="form-group field-profileform-level">
                                                         <label className="control-label" htmlFor="profileform-level"></label>
                                                         <select id="profileform-level" className="custom" name="ProfileForm[level]">
-                                                            <option value="29" selected>Начальный</option>
+                                                            <option value="29" selected="defaultValue">Начальный</option>
                                                             <option value="31">Средний</option>
                                                             <option value="32">Полупрофессиональный</option>
                                                             <option value="33">Профессиональный</option>
@@ -412,7 +412,7 @@ export default React.createClass({
                                                     <div className="form-group field-profileform-purpose">
                                                         <label className="control-label" htmlFor="profileform-purpose"></label>
                                                         <select id="profileform-purpose" className="custom" name="ProfileForm[purpose]">
-                                                            <option value="689" selected>Набор силы</option>
+                                                            <option value="689" selected="defaultValue">Набор силы</option>
                                                             <option value="26">Сброс веса</option>
                                                         </select>
 

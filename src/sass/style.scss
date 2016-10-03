@@ -1323,6 +1323,14 @@ video {
   }
 }
 
+.widget-step-pulse, .widget-step-rate, .widget-step-comment {
+  display: none;
+}
+
+.widget-step-work {
+  display: block;
+}
+
 .rating-traning {
   text-align: center;
   padding: 10px 0 0;
@@ -1502,7 +1510,12 @@ video {
 
 .header {
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 5px;
+
+  @include respond-to-min($resp_step_2) {
+    padding-bottom: 50px;
+  }
+  
   .sep {
     margin: 0 7px;
     color: $color_stack_approx;
@@ -2090,7 +2103,7 @@ video {
   .abonement-title {
     text-transform: uppercase;
     color: $color_star_dust_approx;
-    margin: 25px 20px 5px;
+    margin: 5px 20px;
 
     @include respond-to-min($resp_step_1) {
       margin: 25px 30px 5px;
@@ -2942,8 +2955,12 @@ video {
       padding-top: 12px;
     }
     .text-title {
-      font-size: 20px;
+      font-size: 18px;
       text-transform: uppercase;
+
+      @include respond-to-min($resp_step_2) {
+        font-size: 20px;
+      }
     }
     &.small {
       .text-title {

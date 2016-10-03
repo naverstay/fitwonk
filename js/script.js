@@ -519,22 +519,7 @@ $(function(){
     // edit slider on trainings
 
     initPracticeSlider();
-  
-    // edit init
-     
-    $('.editMe').editable(function (value, settings) {
-        console.log(this);
-        console.log(value);
-        console.log(settings);
-        return (value);
-    }, {
-        placeholder: 'Пусто :(',
-        width: '80px',
-        height: '22px',
-        cssclass: 'edit_form',
-        onblur: 'ignore',
-        submit: 'OK'
-    });
+
     // trainer collapse
     $('.trainerBlock').click(function () {
         $(this).closest('.trainer-section').find('.trainer-info').slideToggle();
@@ -776,6 +761,19 @@ function initSliders () {
     });
 }
 
+function initEdit () {
+    // edit init
+    $('.editMe').editable(function (value, settings) {
+        return (value);
+    }, {
+        placeholder: 'Пусто :(',
+        width: '80px',
+        height: '22px',
+        cssclass: 'edit_form',
+        onblur: 'ignore',
+        submit: 'OK'
+    });
+}
 function initPracticeSlider () {
     $('.foto-practice').each(function (ind) {
         var practice = $(this);

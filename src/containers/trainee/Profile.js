@@ -20,38 +20,42 @@ export default React.createClass({
                         </div>
                         <div className="info-table">
                             <table>
-                                <tr><td>
-                                    <div className="info">
-                                        <span className="title">Возраст:</span>
-                                        <span className="editMe edit_v1">
-                                        46 лет 
-                                        </span>
-                                    </div>
-                                    <div className="info">
-                                        <span className="title">Город:</span>
-                                        <span className="editMe edit_v1"></span>
-                                    </div>
-                                    <div className="info">
-                                        <span className="title">День рождения:</span> 
-                                        <span className="editMe edit_v1">01.01.1970</span>
-                                    </div>
-                                    <div className="info">
-                                        <span className="title">Рост:</span>
-                                        <span className="editMe edit_v1">175 см</span>
-                                        <span style={{"marginLeft": "12px"}}>
-                                            <span className="title">Вес:</span> 
-                                            <span className="editMe edit_v1">98 кг</span>
-                                        </span>
-                                    </div>
-                                    <div className="info">
-                                        <span className="title">Интересы:</span>
-                                        <span className="editMe edit_v1"></span>
-                                    </div>
-                                    <div className="info">
-                                        <span className="title">Программа:</span>
-                                        <span className="editMe edit_v1">Набор силы</span>
-                                    </div>
-                                </td></tr>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div className="info">
+                                                <span className="title">Возраст:</span>
+                                            <span className="editMe edit_v1">
+                                            46 лет 
+                                            </span>
+                                            </div>
+                                            <div className="info">
+                                                <span className="title">Город:</span>
+                                                <span className="editMe edit_v1"></span>
+                                            </div>
+                                            <div className="info">
+                                                <span className="title">День рождения:</span>
+                                                <span className="editMe edit_v1">01.01.1970</span>
+                                            </div>
+                                            <div className="info">
+                                                <span className="title">Рост:</span>
+                                                <span className="editMe edit_v1">175 см</span>
+                                            <span style={{"marginLeft": "12px"}}>
+                                                <span className="title">Вес:</span> 
+                                                <span className="editMe edit_v1">98 кг</span>
+                                            </span>
+                                            </div>
+                                            <div className="info">
+                                                <span className="title">Интересы:</span>
+                                                <span className="editMe edit_v1"></span>
+                                            </div>
+                                            <div className="info">
+                                                <span className="title">Программа:</span>
+                                                <span className="editMe edit_v1">Набор силы</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -104,8 +108,8 @@ export default React.createClass({
                         <div className="switch-place mob_hidden">
                             <div className="switch ">
                                 <div></div>
-                                <span className="true" onClick="$('#user-training_status').val(1)">Тренируюсь</span>
-                                <span className="false" onClick="$('#user-training_status').val(0)">Отдыхаю</span>
+                                <span className="true">Тренируюсь</span>
+                                <span className="false">Отдыхаю</span>
                             </div>
                             <div className="form-group field-user-training_status">
                                 <label className="control-label" htmlFor="user-training_status"></label>
@@ -152,7 +156,7 @@ export default React.createClass({
                                             <option value="1967">1967</option>
                                             <option value="1968">1968</option>
                                             <option value="1969">1969</option>
-                                            <option value="1970" selected="selected">1970</option>
+                                            <option value="1970" selected="defaultValue">1970</option>
                                             <option value="1971">1971</option>
                                             <option value="1972">1972</option>
                                             <option value="1973">1973</option>
@@ -189,7 +193,7 @@ export default React.createClass({
                                 <div className="data w125">
                                     <div className="wr">
                                         <select name="birthday_month" className="custom">
-                                            <option value="01" selected="selected">Январь</option>
+                                            <option value="01" selected="defaultValue">Январь</option>
                                             <option value="02">Февраль</option>
                                             <option value="03">Март</option>
                                             <option value="04">Апрель</option>
@@ -207,7 +211,7 @@ export default React.createClass({
                                 <div className="data w60">
                                     <div className="wr">
                                         <select name="birthday_date" className="custom">
-                                            <option value="01" selected="selected">01</option>
+                                            <option value="01" selected="defaultValue">01</option>
                                             <option value="02">02</option>
                                             <option value="03">03</option>
                                             <option value="04">04</option>
@@ -280,5 +284,8 @@ export default React.createClass({
                 </form>
             </div>
         )
+    },
+    componentDidMount() {
+        initEdit();
     }
 })
