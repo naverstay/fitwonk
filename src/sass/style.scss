@@ -2424,6 +2424,11 @@ video {
   .wr-checkbox .isb-easySwitches {
     margin: 6px;
   }
+  .ul-line:not(.description_opened) .info_description {
+    @include respond-to-max($resp_step_2) {
+      display: none;
+    }
+  }
 }
 
 .slider {
