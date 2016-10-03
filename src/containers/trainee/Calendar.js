@@ -454,5 +454,8 @@ export default React.createClass({
 
             </div>
         )
+    },
+    componentDidMount() {
+        initPracticeSlider();
     }
 })

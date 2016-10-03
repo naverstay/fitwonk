@@ -490,55 +490,7 @@ $(window).load(function(){
         }
     });
 
-    $('.slider').each(function (ind) {
-        var sld = $(this), maxH = 0;
-
-        sld.find('.li-line').each(function (ind) {
-            maxH = Math.max(maxH, $(this).height());
-        });
-        
-        sld.find('.li-line .li-block').css('height', maxH);
-
-        sld.find('.ul-line').slick({
-            dots: false,
-            mobileFirst: true,
-            centerMode: false,
-            infinite: false,
-            arrows: true,
-            //variableWidth: true,
-            speed: 600,
-            zIndex: 1,
-            initialSlide: 0,
-            nextArrow: sld.find('.navigate .next'),
-            prevArrow: sld.find('.navigate .prev'),
-            //centerPadding: '0',
-            slide: '.li-line',
-            //appendDots: sld.parent().find('.slider_dots'),
-            slidesToShow: 1,
-            touchThreshold: 10,
-            //asNavFor: sld.prevAll('.popupObjectSlider').first(),
-            responsive: [
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2
-                    }
-                },
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3
-                    }
-                }
-            ]
-        });
-    });
+    initSliders();
 
 });
 
@@ -771,8 +723,60 @@ $(function(){
     });
 });
 
+function initSliders () {
+
+    $('.slider').each(function (ind) {
+        var sld = $(this), maxH = 0;
+
+        sld.find('.li-line').each(function (ind) {
+            maxH = Math.max(maxH, $(this).height());
+        });
+
+        sld.find('.li-line .li-block').css('height', maxH);
+
+        sld.find('.ul-line').slick({
+            dots: false,
+            mobileFirst: true,
+            centerMode: false,
+            infinite: false,
+            arrows: true,
+            //variableWidth: true,
+            speed: 600,
+            zIndex: 1,
+            initialSlide: 0,
+            nextArrow: sld.find('.navigate .next'),
+            prevArrow: sld.find('.navigate .prev'),
+            //centerPadding: '0',
+            slide: '.li-line',
+            //appendDots: sld.parent().find('.slider_dots'),
+            slidesToShow: 1,
+            touchThreshold: 10,
+            //asNavFor: sld.prevAll('.popupObjectSlider').first(),
+            responsive: [
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                }
+            ]
+        });
+    });
+}
+
 function initPracticeSlider () {
-    console.log($('.foto-practice'));
     $('.foto-practice').each(function (ind) {
         var practice = $(this);
         

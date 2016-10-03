@@ -110,5 +110,8 @@ export default React.createClass({
                 <div className="hide-page-layer"></div>
             </div>
         )
+    },
+    componentDidMount() {
+        initSliders();
     }
 })
