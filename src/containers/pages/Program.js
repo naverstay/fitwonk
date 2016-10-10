@@ -44,15 +44,17 @@ export default React.createClass({
                                                                     <div className="photo"><img src="http://login.fitwonk.dev.pz.su/uploads/avatar/61.jpg?1454997322"/></div>
                                                                     <div className="name">Михаил Аббасов</div>
                                                                     <div className="info"><span className="title">Возраст:</span> 31 год</div>
-                                                                    <div className="info"><span className="title educationToggle">Образование: </span> 
+                                                                    <div className="info"><span className="title">Образование: </span> 
+                                                                        <span className="educationToggle">Сертифицированный тренер&nbsp;<span
+                                                                            className="expand_arrow"><img
+                                                                            src="img/icon_sprite_img.png"
+                                                                            alt=""/></span></span>
                                                                         <span className="info_education">
-                                                                             Сертифицированный тренер  «Ассоциации профессионалов фитнеса» (FPA) по специальности «инструктор тренажерного зала»
+                                                                               «Ассоциации профессионалов фитнеса» (FPA) по специальности «инструктор тренажерного зала»
                                                                         </span>
                                                                         </div>
-                                                                    <div className="info"><span className="title directionToggle">Направление: </span>
-                                                                        <span className="info_direction">
-                                                                            Направление:
-                                                                        Функциональный тренинг, подвесной тренинг (джангл жим),
+                                                                    <div className="info"><span className="title">Направление: </span>
+                                                                        <span className="directionToggle">Функциональный тренинг&nbsp;<span className="expand_arrow"><img src="img/icon_sprite_img.png" alt=""/></span></span><span className="info_direction">, подвесной тренинг (джангл жим),
                                                                         снижение веса, набор мышечной массы.
                                                                         Интересы:
                                                                         Калистеника, кроссфит, кинезис.
@@ -66,14 +68,22 @@ export default React.createClass({
                                                                     <div className="photo"><img src="http://login.fitwonk.dev.pz.su/uploads/avatar/63.jpg?1454962276"/></div>
                                                                     <div className="name">Кристина Малютина</div>
                                                                     <div className="info"><span className="title">Возраст:</span> 22 года</div>
-                                                                    <div className="info"><span className="title educationToggle">Образование: </span>
+                                                                    <div className="info"><span className="title">Образование: </span>
+                                                                        <span className="educationToggle">Сертифицированный тренер&nbsp;<span
+                                                                            className="expand_arrow"><img
+                                                                            src="img/icon_sprite_img.png"
+                                                                            alt=""/></span></span>
                                                                         <span className="info_education">
-                                                                            Сертифицированный тренер Академии бодибилдинга и фитнеса по специальности «групповые программы».
+                                                                             Академии бодибилдинга и фитнеса по специальности «групповые программы».
                                                                         Профессиональный танцор с восьмилетним опытом работы, участница окружных и городских соревнований по бально-спортивным танцам.
                                                                         </span>  </div>
-                                                                    <div className="info"><span className="title directionToggle">Направление: </span>
+                                                                    <div className="info"><span className="title">Направление: </span>
+                                                                        <span className="directionToggle">Проводит летние тренировки&nbsp;<span
+                                                                            className="expand_arrow"><img
+                                                                            src="img/icon_sprite_img.png"
+                                                                            alt=""/></span></span>
                                                                         <span className="info_direction">
-                                                                             Проводит летние тренировки формата «воркаут», занятия по стрейчингу, , функциональному тренингу, снижению веса.
+                                                                             формата «воркаут», занятия по стрейчингу, , функциональному тренингу, снижению веса.
 
                                                                         Интересы: Стрейчинг, бально-спортивные танцы, стрип-пластика.
                                                                         </span>
@@ -87,16 +97,23 @@ export default React.createClass({
                                                                     <div className="photo"><img src="http://login.fitwonk.dev.pz.su/uploads/avatar/64.jpg?1454962541"/></div>
                                                                     <div className="name">Алла Тарасова</div>
                                                                     <div className="info"><span className="title">Возраст:</span> 35 лет</div>
-                                                                    <div className="info"><span className="title educationToggle">Образование: </span> 
+                                                                    <div className="info"><span className="title">Образование: </span> 
+                                                                        <span className="educationToggle">Мастер спорта Международного класса&nbsp;<span
+                                                                            className="expand_arrow"><img
+                                                                            src="img/icon_sprite_img.png"
+                                                                            alt=""/></span></span>
                                                                         <span className="info_education">
-                                                                             Мастер спорта Международного класса по легкой атлетике, выпускница «Российского государственного университета физической культуры, спорта и туризма».
+                                                                              по легкой атлетике, выпускница «Российского государственного университета физической культуры, спорта и туризма».
                                                                         Повышение квалификации:
                                                                         «Тренировки при нарушениях и заболеваниях опорно-двигательного аппарата», «Функциональная анатомия», «Функциональный тренинг», «Беременность и фитнес», «Персональная тренировка при сколиозе», «TRX-SUSPTENTION Training Course».
                                                                         </span>
                                                                     </div>
-                                                                    <div className="info"><span className="title directionToggle">Направление: </span>
-                                                                        <span className="info_direction">
-                                                                               Реабилитация, кинезиотейпирование, функциональный тренинг, снижение веса, набор мышечной массы
+                                                                    <div className="info"><span className="title">Направление: </span>
+                                                                        <span className="directionToggle">Реабилитация, кинезиотейпирование, функциональный тренинг&nbsp;<span
+                                                                            className="expand_arrow"><img
+                                                                            src="img/icon_sprite_img.png"
+                                                                            alt=""/></span></span>
+                                                                        <span className="info_direction">, снижение веса, набор мышечной массы
                                                                         Интересы:
                                                                         Исправление осанки, растяжка, восстановление после травм.
                                                                         </span>

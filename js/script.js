@@ -489,13 +489,13 @@ $(window).load(function(){
             $("#li-trainer-id").val(_this.data('id'));
         }
     }).delegate('.select-programm .directionToggle', 'click', function () {
-        var sld = $(this).closest('.slick-initialized').toggleClass('direction_opened');
+        var sld = $(this).closest('.slick-initialized').addClass('direction_opened');
         
         fitSlider(sld);
         
         return false;
     }).delegate('.select-programm .educationToggle', 'click', function () {
-        var sld = $(this).closest('.slick-initialized').toggleClass('education_opened');
+        var sld = $(this).closest('.slick-initialized').addClass('education_opened');
 
         fitSlider(sld);
 
@@ -736,49 +736,54 @@ function fitSlider (sld) {
 function initSliders () {
 
     $('.slider').each(function (ind) {
-        var sld = $(this), maxH = 0;
+        var container = $(this),
+            sld = container.find('.ul-line');
         
         fitSlider(sld);
         
-        sld.find('.ul-line').slick({
-            dots: false,
-            mobileFirst: true,
-            centerMode: false,
-            infinite: false,
-            arrows: true,
-            //variableWidth: true,
-            speed: 600,
-            zIndex: 1,
-            initialSlide: 0,
-            nextArrow: sld.find('.navigate .next'),
-            prevArrow: sld.find('.navigate .prev'),
-            //centerPadding: '0',
-            slide: '.li-line',
-            //appendDots: sld.parent().find('.slider_dots'),
-            slidesToShow: 1,
-            touchThreshold: 10,
-            //asNavFor: sld.prevAll('.popupObjectSlider').first(),
-            responsive: [
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1
+        if (sld.hasClass('slick-initialized')) {
+            sld.slick('setPosition');
+        } else {
+            sld.slick({
+                dots: false,
+                mobileFirst: true,
+                centerMode: false,
+                infinite: false,
+                arrows: true,
+                //variableWidth: true,
+                speed: 600,
+                zIndex: 1,
+                initialSlide: 0,
+                nextArrow: container.find('.navigate .next'),
+                prevArrow: container.find('.navigate .prev'),
+                //centerPadding: '0',
+                slide: '.li-line',
+                //appendDots: sld.parent().find('.slider_dots'),
+                slidesToShow: 1,
+                touchThreshold: 10,
+                //asNavFor: sld.prevAll('.popupObjectSlider').first(),
+                responsive: [
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3
+                        }
                     }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2
-                    }
-                },
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3
-                    }
-                }
-            ]
-        });
+                ]
+            });
+        }
     });
 }
 
