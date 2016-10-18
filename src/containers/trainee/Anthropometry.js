@@ -1,9 +1,12 @@
 import React from 'react'
+import Helmet from 'react-helmet'
+import { url } from '../../config'
 
 export default React.createClass({
     render() {
         return (
             <div className="info-section">
+                <Helmet title="Мои цели" />
                 <div className="info-title">
                     <div className="text-title">Мои цели</div>
                 </div>
@@ -13,7 +16,7 @@ export default React.createClass({
                         <div className="left-label"></div>
                         <a className="item-title drop label drop-button">
         <span className="icon">
-                    <img src="http://login.fitwonk.dev.pz.su/uploads/anthropometry/pulse_icon.png" alt=""/>                </span>
+                    <img src={url("uploads/anthropometry/pulse_icon.png")} alt=""/>                </span>
                             <span className="drop-icon">
                     <img src="img/icon_sprite_img2.png" alt=""/>                </span>
                             <span>Пульс в покое</span>
@@ -55,7 +58,7 @@ export default React.createClass({
                         <div className="left-label"></div>
                         <a className="item-title drop label drop-button">
         <span className="icon">
-                    <img src="http://login.fitwonk.dev.pz.su/uploads/anthropometry/weight_icon.png" alt=""/>                </span>
+                    <img src={url("uploads/anthropometry/weight_icon.png")} alt=""/>                </span>
                             <span className="drop-icon">
                     <img src="img/icon_sprite_img2.png" alt=""/>                </span>
                             <span>Вес</span>
@@ -101,7 +104,7 @@ export default React.createClass({
                         <div className="left-label"></div>
                         <a className="item-title drop label drop-button">
         <span className="icon">
-                    <img src="http://login.fitwonk.dev.pz.su/uploads/anthropometry/chest_icon.png" alt=""/>                </span>
+                    <img src={url("uploads/anthropometry/chest_icon.png")} alt=""/>                </span>
                             <span className="drop-icon">
                     <img src="img/icon_sprite_img2.png" alt=""/>                </span>
                             <span>Грудь</span>
@@ -146,7 +149,7 @@ export default React.createClass({
                         <div className="left-label"></div>
                         <a className="item-title drop label drop-button">
         <span className="icon">
-                    <img src="http://login.fitwonk.dev.pz.su/uploads/anthropometry/waist_icon.png" alt=""/>                </span>
+                    <img src={url("uploads/anthropometry/waist_icon.png")} alt=""/>                </span>
                             <span className="drop-icon">
                     <img src="img/icon_sprite_img2.png" alt=""/>                </span>
                             <span>Талия</span>
@@ -188,7 +191,7 @@ export default React.createClass({
                         <div className="left-label"></div>
                         <a className="item-title drop label drop-button">
         <span className="icon">
-                    <img src="http://login.fitwonk.dev.pz.su/uploads/anthropometry/hips_icon.png" alt=""/>                </span>
+                    <img src={url("uploads/anthropometry/hips_icon.png")} alt=""/>                </span>
                             <span className="drop-icon">
                     <img src="img/icon_sprite_img2.png" alt=""/>                </span>
                             <span>Бедра</span>
@@ -230,7 +233,7 @@ export default React.createClass({
                         <div className="left-label"></div>
                         <a className="item-title drop label drop-button">
         <span className="icon">
-                    <img src="http://login.fitwonk.dev.pz.su/uploads/anthropometry/biceps_icon.png" alt=""/>                </span>
+                    <img src={url("uploads/anthropometry/biceps_icon.png")} alt=""/>                </span>
                             <span className="drop-icon">
                     <img src="img/icon_sprite_img2.png" alt=""/>                </span>
                             <span>Бицепс</span>
@@ -253,7 +256,7 @@ export default React.createClass({
                                     <div className="label">?</div>
                                     <div className="info">
                                         <div className="wr-img">
-                                            <img src="http://login.fitwonk.dev.pz.su/uploads/anthropometry/biceps.png"
+                                            <img src={url("uploads/anthropometry/biceps.png")}
                                                  alt=""/></div>
                                         <div className="wr-text">Приводите руку в положение как на фотографии. Кисти рук
                                             обязательно повернуты к голове. Измерение делаете по самой высокой точке
@@ -289,47 +292,47 @@ export default React.createClass({
                         <div className="item-body drop-body">
                             <div className="rewards">
                                             <span className="reward-item ">
-    <span className="reward-img"><img src="http://login.fitwonk.dev.pz.su/uploads/bages/1.png" alt=""/></span>
+    <span className="reward-img"><img src={url("uploads/bages/1.png")} alt=""/></span>
     <span className="reward-title">
         <span className="n">0-20</span>тренировок
     </span>
 </span> <span className="reward-item disabled">
-    <span className="reward-img"><img src="http://login.fitwonk.dev.pz.su/uploads/bages/2.png" alt=""/></span>
+    <span className="reward-img"><img src={url("uploads/bages/2.png")} alt=""/></span>
     <span className="reward-title">
         <span className="n">21-50</span>тренировок
     </span>
 </span> <span className="reward-item disabled">
-    <span className="reward-img"><img src="http://login.fitwonk.dev.pz.su/uploads/bages/3.png" alt=""/></span>
+    <span className="reward-img"><img src={url("uploads/bages/3.png")} alt=""/></span>
     <span className="reward-title">
         <span className="n">51-100</span>тренировок
     </span>
 </span> <span className="reward-item disabled">
-    <span className="reward-img"><img src="http://login.fitwonk.dev.pz.su/uploads/bages/4.png" alt=""/></span>
+    <span className="reward-img"><img src={url("uploads/bages/4.png")} alt=""/></span>
     <span className="reward-title">
         <span className="n">101-200</span>тренировок
     </span>
 </span> <span className="reward-item disabled">
-    <span className="reward-img"><img src="http://login.fitwonk.dev.pz.su/uploads/bages/5.png" alt=""/></span>
+    <span className="reward-img"><img src={url("uploads/bages/5.png")} alt=""/></span>
     <span className="reward-title">
         <span className="n">201-300</span>тренировок
     </span>
 </span> <span className="reward-item disabled">
-    <span className="reward-img"><img src="http://login.fitwonk.dev.pz.su/uploads/bages/6.png" alt=""/></span>
+    <span className="reward-img"><img src={url("uploads/bages/6.png")} alt=""/></span>
     <span className="reward-title">
         <span className="n">301-400</span>тренировок
     </span>
 </span> <span className="reward-item disabled">
-    <span className="reward-img"><img src="http://login.fitwonk.dev.pz.su/uploads/bages/7.png" alt=""/></span>
+    <span className="reward-img"><img src={url("uploads/bages/7.png")} alt=""/></span>
     <span className="reward-title">
         <span className="n">401-500</span>тренировок
     </span>
 </span> <span className="reward-item disabled">
-    <span className="reward-img"><img src="http://login.fitwonk.dev.pz.su/uploads/bages/8.png" alt=""/></span>
+    <span className="reward-img"><img src={url("uploads/bages/8.png")} alt=""/></span>
     <span className="reward-title">
         <span className="n">501-750</span>тренировок
     </span>
 </span> <span className="reward-item disabled">
-    <span className="reward-img"><img src="http://login.fitwonk.dev.pz.su/uploads/bages/9.png" alt=""/></span>
+    <span className="reward-img"><img src={url("uploads/bages/9.png")} alt=""/></span>
     <span className="reward-title">
         <span className="n">751-100000</span>тренировок
     </span>

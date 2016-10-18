@@ -579,6 +579,7 @@ $(function(){
     });
 
     // view help
+/*
     $('.help .label').click(function(e){
         e.stopPropagation();
         if ( $(this).parents('.help:first').hasClass('open')) {
@@ -596,6 +597,7 @@ $(function(){
     $('.help').click(function(e) {
         e.stopPropagation();
     });
+*/
 /*
     // close help
     $('body').click(function(){

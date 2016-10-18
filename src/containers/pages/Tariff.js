@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router'
+import Helmet from 'react-helmet'
 
 export default React.createClass({
     render() {
         return (
             <div>
+                <Helmet title="Аббонемент и оплата" />
                 <div className="header">
                     <div className="page-width">
                         <div className="logo">

@@ -900,6 +900,10 @@ video {
         text-align: center;
         font-size: 30px;
         line-height: 1;
+        &.auto-text {
+          width: auto !important;
+          line-height: 0.9;
+        }
       }
     }
     .counters {
@@ -924,8 +928,8 @@ video {
       .general {
         display: inline-block;
         vertical-align: top;
-        height: 100px;
-        width: 100px;
+        height: 152px;
+        width: 152px;
         padding: 7px;
         background: $white;
         -webkit-border-radius: 120px;
@@ -942,9 +946,9 @@ video {
 
         .stat {
           position: absolute;
-          width: 100px;
+          width: 152px;
           text-align: center;
-          padding-top: 10px;
+          padding-top: 29px;
           line-height: 1.2;
           .perc {
             color: $color_mariner_approx;
@@ -1038,7 +1042,7 @@ video {
       }
     }
     .help-layer {
-      display: none;
+      //display: none;
       //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
       box-shadow: 0 0 0 2px $black_20;
       position: absolute;

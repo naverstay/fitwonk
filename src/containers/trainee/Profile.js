@@ -1,9 +1,11 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 
 export default React.createClass({
     render() {
         return (
             <div>
+                <Helmet title="Настройки" />
                 <div className="info-section">
                     <div className="info-title">
                         <div className="sub"></div>
@@ -15,7 +17,7 @@ export default React.createClass({
                                 <span className="wr-img">
                                     <img src="img/no-avatar.jpg" alt=""/>                                </span>
                                 <span className="user-label">
-                                    <img src="http://login.fitwonk.dev.pz.su/uploads/bages/1.png" alt=""/>                                </span>
+                                    <img src="uploads/bages/1.png" alt=""/>                                </span>
                             </a>
                         </div>
                         <div className="info-table">
@@ -93,7 +95,7 @@ export default React.createClass({
                                     <div className="help-block"></div>
                             </div></div>
                             <div className="photo active">
-                                <img className="default" src="http://login.fitwonk.dev.pz.su/img/no-avatar.jpg" alt=""/>                </div>
+                                <img className="default" src="img/no-avatar.jpg" alt=""/>                </div>
                         </div>
                         <div className="switch-place mob_hidden">
                             <div className="wr-input">

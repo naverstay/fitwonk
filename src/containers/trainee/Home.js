@@ -1,10 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router'
+import Helmet from 'react-helmet'
+import { url } from '../../config'
 
 export default React.createClass({
     render() {
         return (
             <div>
+                <Helmet title="Мой день" />
                 <div className="info-section">
                     <div className="info-title">
                         <div className="sub"></div>
@@ -32,11 +35,21 @@ export default React.createClass({
                     </div>
                     <div className="day-training">
                         <ul className="training-list">
-                            <li><Link to="/calendar#training" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/uploads/exercise/icon/46.png" alt=""/></span>Приседания</Link></li>
-                            <li><Link to="/calendar#training" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/uploads/exercise/icon/93.png" alt=""/></span>Лодочка с прямыми руками вперед</Link></li>
-                            <li><Link to="/calendar#training" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/uploads/exercise/icon/97.png" alt=""/></span>Отжимания широким хватом с колен</Link></li>
-                            <li><Link to="/calendar#training" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/uploads/exercise/icon/108.png" alt=""/></span>Обратные отжимания от стула, колени согнуты</Link></li>
-                            <li><Link to="/calendar#training" className="item"><span className="icon"><img src="http://login.fitwonk.dev.pz.su/uploads/exercise/icon/61.png" alt=""/></span>Пресс</Link></li>
+                            <li><Link to="/calendar#training" className="item">
+                                <span className="icon"><img src={url("uploads/exercise/icon/46.png")} alt=""/></span>Приседания
+                            </Link></li>
+                            <li><Link to="/calendar#training" className="item">
+                                <span className="icon"><img src={url("uploads/exercise/icon/93.png")} alt=""/></span>Лодочка с прямыми руками вперед
+                            </Link></li>
+                            <li><Link to="/calendar#training" className="item">
+                                <span className="icon"><img src={url("uploads/exercise/icon/97.png")} alt=""/></span>Отжимания широким хватом с колен
+                            </Link></li>
+                            <li><Link to="/calendar#training" className="item">
+                                <span className="icon"><img src={url("uploads/exercise/icon/108.png")} alt=""/></span>Обратные отжимания от стула, колени согнуты
+                            </Link></li>
+                            <li><Link to="/calendar#training" className="item">
+                                <span className="icon"><img src={url("uploads/exercise/icon/61.png")} alt=""/></span>Пресс
+                            </Link></li>
                         </ul>
                         <div className="day">
                             <table>
@@ -62,7 +75,7 @@ export default React.createClass({
                                         <div className="fs20 congratulation_text">Поздравляем!</div>
                                         <div className="fflc mob_hidden">У вас новый уровень.</div>
                                     </td>
-                                    <td className="user_level"><img src="http://login.fitwonk.dev.pz.su/uploads/bages/1.png"/> </td>
+                                    <td className="user_level"><img src={url("uploads/bages/1.png")}/> </td>
                                     <td className="w150 pr20 tu fflc"></td>
                                 </tr>
                             </table>

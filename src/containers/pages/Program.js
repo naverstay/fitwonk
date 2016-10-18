@@ -1,9 +1,12 @@
 import React from 'react'
+import Helmet from 'react-helmet'
+import { url } from '../../config'
 
 export default React.createClass({
     render() {
         return (
             <div>
+                <Helmet title="Выбор коучера" />
                 <div className="header">
                     <div className="page-width">
                         <div className="logo">
@@ -41,7 +44,7 @@ export default React.createClass({
                                                             <li className="li-line"><div className="li-ind">
                                                                 <div className="li-block li-trainer active" data-id="61">
                                                                     <div className="checked"><img src="img/icon_sprite_img.png"/></div>
-                                                                    <div className="photo"><img src="http://login.fitwonk.dev.pz.su/uploads/avatar/61.jpg?1454997322"/></div>
+                                                                    <div className="photo"><img src={url("/uploads/avatar/61.jpg?1454997322")}/></div>
                                                                     <div className="name">Михаил Аббасов</div>
                                                                     <div className="info"><span className="title">Возраст:</span> 31 год</div>
                                                                     <div className="info"><span className="title">Образование: </span> 
@@ -65,7 +68,7 @@ export default React.createClass({
                                                             <li className="li-line"><div className="li-ind">
                                                                 <div className="li-block li-trainer " data-id="63">
                                                                     <div className="checked"><img src="img/icon_sprite_img.png"/></div>
-                                                                    <div className="photo"><img src="http://login.fitwonk.dev.pz.su/uploads/avatar/63.jpg?1454962276"/></div>
+                                                                    <div className="photo"><img src={url("/uploads/avatar/63.jpg?1454962276")}/></div>
                                                                     <div className="name">Кристина Малютина</div>
                                                                     <div className="info"><span className="title">Возраст:</span> 22 года</div>
                                                                     <div className="info"><span className="title">Образование: </span>
@@ -94,7 +97,7 @@ export default React.createClass({
                                                             <li className="li-line"><div className="li-ind">
                                                                 <div className="li-block li-trainer " data-id="64">
                                                                     <div className="checked"><img src="img/icon_sprite_img.png"/></div>
-                                                                    <div className="photo"><img src="http://login.fitwonk.dev.pz.su/uploads/avatar/64.jpg?1454962541"/></div>
+                                                                    <div className="photo"><img src={url("/uploads/avatar/64.jpg?1454962541")}/></div>
                                                                     <div className="name">Алла Тарасова</div>
                                                                     <div className="info"><span className="title">Возраст:</span> 35 лет</div>
                                                                     <div className="info"><span className="title">Образование: </span> 

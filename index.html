@@ -13,17 +13,19 @@
     <meta name="csrf-param" content="_csrf">
     <meta name="csrf-token" content="Nko1a0p1QVJZKV48Zzt1GwMZYiANAA8WRg5kLAgcEwNEB0AFFTQNPQ==">
     <title>Мои цели</title>
-	<link rel="icon" href="favicon.png" type="image/png">
-    <link href="css/c3.min.css" rel="stylesheet">
-<link href="css/style.css?10" rel="stylesheet">
-<link href="css/additional.css" rel="stylesheet">
+    <link rel="icon" href="favicon.png" type="image/png">
 
-<script src="assets/5b928dd8/jquery.js"></script>
-<script src="assets/e704461e/yii.js"></script>
-<script src="js/jquery.jeditable.js"></script>
-<script src="js/script.js"></script>
-<script src="js/slick.js"></script>
-<script src="js/autosize.min.js"></script>
+    <link href="css/c3.min.css" rel="stylesheet">
+    <link href="css/style.css?10" rel="stylesheet">
+    <link href="css/additional.css" rel="stylesheet">
+    <link href="css/video-js.min.css" rel="stylesheet">
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/yii.js"></script>
+    <script src="js/jquery.jeditable.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/slick.js"></script>
+    <script src="js/autosize.min.js"></script>
 </head>
 <body>
 <style type="text/css">
@@ -209,11 +211,14 @@
     });
 </script>
 
+<script src="js/jquery.knob.js"></script>
+<script src="js/video.min.js"></script>
 <script src="js/d3.min.js"></script>
 <script src="js/c3.min.js"></script>
 <script src="js/anthropometry-graph-trainee.js"></script>
-<script src="assets/e704461e/yii.validation.js"></script>
-<script src="assets/e704461e/yii.activeForm.js"></script>
+<script src="js/vendor/yii.validation.js"></script>
+<script src="js/vendor/yii.activeForm.js"></script>
+
 <script type="text/javascript">jQuery(document).ready(function () {
 jQuery('#w0').yiiActiveForm([{"id":"contactform-name","name":"name","container":".field-contactform-name","input":"#contactform-name","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Name»."});}},{"id":"contactform-email","name":"email","container":".field-contactform-email","input":"#contactform-email","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Email»."});yii.validation.email(value, messages, {"pattern":/^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,"fullPattern":/^[^@]*<[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/,"allowName":false,"message":"Значение «Email» не является правильным email адресом.","enableIDN":false,"skipOnEmpty":1});}},{"id":"contactform-subject","name":"subject","container":".field-contactform-subject","input":"#contactform-subject","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Subject»."});}},{"id":"contactform-body","name":"body","container":".field-contactform-body","input":"#contactform-body","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Body»."});}}], []);
 });</script>

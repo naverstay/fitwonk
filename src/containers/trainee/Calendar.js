@@ -1,10 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router'
+import Helmet from 'react-helmet'
+import { url } from '../../config'
 
 export default React.createClass({
     render() {
         return (
             <div>
+                <Helmet title="Календарь тренировок" />
                 <div className="info-section">
                     <div className="info-title">
                         <div className="text-title">Календарь тренировок</div>
@@ -170,7 +173,7 @@ export default React.createClass({
                             <div className="left-label"></div>
                             <a className="item-title drop label drop-button">
                                 <span className="icon"><img
-                                    src="http://login.fitwonk.dev.pz.su/uploads/exercise/icon/46.png" alt=""/></span>
+                                    src={url("uploads/exercise/icon/46.png")} alt=""/></span>
                                 <span className="drop-icon"><img src="img/icon_sprite_img2.png"/></span>
                                 <span>Приседания</span>
                             </a>
@@ -196,13 +199,13 @@ export default React.createClass({
                                     <div className="foto-practice">
                                         <div className="wr-img">
                                             <img
-                                                src="http://login.fitwonk.dev.pz.su/uploads/exercise/023-prisedaniya_profil_02-1443703905.jpeg"
+                                                src={url("uploads/exercise/023-prisedaniya_profil_02-1443703905.jpeg")}
                                                 style={{"maxWidth": "320px"}}/>
                                             <div className="img-label"></div>
                                         </div>
                                         <div className="wr-img">
                                             <img
-                                                src="http://login.fitwonk.dev.pz.su/uploads/exercise/023-prisedaniya_fas_01-1443704645.jpeg"
+                                                src={url("uploads/exercise/023-prisedaniya_fas_01-1443704645.jpeg")}
                                                 style={{"maxWidth": "320px"}}/>
                                             <div className="img-label"></div>
                                         </div>
@@ -224,7 +227,7 @@ export default React.createClass({
                             <div className="left-label"></div>
                             <a className="item-title drop label drop-button">
                                 <span className="icon"><img
-                                    src="http://login.fitwonk.dev.pz.su/uploads/exercise/icon/93.png" alt=""/></span>
+                                    src={url("uploads/exercise/icon/93.png")} alt=""/></span>
                                 <span className="drop-icon"><img src="img/icon_sprite_img2.png"/></span>
                                 <span>Лодочка с прямыми руками вперед</span>
                             </a>
@@ -249,7 +252,7 @@ export default React.createClass({
                                     <div className="foto-practice">
                                         <div className="wr-img">
                                             <img
-                                                src="http://login.fitwonk.dev.pz.su/uploads/exercise/194-lodochka-s-pryamyimi-rukami-vpered-1444648630.jpg"
+                                                src={url("uploads/exercise/194-lodochka-s-pryamyimi-rukami-vpered-1444648630.jpg")}
                                                 style={{"maxWidth": "320px"}}/>
                                             <div className="img-label"></div>
                                         </div>
@@ -269,7 +272,7 @@ export default React.createClass({
                             <div className="left-label"></div>
                             <a className="item-title drop label drop-button">
                                 <span className="icon"><img
-                                    src="http://login.fitwonk.dev.pz.su/uploads/exercise/icon/97.png" alt=""/></span>
+                                    src={url("uploads/exercise/icon/97.png")} alt=""/></span>
                                 <span className="drop-icon"><img src="img/icon_sprite_img2.png"/></span>
                                 <span>Отжимания широким хватом с колен</span>
                             </a>
@@ -294,13 +297,13 @@ export default React.createClass({
                                     <div className="foto-practice">
                                         <div className="wr-img">
                                             <img
-                                                src="http://login.fitwonk.dev.pz.su/uploads/exercise/101-otjimaniya-s-kolen-shirokiy-hvat_01-1444730354.jpg"
+                                                src={url("uploads/exercise/101-otjimaniya-s-kolen-shirokiy-hvat_01-1444730354.jpg")}
                                                 style={{"maxWidth": "320px"}}/>
                                             <div className="img-label"></div>
                                         </div>
                                         <div className="wr-img">
                                             <img
-                                                src="http://login.fitwonk.dev.pz.su/uploads/exercise/101-otjimaniya-s-kolen-shirokiy-hvat_02-1444730368.jpg"
+                                                src={url("uploads/exercise/101-otjimaniya-s-kolen-shirokiy-hvat_02-1444730368.jpg")}
                                                 style={{"maxWidth": "320px"}}/>
                                             <div className="img-label"></div>
                                         </div>
@@ -323,7 +326,7 @@ export default React.createClass({
                             <div className="left-label"></div>
                             <a className="item-title drop label drop-button">
                                 <span className="icon"><img
-                                    src="http://login.fitwonk.dev.pz.su/uploads/exercise/icon/108.png" alt=""/></span>
+                                    src={url("uploads/exercise/icon/108.png")} alt=""/></span>
                                 <span className="drop-icon"><img src="img/icon_sprite_img2.png"/></span>
                                 <span>Обратные отжимания от стула, колени согнуты</span>
                             </a>
@@ -348,13 +351,13 @@ export default React.createClass({
                                     <div className="foto-practice">
                                         <div className="wr-img">
                                             <img
-                                                src="http://login.fitwonk.dev.pz.su/uploads/exercise/obratnyie-otjimaniya-ot-stula-koleni-sognutyi_01-1446711147.jpg"
+                                                src={url("uploads/exercise/obratnyie-otjimaniya-ot-stula-koleni-sognutyi_01-1446711147.jpg")}
                                                 style={{"maxWidth": "320px"}}/>
                                             <div className="img-label"></div>
                                         </div>
                                         <div className="wr-img">
                                             <img
-                                                src="http://login.fitwonk.dev.pz.su/uploads/exercise/obratnyie-otjimaniya-ot-stula-koleni-sognutyi_02-1446711235.jpg"
+                                                src={url("uploads/exercise/obratnyie-otjimaniya-ot-stula-koleni-sognutyi_02-1446711235.jpg")}
                                                 style={{"maxWidth": "320px"}}/>
                                             <div className="img-label"></div>
                                         </div>
@@ -377,7 +380,7 @@ export default React.createClass({
                             <div className="left-label"></div>
                             <a className="item-title drop label drop-button">
                                 <span className="icon"><img
-                                    src="http://login.fitwonk.dev.pz.su/uploads/exercise/icon/61.png" alt=""/></span>
+                                    src={url("uploads/exercise/icon/61.png")} alt=""/></span>
                                 <span className="drop-icon"><img src="img/icon_sprite_img2.png"/></span>
                                 <span>Пресс</span>
                             </a>
@@ -402,13 +405,13 @@ export default React.createClass({
                                     <div className="foto-practice">
                                         <div className="wr-img">
                                             <img
-                                                src="http://login.fitwonk.dev.pz.su/uploads/exercise/151-press_01-1445205730.jpg"
+                                                src={url("uploads/exercise/151-press_01-1445205730.jpg")}
                                                 style={{"maxWidth": "320px"}}/>
                                             <div className="img-label"></div>
                                         </div>
                                         <div className="wr-img">
                                             <img
-                                                src="http://login.fitwonk.dev.pz.su/uploads/exercise/151-press_02-1445205743.jpg"
+                                                src={url("uploads/exercise/151-press_02-1445205743.jpg")}
                                                 style={{"maxWidth": "320px"}}/>
                                             <div className="img-label"></div>
                                         </div>

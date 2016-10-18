@@ -1,9 +1,11 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 
 export default React.createClass({
     render() {
         return (
             <div>
+                <Helmet title="Сброс пароля" />
                 <div className="page-width">
                     <div className="page-bg"></div>
                 </div>

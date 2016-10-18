@@ -2,11 +2,14 @@ import React from 'react'
 import Alert from '../common/Alert'
 import LeftMenu from './blocks/LeftMenu'
 import { Link } from 'react-router'
+import Helmet from 'react-helmet'
+import { url } from '../../config'
 
 export default React.createClass({
   render() {
     return (
         <div className={this.props.location.pathname == '/dialog' ? 'trainer_view' : ''}>
+            <Helmet title="Личный кабинет" />
             <div id="alertMessage" className="alert-message">
                 <div className="page-width">
                     Старая версия IE
@@ -16,7 +19,7 @@ export default React.createClass({
                 <div className="page-width">
                     <div className="mob_menu mobMenu "></div>
                     <div className="logo">
-                        <a href="trainee"><img src="http://login.fitwonk.dev.pz.su/img/logo_fitwonk.png" alt=""/></a>
+                        <a href="trainee"><img src="img/logo_fitwonk.png" alt=""/></a>
                     </div>
                     <div className="header-title">
                         <div className="date">26.08.2016</div>
@@ -37,7 +40,7 @@ export default React.createClass({
                         <span className="wr-img">
                             <img src="img/no-avatar.jpg" alt="" />                        </span>
                             <span className="user-label">
-                            <img src="http://login.fitwonk.dev.pz.su/uploads/bages/1.png" alt="" />                        </span>
+                            <img src={url("uploads/bages/1.png")} alt="" />                        </span>
                         </Link>
                         <div className="user-account-type"><span className="label">Тариф: </span><span className="value"><Link to="/tariff">Базовый</Link></span></div>
                         <div className="user-name"><Link to="/profile">aovechkin</Link></div>
@@ -52,7 +55,7 @@ export default React.createClass({
                             <div className="user-block">
                                 <Link className="border-avatar" to="/dialog">
                         <span className="wr-img">
-                            <img src="http://login.fitwonk.dev.pz.su/uploads/avatar/61.jpg?1454997322" alt="" />                        </span>
+                            <img src={url("uploads/avatar/61.jpg?1454997322")} alt="" />                        </span>
                                 </Link>
                                 <div className="user-name"><Link to="/dialog">Михаил</Link></div>                        </div>
                             <div className="chain">
@@ -93,7 +96,7 @@ export default React.createClass({
                                 <div className="help-block"></div>
                         </div>    <div className="ang"></div>
                             <div className="info-title">
-                                <div className="sub"><span><img src="http://login.fitwonk.dev.pz.su/img/icon_done_sprite.png" alt="" /></span></div>
+                                <div className="sub"><span><img src="img/icon_done_sprite.png" alt="" /></span></div>
                                 <div className="text-title">Написать команде Fitwonk</div>
                             </div>
                             <div className="title">Причина обращения</div>

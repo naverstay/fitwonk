@@ -1,5 +1,12 @@
 import React from 'react'
 import { render } from 'react-dom'
+
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+import createSagaMiddleware from 'redux-saga'
+import rootSaga from './sagas'
+import rootReducer from './reducers'
+
 import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 
 // Trainee application
@@ -21,28 +28,38 @@ import PageTraining from './containers/pages/Training'
 
 import PageTestPage from './containers/pages/TestPage'
 
+
+const sagaMiddleware = createSagaMiddleware()
+const store = createStore(
+    rootReducer,
+    applyMiddleware(sagaMiddleware)
+)
+sagaMiddleware.run(rootSaga)
+
 render((
-    <Router history={hashHistory}>
-        {/* Trainee application */}
-        <Route path="/" component={AppTrainee}>
-            <IndexRoute component={Home}/>
-            <Route path="/calendar" component={Calendar}/>
-            <Route path="/dialog" component={Dialog}/>
-            <Route path="/anthropometry" component={Anthropometry}/>
-            <Route path="/profile" component={Profile}/>
-        </Route>
+    <Provider store={store}>
+        <Router history={hashHistory}>
+            {/* Trainee application */}
+            <Route path="/" component={AppTrainee}>
+                <IndexRoute component={Home}/>
+                <Route path="/calendar" component={Calendar}/>
+                <Route path="/dialog" component={Dialog}/>
+                <Route path="/anthropometry" component={Anthropometry}/>
+                <Route path="/profile" component={Profile}/>
+            </Route>
 
-        {/* Different pages */}
-        <Route path="/login" component={PageLogin}/>
-        <Route path="/logout" component={PageLogin}/>
-        <Route path="/registration" component={PageRegistration}/>
-        <Route path="/password-reset" component={PagePasswordReset}/>
-        <Route path="/program" component={PageProgram}/>
-        <Route path="/tariff" component={PageTariff}/>
-        <Route path="/registration-form" component={PageRegistrationForm}/>
-        <Route path="/training" component={PageTraining}/>
+            {/* Different pages */}
+            <Route path="/login" component={PageLogin}/>
+            <Route path="/logout" component={PageLogin}/>
+            <Route path="/registration" component={PageRegistration}/>
+            <Route path="/password-reset" component={PagePasswordReset}/>
+            <Route path="/program" component={PageProgram}/>
+            <Route path="/tariff" component={PageTariff}/>
+            <Route path="/registration-form" component={PageRegistrationForm}/>
+            <Route path="/training" component={PageTraining}/>
 
-        {/* Test page */}
-        <Route path="/test_page" component={PageTestPage}/>
-    </Router>
+            {/* Test page */}
+            <Route path="/test_page" component={PageTestPage}/>
+        </Router>
+    </Provider>
 ), document.getElementById('application'))

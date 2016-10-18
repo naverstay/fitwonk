@@ -24123,8 +24123,6 @@
 
 	var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
-	var _Actions = __webpack_require__(184);
-
 	var _computeChangedRoutes2 = __webpack_require__(202);
 
 	var _computeChangedRoutes3 = _interopRequireDefault(_computeChangedRoutes2);
@@ -24171,10 +24169,6 @@
 	    }
 
 	    return (0, _isActive3.default)(location, indexOnly, state.location, state.routes, state.params);
-	  }
-
-	  function createLocationFromRedirectInfo(location) {
-	    return history.createLocation(location, _Actions.REPLACE);
 	  }
 
 	  var partialNextState = void 0;
@@ -24234,7 +24228,7 @@
 	    }
 
 	    function handleErrorOrRedirect(error, redirectInfo) {
-	      if (error) callback(error);else callback(null, createLocationFromRedirectInfo(redirectInfo));
+	      if (error) callback(error);else callback(null, redirectInfo);
 	    }
 	  }
 
@@ -26385,6 +26379,8 @@
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+	var _Actions = __webpack_require__(184);
+
 	var _invariant = __webpack_require__(180);
 
 	var _invariant2 = _interopRequireDefault(_invariant);
@@ -26443,7 +26439,7 @@
 	  history = (0, _RouterUtils.createRoutingHistory)(history, transitionManager);
 
 	  transitionManager.match(location, function (error, redirectLocation, nextState) {
-	    callback(error, redirectLocation, nextState && _extends({}, nextState, {
+	    callback(error, redirectLocation && router.createLocation(redirectLocation, _Actions.REPLACE), nextState && _extends({}, nextState, {
 	      history: history,
 	      router: router,
 	      matchContext: { history: history, transitionManager: transitionManager, router: router }
@@ -29810,6 +29806,9 @@
 	                )
 	            )
 	        );
+	    },
+	    componentDidMount: function componentDidMount() {
+	        initPracticeSlider();
 	    }
 	});
 
@@ -30368,99 +30367,103 @@
 	                            "table",
 	                            null,
 	                            _react2.default.createElement(
-	                                "tr",
+	                                "tbody",
 	                                null,
 	                                _react2.default.createElement(
-	                                    "td",
+	                                    "tr",
 	                                    null,
 	                                    _react2.default.createElement(
-	                                        "div",
-	                                        { className: "info" },
+	                                        "td",
+	                                        null,
 	                                        _react2.default.createElement(
-	                                            "span",
-	                                            { className: "title" },
-	                                            "Возраст:"
-	                                        ),
-	                                        _react2.default.createElement(
-	                                            "span",
-	                                            { className: "editMe edit_v1" },
-	                                            "46 лет"
-	                                        )
-	                                    ),
-	                                    _react2.default.createElement(
-	                                        "div",
-	                                        { className: "info" },
-	                                        _react2.default.createElement(
-	                                            "span",
-	                                            { className: "title" },
-	                                            "Город:"
-	                                        ),
-	                                        _react2.default.createElement("span", { className: "editMe edit_v1" })
-	                                    ),
-	                                    _react2.default.createElement(
-	                                        "div",
-	                                        { className: "info" },
-	                                        _react2.default.createElement(
-	                                            "span",
-	                                            { className: "title" },
-	                                            "День рождения:"
-	                                        ),
-	                                        _react2.default.createElement(
-	                                            "span",
-	                                            { className: "editMe edit_v1" },
-	                                            "01.01.1970"
-	                                        )
-	                                    ),
-	                                    _react2.default.createElement(
-	                                        "div",
-	                                        { className: "info" },
-	                                        _react2.default.createElement(
-	                                            "span",
-	                                            { className: "title" },
-	                                            "Рост:"
-	                                        ),
-	                                        _react2.default.createElement(
-	                                            "span",
-	                                            { className: "editMe edit_v1" },
-	                                            "175 см"
-	                                        ),
-	                                        _react2.default.createElement(
-	                                            "span",
-	                                            { style: { "marginLeft": "12px" } },
+	                                            "div",
+	                                            { className: "info" },
 	                                            _react2.default.createElement(
 	                                                "span",
 	                                                { className: "title" },
-	                                                "Вес:"
+	                                                "Возраст:"
 	                                            ),
 	                                            _react2.default.createElement(
 	                                                "span",
 	                                                { className: "editMe edit_v1" },
-	                                                "98 кг"
+	                                                "46 лет"
 	                                            )
-	                                        )
-	                                    ),
-	                                    _react2.default.createElement(
-	                                        "div",
-	                                        { className: "info" },
-	                                        _react2.default.createElement(
-	                                            "span",
-	                                            { className: "title" },
-	                                            "Интересы:"
-	                                        ),
-	                                        _react2.default.createElement("span", { className: "editMe edit_v1" })
-	                                    ),
-	                                    _react2.default.createElement(
-	                                        "div",
-	                                        { className: "info" },
-	                                        _react2.default.createElement(
-	                                            "span",
-	                                            { className: "title" },
-	                                            "Программа:"
 	                                        ),
 	                                        _react2.default.createElement(
-	                                            "span",
-	                                            { className: "editMe edit_v1" },
-	                                            "Набор силы"
+	                                            "div",
+	                                            { className: "info" },
+	                                            _react2.default.createElement(
+	                                                "span",
+	                                                { className: "title" },
+	                                                "Город:"
+	                                            ),
+	                                            _react2.default.createElement("span", { className: "editMe edit_v1" })
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            "div",
+	                                            { className: "info" },
+	                                            _react2.default.createElement(
+	                                                "span",
+	                                                { className: "title" },
+	                                                "День рождения:"
+	                                            ),
+	                                            _react2.default.createElement(
+	                                                "span",
+	                                                { className: "editMe edit_v1" },
+	                                                "01.01.1970"
+	                                            )
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            "div",
+	                                            { className: "info" },
+	                                            _react2.default.createElement(
+	                                                "span",
+	                                                { className: "title" },
+	                                                "Рост:"
+	                                            ),
+	                                            _react2.default.createElement(
+	                                                "span",
+	                                                { className: "editMe edit_v1" },
+	                                                "175 см"
+	                                            ),
+	                                            _react2.default.createElement(
+	                                                "span",
+	                                                { style: { "marginLeft": "12px" } },
+	                                                _react2.default.createElement(
+	                                                    "span",
+	                                                    { className: "title" },
+	                                                    "Вес:"
+	                                                ),
+	                                                _react2.default.createElement(
+	                                                    "span",
+	                                                    { className: "editMe edit_v1" },
+	                                                    "98 кг"
+	                                                )
+	                                            )
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            "div",
+	                                            { className: "info" },
+	                                            _react2.default.createElement(
+	                                                "span",
+	                                                { className: "title" },
+	                                                "Интересы:"
+	                                            ),
+	                                            _react2.default.createElement("span", { className: "editMe edit_v1" })
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            "div",
+	                                            { className: "info" },
+	                                            _react2.default.createElement(
+	                                                "span",
+	                                                { className: "title" },
+	                                                "Программа:"
+	                                            ),
+	                                            _react2.default.createElement(
+	                                                "span",
+	                                                { className: "editMe edit_v1" },
+	                                                "Набор силы"
+	                                            )
 	                                        )
 	                                    )
 	                                )
@@ -30586,12 +30589,12 @@
 	                            _react2.default.createElement("div", null),
 	                            _react2.default.createElement(
 	                                "span",
-	                                { className: "true", onClick: "$('#user-training_status').val(1)" },
+	                                { className: "true" },
 	                                "Тренируюсь"
 	                            ),
 	                            _react2.default.createElement(
 	                                "span",
-	                                { className: "false", onClick: "$('#user-training_status').val(0)" },
+	                                { className: "false" },
 	                                "Отдыхаю"
 	                            )
 	                        ),
@@ -30764,7 +30767,7 @@
 	                                        ),
 	                                        _react2.default.createElement(
 	                                            "option",
-	                                            { value: "1970", selected: "selected" },
+	                                            { value: "1970", selected: "defaultValue" },
 	                                            "1970"
 	                                        ),
 	                                        _react2.default.createElement(
@@ -30931,7 +30934,7 @@
 	                                        { name: "birthday_month", className: "custom" },
 	                                        _react2.default.createElement(
 	                                            "option",
-	                                            { value: "01", selected: "selected" },
+	                                            { value: "01", selected: "defaultValue" },
 	                                            "Январь"
 	                                        ),
 	                                        _react2.default.createElement(
@@ -31003,7 +31006,7 @@
 	                                        { name: "birthday_date", className: "custom" },
 	                                        _react2.default.createElement(
 	                                            "option",
-	                                            { value: "01", selected: "selected" },
+	                                            { value: "01", selected: "defaultValue" },
 	                                            "01"
 	                                        ),
 	                                        _react2.default.createElement(
@@ -31300,6 +31303,9 @@
 	                )
 	            )
 	        );
+	    },
+	    componentDidMount: function componentDidMount() {
+	        initEdit();
 	    }
 	});
 
@@ -31691,7 +31697,7 @@
 	                        ),
 	                        _react2.default.createElement(
 	                            "div",
-	                            { className: "dt_hidden" },
+	                            { className: "dt_hidden mob_hidden" },
 	                            "Твой персональный коучер"
 	                        )
 	                    )
@@ -31729,7 +31735,7 @@
 	                                { className: "select-programm" },
 	                                _react2.default.createElement(
 	                                    "div",
-	                                    { className: "trainer-title" },
+	                                    { className: "trainer-title mob_hidden" },
 	                                    "Выбор коучера:"
 	                                ),
 	                                _react2.default.createElement(
@@ -31786,20 +31792,28 @@
 	                                                                    { className: "info" },
 	                                                                    _react2.default.createElement(
 	                                                                        "span",
-	                                                                        { className: "title" },
-	                                                                        "Образование:"
+	                                                                        { className: "title educationToggle" },
+	                                                                        "Образование: "
 	                                                                    ),
-	                                                                    " Образование: Сертифицированный тренер  «Ассоциации профессионалов фитнеса» (FPA) по специальности «инструктор тренажерного зала» "
+	                                                                    _react2.default.createElement(
+	                                                                        "span",
+	                                                                        { className: "info_education" },
+	                                                                        "Сертифицированный тренер  «Ассоциации профессионалов фитнеса» (FPA) по специальности «инструктор тренажерного зала»"
+	                                                                    )
 	                                                                ),
 	                                                                _react2.default.createElement(
 	                                                                    "div",
 	                                                                    { className: "info" },
 	                                                                    _react2.default.createElement(
 	                                                                        "span",
-	                                                                        { className: "title" },
-	                                                                        "Направление:"
+	                                                                        { className: "title directionToggle" },
+	                                                                        "Направление: "
 	                                                                    ),
-	                                                                    " Направление: Функциональный тренинг, подвесной тренинг (джангл жим), снижение веса, набор мышечной массы. Интересы: Калистеника, кроссфит, кинезис."
+	                                                                    _react2.default.createElement(
+	                                                                        "span",
+	                                                                        { className: "info_direction" },
+	                                                                        "Направление: Функциональный тренинг, подвесной тренинг (джангл жим), снижение веса, набор мышечной массы. Интересы: Калистеника, кроссфит, кинезис."
+	                                                                    )
 	                                                                )
 	                                                            )
 	                                                        )
@@ -31843,20 +31857,29 @@
 	                                                                    { className: "info" },
 	                                                                    _react2.default.createElement(
 	                                                                        "span",
-	                                                                        { className: "title" },
-	                                                                        "Образование:"
+	                                                                        { className: "title educationToggle" },
+	                                                                        "Образование: "
 	                                                                    ),
-	                                                                    " Сертифицированный тренер Академии бодибилдинга и фитнеса по специальности «групповые программы». Профессиональный танцор с восьмилетним опытом работы, участница окружных и городских соревнований по бально-спортивным танцам. "
+	                                                                    _react2.default.createElement(
+	                                                                        "span",
+	                                                                        { className: "info_education" },
+	                                                                        "Сертифицированный тренер Академии бодибилдинга и фитнеса по специальности «групповые программы». Профессиональный танцор с восьмилетним опытом работы, участница окружных и городских соревнований по бально-спортивным танцам."
+	                                                                    ),
+	                                                                    "  "
 	                                                                ),
 	                                                                _react2.default.createElement(
 	                                                                    "div",
 	                                                                    { className: "info" },
 	                                                                    _react2.default.createElement(
 	                                                                        "span",
-	                                                                        { className: "title" },
-	                                                                        "Направление:"
+	                                                                        { className: "title directionToggle" },
+	                                                                        "Направление: "
 	                                                                    ),
-	                                                                    " Проводит летние тренировки формата «воркаут», занятия по стрейчингу, , функциональному тренингу, снижению веса. Интересы: Стрейчинг, бально-спортивные танцы, стрип-пластика."
+	                                                                    _react2.default.createElement(
+	                                                                        "span",
+	                                                                        { className: "info_direction" },
+	                                                                        "Проводит летние тренировки формата «воркаут», занятия по стрейчингу, , функциональному тренингу, снижению веса. Интересы: Стрейчинг, бально-спортивные танцы, стрип-пластика."
+	                                                                    )
 	                                                                )
 	                                                            )
 	                                                        )
@@ -31900,20 +31923,28 @@
 	                                                                    { className: "info" },
 	                                                                    _react2.default.createElement(
 	                                                                        "span",
-	                                                                        { className: "title" },
-	                                                                        "Образование:"
+	                                                                        { className: "title educationToggle" },
+	                                                                        "Образование: "
 	                                                                    ),
-	                                                                    " Образование: Мастер спорта Международного класса по легкой атлетике, выпускница «Российского государственного университета физической культуры, спорта и туризма». Повышение квалификации: «Тренировки при нарушениях и заболеваниях опорно-двигательного аппарата», «Функциональная анатомия», «Функциональный тренинг», «Беременность и фитнес», «Персональная тренировка при сколиозе», «TRX-SUSPTENTION Training Course»."
+	                                                                    _react2.default.createElement(
+	                                                                        "span",
+	                                                                        { className: "info_education" },
+	                                                                        "Мастер спорта Международного класса по легкой атлетике, выпускница «Российского государственного университета физической культуры, спорта и туризма». Повышение квалификации: «Тренировки при нарушениях и заболеваниях опорно-двигательного аппарата», «Функциональная анатомия», «Функциональный тренинг», «Беременность и фитнес», «Персональная тренировка при сколиозе», «TRX-SUSPTENTION Training Course»."
+	                                                                    )
 	                                                                ),
 	                                                                _react2.default.createElement(
 	                                                                    "div",
 	                                                                    { className: "info" },
 	                                                                    _react2.default.createElement(
 	                                                                        "span",
-	                                                                        { className: "title" },
-	                                                                        "Направление:"
+	                                                                        { className: "title directionToggle" },
+	                                                                        "Направление: "
 	                                                                    ),
-	                                                                    " Направление: Реабилитация, кинезиотейпирование, функциональный тренинг, снижение веса, набор мышечной массы Интересы: Исправление осанки, растяжка, восстановление после травм."
+	                                                                    _react2.default.createElement(
+	                                                                        "span",
+	                                                                        { className: "info_direction" },
+	                                                                        "Реабилитация, кинезиотейпирование, функциональный тренинг, снижение веса, набор мышечной массы Интересы: Исправление осанки, растяжка, восстановление после травм."
+	                                                                    )
 	                                                                )
 	                                                            )
 	                                                        )
@@ -31967,6 +31998,9 @@
 	            ),
 	            _react2.default.createElement("div", { className: "hide-page-layer" })
 	        );
+	    },
+	    componentDidMount: function componentDidMount() {
+	        initSliders();
 	    }
 	});
 
@@ -32053,7 +32087,16 @@
 	                                _react2.default.createElement(
 	                                    'div',
 	                                    { className: 'text-title' },
-	                                    'Индивидуальная программа'
+	                                    _react2.default.createElement(
+	                                        'span',
+	                                        { className: 'mob_hidden' },
+	                                        'Индивидуальная'
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'span',
+	                                        null,
+	                                        'программа'
+	                                    )
 	                                )
 	                            )
 	                        ),
@@ -32074,7 +32117,7 @@
 	                                { className: 'select-programm' },
 	                                _react2.default.createElement(
 	                                    'div',
-	                                    { className: 'abonement-title' },
+	                                    { className: 'abonement-title mob_hidden' },
 	                                    'Выбор абонемента:'
 	                                ),
 	                                _react2.default.createElement('input', { type: 'hidden', name: 'plan_id', id: 'li-trainer-id', value: 'skip' }),
@@ -32673,6 +32716,9 @@
 	            ),
 	            _react2.default.createElement('div', { className: 'hide-page-layer' })
 	        );
+	    },
+	    componentDidMount: function componentDidMount() {
+	        initSliders();
 	    }
 	});
 
@@ -33464,7 +33510,7 @@
 	                                                        { name: "birthday_date", className: "custom" },
 	                                                        _react2.default.createElement(
 	                                                            "option",
-	                                                            { value: "01", selected: "selected" },
+	                                                            { value: "01", selected: "defaultValue" },
 	                                                            "01"
 	                                                        ),
 	                                                        _react2.default.createElement(
@@ -33631,7 +33677,7 @@
 	                                                        { name: "birthday_month", className: "custom" },
 	                                                        _react2.default.createElement(
 	                                                            "option",
-	                                                            { value: "01", selected: "selected" },
+	                                                            { value: "01", selected: "defaultValue" },
 	                                                            "Январь"
 	                                                        ),
 	                                                        _react2.default.createElement(
@@ -33823,7 +33869,7 @@
 	                                                        ),
 	                                                        _react2.default.createElement(
 	                                                            "option",
-	                                                            { value: "1970", selected: "selected" },
+	                                                            { value: "1970", selected: "defaultValue" },
 	                                                            "1970"
 	                                                        ),
 	                                                        _react2.default.createElement(
@@ -34085,7 +34131,7 @@
 	                                                    { id: "profileform-activity", className: "custom", name: "ProfileForm[activity]" },
 	                                                    _react2.default.createElement(
 	                                                        "option",
-	                                                        { value: "34", selected: true },
+	                                                        { value: "34", selected: "defaultValue" },
 	                                                        "Минимальная (никаких физических нагрузок)"
 	                                                    ),
 	                                                    _react2.default.createElement(
@@ -34138,7 +34184,7 @@
 	                                                    { id: "profileform-level", className: "custom", name: "ProfileForm[level]" },
 	                                                    _react2.default.createElement(
 	                                                        "option",
-	                                                        { value: "29", selected: true },
+	                                                        { value: "29", selected: "defaultValue" },
 	                                                        "Начальный"
 	                                                    ),
 	                                                    _react2.default.createElement(
@@ -34240,7 +34286,7 @@
 	                                                    { id: "profileform-purpose", className: "custom", name: "ProfileForm[purpose]" },
 	                                                    _react2.default.createElement(
 	                                                        "option",
-	                                                        { value: "689", selected: true },
+	                                                        { value: "689", selected: "defaultValue" },
 	                                                        "Набор силы"
 	                                                    ),
 	                                                    _react2.default.createElement(

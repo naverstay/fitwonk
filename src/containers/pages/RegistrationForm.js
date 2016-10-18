@@ -1,9 +1,11 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 
 export default React.createClass({
     render() {
         return (
             <div>
+                <Helmet title="Регистрация нового пользователя" />
                 <div className="header">
                     <div className="page-width">
                         <div className="logo">

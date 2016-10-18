@@ -1,10 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router'
+import Helmet from 'react-helmet'
+import { url } from '../../config'
 
 export default React.createClass({
     render() {
         return (
             <div>
+                <Helmet title="Мой коучер" />
                 <div className="info-title">
                     <div className="sub"><a href="trainee/archive">Архив диалогов</a></div>
                     <div className="text-title">Список диалогов</div>
@@ -34,14 +37,14 @@ export default React.createClass({
                                                 <p>Меня зовут FITWONK, я твой персональный фитнес-тренер. Вдвоем мы
                                                     добьемся любой поставленной цели, ну что, начнем?</p>
                                                 <p>Анкета с параметрами на этапе регистрации – это только начало. <img
-                                                    src="http://login.fitwonk.dev.pz.su/uploads/mail/smile-160125.gif"
-                                                    alt="smile"/> Пожалуйста, заполни показатели в разделе <a
-                                                    href="http://login.fitwonk.dev.pz.su/trainee/anthropometry">Мои
-                                                    цели</a>, чтобы познакомиться ещё ближе. <img
-                                                    src="http://login.fitwonk.dev.pz.su/uploads/mail/smile-160125.gif"
+                                                    src={url("uploads/mail/smile-160125.gif")}
+                                                    alt="smile"/> Пожалуйста, заполни показатели в разделе <Link
+                                                    to="/anthropometry">Мои
+                                                    цели</Link>, чтобы познакомиться ещё ближе. <img
+                                                    src={url("uploads/mail/smile-160125.gif")}
                                                     alt="smile"/></p>
-                                                <p>Теперь в разделе <a
-                                                    href="http://login.fitwonk.dev.pz.su/trainee/calendar">Календарь</a>
+                                                <p>Теперь в разделе <Link
+                                                    to="/calendar">Календарь</Link>
                                                     приступай к своей первой тренировке!</p>
                                                 <p>Не забудь оставить отзыв: что было сложно, непонятно, с чем не
                                                     возникли проблемы, что беспокоило, - тогда мне будет проще
@@ -49,7 +52,7 @@ export default React.createClass({
                                                     результативной!</p>
                                                 <p>Возникнут вопросы, обязательно пиши.</p>
                                                 <p>Спасибо за доверие и приятно познакомиться! <img
-                                                    src="http://login.fitwonk.dev.pz.su/uploads/mail/smile-160125.gif"
+                                                    src={url("uploads/mail/smile-160125.gif")}
                                                     alt="smile"/></p>
                                                 <span className="reserv type2"></span>
                                                 <div className="date">21:49 08.08.2016</div>
