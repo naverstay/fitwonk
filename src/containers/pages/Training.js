@@ -291,7 +291,7 @@ class InfoTimers extends Component {
             style = {visibility: 'hidden'};
         }
         let content =
-            <div style={style}>
+            <div className="training-info" style={style}>
                 <div className="half-left">
                     <div className="ind top widget-step-work">
                         <span className="countSubject">{sTitle}</span><span className="countTime">{sTime}</span>

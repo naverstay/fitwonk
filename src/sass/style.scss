@@ -906,7 +906,7 @@ video {
         }
       }
     }
-    .counters {
+/*    .counters {
       @extend %clearfix;
       position: relative;
 
@@ -1099,7 +1099,7 @@ video {
           margin: 0 auto;
         }
       }
-    }
+    }*/
     .pt30 {
       padding-top: 30px;
     }
@@ -1325,6 +1325,203 @@ video {
       }
     }
   }
+}
+
+.widget .widget-body .counters {
+  position: relative
+}
+
+@media only screen and (min-width: 768px) {
+  .widget .widget-body .counters {
+    height: 250px;
+    width: 402px;
+    margin: 12px auto 0
+  }
+}
+
+.widget .widget-body .counters input {
+  outline: none;
+  color: #2a75b9
+}
+
+.widget .widget-body .counters .general {
+  height: 152px;
+  width: 152px;
+  padding: 7px;
+  background: #fff;
+  -webkit-border-radius: 120px;
+  -moz-border-radius: 120px;
+  -khtml-border-radius: 120px;
+  border-radius: 120px
+}
+
+@media only screen and (min-width: 768px) {
+  .widget .widget-body .counters .general {
+    position: absolute;
+    top: 60px;
+    right: 0
+  }
+}
+
+.widget .widget-body .counters .general .stat {
+  position: absolute;
+  width: 152px;
+  text-align: center;
+  padding-top: 29px;
+  line-height: 1.2
+}
+
+.widget .widget-body .counters .general .stat .perc {
+  color: #2a75b9;
+  font-size: 43px
+}
+
+.widget .widget-body .counters .general .stat .text {
+  text-transform: uppercase;
+  font-size: 15px
+}
+
+.widget .widget-body .counters .general .stat .timer {
+  color: #a2a2a2;
+  font-size: 18px
+}
+
+.widget .widget-body .counters .step {
+  margin: 0 auto;
+  height: 230px;
+  width: 230px;
+  padding: 10px;
+  background: #fff;
+  -webkit-border-radius: 180px;
+  -moz-border-radius: 180px;
+  -khtml-border-radius: 180px;
+  border-radius: 180px
+}
+
+@media only screen and (min-width: 768px) {
+  .widget .widget-body .counters .step {
+    position: absolute;
+    top: 0;
+    left: 0
+  }
+}
+
+.widget .widget-body .counters .step .stat {
+  position: absolute;
+  width: 230px;
+  text-align: center;
+  padding-top: 48px;
+  line-height: 1.2
+}
+
+.widget .widget-body .counters .step .stat .perc {
+  color: #2a75b9;
+  font-size: 60px
+}
+
+.widget .widget-body .counters .step .stat .text {
+  text-transform: uppercase;
+  font-size: 22px;
+  line-height: 1.5
+}
+
+.widget .widget-body .counters .step .stat .timer {
+  color: #a2a2a2;
+  font-size: 20px
+}
+
+.widget .widget-body .counters .round-count {
+  position: relative
+}
+
+.widget .widget-body .countdown {
+  text-align: center;
+  position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+  .widget .widget-body .countdown {
+    padding-bottom: 70px;
+  }
+  
+  .training-info {
+    font-size: 14px;
+  }
+}
+
+.widget .widget-body .countdown .count {
+  font-size: 230px;
+  color: #fff;
+  line-height: 0.9
+}
+
+.widget .widget-body .countdown .desc {
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1.2
+}
+
+.widget .widget-body .help-layer {
+  display: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 60px;
+  bottom: 60px;
+  left: 50%;
+  width: 500px;
+  margin-left: -250px;
+  background: #fff;
+  overflow-x: hidden;
+  overflow-y: auto
+}
+
+.widget .widget-body .help-layer .help-ind {
+  padding: 20px
+}
+
+.widget .widget-body .end-training {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase
+}
+
+@media only screen and (max-width: 768px) {
+  .widget .widget-body .end-training {
+    padding-bottom: 70px;
+  }
+}
+
+.widget .widget-body .end-training .fs20 {
+  font-size: 20px
+}
+
+.widget .widget-body .end-training .fs35 {
+  font-size: 35px
+}
+
+.widget .widget-body .end-training .fs55 {
+  font-size: 55px
+}
+
+.widget .widget-body .end-training .fs70 {
+  font-size: 70px
+}
+
+.widget .widget-body .end-training .fflc {
+  font-family: futurafuturislightc, Arial, sans-serif
+}
+
+.widget .widget-body .end-training .wr-img {
+  width: 235px;
+  margin: 0 auto
+}
+
+.widget .widget-body .end-training .wr-img img {
+  width: 100%;
+  display: block;
+  margin: 0 auto
 }
 
 .widget-step-pulse, .widget-step-rate, .widget-step-comment {
