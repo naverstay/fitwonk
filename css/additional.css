@@ -175,7 +175,7 @@ input[type=text] {
 }
 
 .widget .widget-body .help-layer {
-    height: 279px;
+    /*height: 279px;*/
     overflow: hidden;
     z-index: 9;
 }
@@ -198,7 +198,10 @@ input[type=text] {
 }
 
 .widget .widget-body .help-layer .practice {
-    height: 279px;
+    /*height: 279px;*/
+    height: 0 !important;
+    padding-bottom: 56.3% !important;
+    overflow: hidden;
 }
 
 .gender-select {

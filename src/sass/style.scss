@@ -1269,17 +1269,19 @@ video {
 }
 
 .widget .widget-body .help-layer {
-  display: none;
+  //display: none;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
   position: absolute;
   top: 60px;
-  bottom: 60px;
   left: 50%;
   width: 500px;
-  margin-left: -250px;
+  max-width: 95%;
   background: #fff;
   overflow-x: hidden;
-  overflow-y: auto
+  overflow-y: auto;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
 }
 
 .widget .widget-body .help-layer .help-ind {
