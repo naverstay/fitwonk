@@ -180,8 +180,8 @@ class HelpLayer extends Component {
         let isPlayerVisible = training.status < TRAINING_STATUS_FINISHED;
         let style = {}, playerStyle = {}, pulseStyle = {};
 
-        if (!isVisible) {
-            style = {display: 'none'};
+        if (isVisible) {
+            style = {display: 'block'};
         }
 
         if (!isPlayerVisible) {

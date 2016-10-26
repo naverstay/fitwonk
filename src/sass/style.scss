@@ -1269,7 +1269,7 @@ video {
 }
 
 .widget .widget-body .help-layer {
-  //display: none;
+  display: none;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
   position: absolute;
   top: 60px;
@@ -5906,6 +5906,9 @@ video {
     width: 100%;
     color: $white;
     line-height: 1.2;
+    tbody {
+      display: block;
+    }
     a {
       text-decoration: underline;
       color: $white;
